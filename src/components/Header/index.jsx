@@ -258,12 +258,12 @@ export default function Header() {
   };
 
   return (
-    <nav className="flex items-center justify-between py-3 px-6 bg-[#0C0C0C]/95 backdrop-blur-xl border-b border-[#BBA473]/10 sticky top-0 z-40">
-      {/* Subtle top shine line */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#BBA473]/20 to-transparent"></div>
+    <nav className="flex items-center justify-between py-3 px-6 bg-[#1a0405]/90 backdrop-blur-2xl border-b border-white/[0.04] sticky top-0 z-40 shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
+      {/* Top accent */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#dea402]/15 to-transparent"></div>
 
       {/* Mobile Menu Button */}
-      <button className="flex items-center space-x-2 text-white font-medium md:block lg:hidden hover:text-[#BBA473] transition-colors duration-300">
+      <button className="flex items-center space-x-2 text-white font-medium md:block lg:hidden hover:text-[#dea402] transition-colors duration-300">
         <Menu className="w-6 h-6" />
         <span>Menu</span>
       </button>
@@ -277,11 +277,11 @@ export default function Header() {
               setNotificationsOpen(!notificationsOpen);
               setProfileOpen(false);
             }}
-            className="relative p-2.5 rounded-xl bg-[#161616] hover:bg-[#1E1E1E] transition-all duration-300 border border-[#BBA473]/10 hover:border-[#BBA473]/30 group"
+            className="relative p-2.5 rounded-xl bg-[#2d070a] hover:bg-[#3a0c0f] transition-all duration-300 border border-[#dea402]/10 hover:border-[#dea402]/30 group"
           >
-            <Bell className="w-5 h-5 text-gray-400 group-hover:text-[#BBA473] transition-colors duration-300" />
+            <Bell className="w-5 h-5 text-gray-400 group-hover:text-[#dea402] transition-colors duration-300" />
             {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black text-[8px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center animate-pulse px-1">
+              <span className="absolute -top-1 -right-1 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black text-[8px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center animate-pulse px-1">
                 {unreadCount}
               </span>
             )}
@@ -289,13 +289,13 @@ export default function Header() {
 
           {/* Notifications Dropdown */}
           {notificationsOpen && (
-            <div className="absolute right-0 mt-3 w-96 bg-[#141414] rounded-xl shadow-2xl border border-[#BBA473]/15 overflow-hidden animate-slideDown z-50">
+            <div className="absolute right-0 mt-3 w-96 bg-[#2d070a] rounded-xl shadow-2xl border border-[#dea402]/15 overflow-hidden animate-slideDown z-50">
               {/* Header */}
-              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#BBA473]/8 to-transparent border-b border-[#BBA473]/15">
+              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#dea402]/8 to-transparent border-b border-[#dea402]/15">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-bold text-[#BBA473]">Notifications</h3>
+                  <h3 className="text-lg font-bold text-[#dea402]">Notifications</h3>
                   {unreadCount > 0 && (
-                    <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-full">
+                    <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-full">
                       {unreadCount} new
                     </span>
                   )}
@@ -303,7 +303,7 @@ export default function Header() {
                 {unreadCount > 0 && (
                   <button
                     onClick={markAllAsRead}
-                    className="flex items-center gap-1 text-xs text-[#BBA473] hover:text-[#d4bc89] transition-colors duration-300 font-medium"
+                    className="flex items-center gap-1 text-xs text-[#dea402] hover:text-[#f0ba0a] transition-colors duration-300 font-medium"
                   >
                     <Check className="w-3 h-3" />
                     Mark all read
@@ -315,7 +315,7 @@ export default function Header() {
               <div className="max-h-[500px] overflow-y-auto custom-scrollbar">
                 {loading ? (
                   <div className="px-4 py-8 text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#BBA473] mx-auto mb-2"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#dea402] mx-auto mb-2"></div>
                     <p className="text-gray-400 text-sm">Loading...</p>
                   </div>
                 ) : notifications.length === 0 ? (
@@ -327,9 +327,9 @@ export default function Header() {
                   notifications.slice(0, 8).map((notification, index) => (
                     <div
                       key={notification.id}
-                      className={`group relative px-4 py-3 hover:bg-[#1E1E1E] transition-all duration-300 cursor-pointer ${
-                        notification.unread ? 'bg-[#BBA473]/5' : ''
-                      } ${index !== Math.min(notifications.length, 8) - 1 ? 'border-b border-[#BBA473]/10' : ''}`}
+                      className={`group relative px-4 py-3 hover:bg-[#3a0c0f] transition-all duration-300 cursor-pointer ${
+                        notification.unread ? 'bg-[#dea402]/5' : ''
+                      } ${index !== Math.min(notifications.length, 8) - 1 ? 'border-b border-[#dea402]/10' : ''}`}
                     >
                       <div className="flex gap-3">
                         {/* Icon */}
@@ -340,17 +340,17 @@ export default function Header() {
                         {/* Content */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-2">
-                            <h4 className="text-white font-semibold text-sm group-hover:text-[#BBA473] transition-colors duration-300">
+                            <h4 className="text-white font-semibold text-sm group-hover:text-[#dea402] transition-colors duration-300">
                               {notification.title}
                             </h4>
                             {notification.unread && (
-                              <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#BBA473] mt-1"></div>
+                              <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#dea402] mt-1"></div>
                             )}
                           </div>
                           <p className="text-gray-400 text-xs mt-1 line-clamp-2">
                             {notification.message}
                           </p>
-                          <span className="text-[#BBA473]/70 text-xs mt-1 block">
+                          <span className="text-[#dea402]/70 text-xs mt-1 block">
                             {notification.time}
                           </span>
                         </div>
@@ -361,13 +361,13 @@ export default function Header() {
               </div>
 
               {/* Footer */}
-              <div className="p-3 bg-[#0C0C0C] border-t border-[#BBA473]/15">
+              <div className="p-3 bg-[#200607] border-t border-[#dea402]/15">
                 <button
                   onClick={() => {
                     setNotificationsOpen(false);
                     navigate('/notifications');
                   }}
-                  className="w-full py-2 text-center text-sm font-semibold text-[#BBA473] hover:text-white hover:bg-[#1A1A1A] rounded-lg transition-all duration-300"
+                  className="w-full py-2 text-center text-sm font-semibold text-[#dea402] hover:text-white hover:bg-[#4a1015] rounded-lg transition-all duration-300"
                 >
                   View All Notifications
                 </button>
@@ -377,7 +377,7 @@ export default function Header() {
         </div>
 
         {/* Divider */}
-        <div className="w-px h-8 bg-[#BBA473]/10"></div>
+        <div className="w-px h-8 bg-[#dea402]/10"></div>
 
         {/* Profile Dropdown */}
         <div className="relative profile-dropdown">
@@ -386,10 +386,10 @@ export default function Header() {
               setProfileOpen(!profileOpen);
               setNotificationsOpen(false);
             }}
-            className="transition-all duration-300 flex items-center space-x-3 cursor-pointer p-1.5 rounded-xl hover:bg-[#161616] group"
+            className="transition-all duration-300 flex items-center space-x-3 cursor-pointer p-1.5 rounded-xl hover:bg-[#2d070a] group"
           >
             {/* Avatar with photo + hover initials */}
-            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#BBA473]/20 group-hover:ring-[#BBA473]/50 transition-all duration-300">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#dea402]/20 group-hover:ring-[#dea402]/50 transition-all duration-300">
               {/* Dummy profile photo - default visible */}
               <img
                 src={getAvatarForUser(userDetails || branchDetails)}
@@ -398,7 +398,7 @@ export default function Header() {
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               {/* Initials overlay - visible on hover */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#dea402] to-[#b38302] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="font-bold text-black text-sm">
                   {userDetails ? userDetails.charAt(0).toUpperCase() : 'M'}
                   {branchDetails ? branchDetails.charAt(0).toUpperCase() : 'A'}
@@ -417,7 +417,7 @@ export default function Header() {
 
           {/* Profile Dropdown Menu */}
           {profileOpen && (
-            <div className="absolute right-0 mt-3 w-60 bg-[#141414] rounded-xl shadow-2xl border border-[#BBA473]/15 overflow-hidden animate-slideDown z-50">
+            <div className="absolute right-0 mt-3 w-60 bg-[#2d070a] rounded-xl shadow-2xl border border-[#dea402]/15 overflow-hidden animate-slideDown z-50">
               {/* Profile info header */}
 
               <div className="py-1.5">
@@ -427,15 +427,15 @@ export default function Header() {
                     setProfileOpen(false);
                     navigate('/update-password');
                   }}
-                  className="w-full flex items-center gap-3 px-4 py-2.5 text-white hover:bg-[#1E1E1E] transition-all duration-300 group"
+                  className="w-full flex items-center gap-3 px-4 py-2.5 text-white hover:bg-[#3a0c0f] transition-all duration-300 group"
                 >
-                  <div className="p-1.5 rounded-lg bg-[#BBA473]/10 group-hover:bg-[#BBA473]/20 transition-colors duration-300">
-                    <Key className="w-4 h-4 text-[#BBA473]" />
+                  <div className="p-1.5 rounded-lg bg-[#dea402]/10 group-hover:bg-[#dea402]/20 transition-colors duration-300">
+                    <Key className="w-4 h-4 text-[#dea402]" />
                   </div>
                   <span className="text-sm font-medium">Update Password</span>
                 </button>
 
-                <div className="mx-4 my-1 border-t border-[#BBA473]/10"></div>
+                <div className="mx-4 my-1 border-t border-[#dea402]/10"></div>
 
                 <button
                   onClick={() => {
@@ -476,17 +476,17 @@ export default function Header() {
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: #0C0C0C;
+          background: #200607;
           border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(187, 164, 115, 0.3);
+          background: rgba(222, 164, 2, 0.3);
           border-radius: 3px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(187, 164, 115, 0.5);
+          background: rgba(222, 164, 2, 0.5);
         }
       `}</style>
     </nav>

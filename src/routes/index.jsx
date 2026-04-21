@@ -257,7 +257,7 @@ export function AppRoutes() {
   const isLoginPage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen flex bg-[#050505] text-white relative">
+    <div className="min-h-screen flex bg-[#1a0405] text-white relative">
       {/* Global Background */}
       {!isLoginPage && <GridBackground />}
 

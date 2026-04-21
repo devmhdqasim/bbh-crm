@@ -65,20 +65,20 @@ initMocks().then(() => {
             toastOptions={{
               duration: 3000,
               style: {
-                background: '#2A2A2A',
+                background: '#5c1a20',
                 color: '#fff',
-                border: '1px solid #BBA473',
+                border: '1px solid #dea402',
               },
               success: {
                 iconTheme: {
-                  primary: '#BBA473',
-                  secondary: '#1A1A1A',
+                  primary: '#dea402',
+                  secondary: '#4a1015',
                 },
               },
               error: {
                 iconTheme: {
                   primary: '#ef4444',
-                  secondary: '#1A1A1A',
+                  secondary: '#4a1015',
                 },
               },
             }}

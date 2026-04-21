@@ -63,13 +63,13 @@ export default function EnterOTP({
         if (result.success) {
           toast.success('Verification Successful!', {
             style: {
-              background: '#1a1a1a',
-              color: '#BBA473',
-              border: '1px solid #BBA473',
+              background: '#4a1015',
+              color: '#dea402',
+              border: '1px solid #dea402',
             },
             iconTheme: {
-              primary: '#BBA473',
-              secondary: '#1a1a1a',
+              primary: '#dea402',
+              secondary: '#4a1015',
             },
           });
           // Small delay for success animation
@@ -151,13 +151,13 @@ export default function EnterOTP({
       await resendOTP(login, loginBy);
       toast.success('OTP Resent Successfully', {
         style: {
-          background: '#1a1a1a',
-          color: '#BBA473',
-          border: '1px solid #BBA473',
+          background: '#4a1015',
+          color: '#dea402',
+          border: '1px solid #dea402',
         },
         iconTheme: {
-          primary: '#BBA473',
-          secondary: '#1a1a1a',
+          primary: '#dea402',
+          secondary: '#4a1015',
         },
       });
       setTimer(30);
@@ -170,44 +170,35 @@ export default function EnterOTP({
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#1a0405] flex items-center justify-center p-4 relative overflow-hidden">
 
-      {/* Enhanced Grid Background */}
+      {/* Cinematic Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-        {/* Brighter Major Grid Lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.07)_1px,transparent_1px)] bg-[size:200px_200px]"></div>
-
-        {/* Radial Glows */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(187,164,115,0.15),transparent_70%)]"></div>
-
-        {/* Animated Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#BBA473] rounded-full mix-blend-screen filter blur-[128px] opacity-10 animate-pulse" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#8E7D5A] rounded-full mix-blend-screen filter blur-[128px] opacity-5 animate-pulse" style={{ animationDuration: '7s' }}></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-20%,rgba(222,164,2,0.12),transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(222,164,2,0.04),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(74,16,21,0.3),transparent_50%)]"></div>
       </div>
 
-      <div className={`w-full max-w-lg relative z-10 transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+      <div className={`w-full max-w-md relative z-10 transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
 
         {/* Back Button */}
         <button
           onClick={onBack}
-          className="absolute -top-12 left-0 text-[#BBA473]/80 hover:text-[#BBA473] flex items-center gap-2 transition-colors group"
+          className="absolute -top-12 left-0 text-[#dea402]/80 hover:text-[#dea402] flex items-center gap-2 transition-colors group"
         >
           <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
           <span className="text-sm font-medium">Back</span>
         </button>
 
         {/* Card Container */}
-        <div className="bg-[#1a1a1a]/60 backdrop-blur-xl border border-[#BBA473]/20 rounded-2xl p-8 shadow-2xl relative overflow-hidden group-hover:border-[#BBA473]/40 transition-all duration-500">
+        <div className="bg-[#37090b]/60 backdrop-blur-2xl border border-white/[0.06] rounded-3xl p-8 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.5)] relative overflow-hidden">
 
           {/* Top shine border */}
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#BBA473]/50 to-transparent opacity-50"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-0.5 bg-gradient-to-r from-transparent via-[#dea402] to-transparent rounded-full"></div>
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="SaveInGold Logo" className="h-16 w-auto object-contain" />
+            <img src={logo} alt="BBH Logo" className="h-16 w-auto object-contain" />
           </div>
 
           {/* Heading */}
@@ -215,7 +206,7 @@ export default function EnterOTP({
             <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">
               Verification
             </h1>
-            <p className="text-[#BBA473]/80 text-sm font-medium">
+            <p className="text-[#dea402]/80 text-sm font-medium">
               Enter the 6-digit code sent to your email
             </p>
             <p className="text-gray-500 text-xs mt-1 truncate max-w-[250px] mx-auto">
@@ -239,9 +230,9 @@ export default function EnterOTP({
                   onKeyDown={(e) => handleKeyDown(index, e)}
                   onPaste={handlePaste}
                   disabled={isLoading}
-                  className={`w-12 h-14 text-center text-xl font-bold bg-[#0f0f0f]/80 text-white rounded-lg border transition-all duration-300 focus:outline-none ${digit
-                      ? 'border-[#BBA473] shadow-[0_0_10px_rgba(187,164,115,0.2)]'
-                      : 'border-[#BBA473]/10 focus:border-[#BBA473]'
+                  className={`w-12 h-14 text-center text-xl font-bold bg-white/[0.04] text-white rounded-xl border transition-all duration-300 focus:outline-none ${digit
+                      ? 'border-[#dea402] shadow-[0_0_10px_rgba(222,164,2,0.2)]'
+                      : 'border-[#dea402]/10 focus:border-[#dea402]'
                     }`}
                 />
               ))}
@@ -259,7 +250,7 @@ export default function EnterOTP({
               type="button"
               onClick={formik.handleSubmit}
               disabled={isLoading || formik.values.otp.length !== 6}
-              className="w-full bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black font-bold text-lg py-4 rounded-lg hover:from-[#d4bc89] hover:to-[#a69363] disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#BBA473]/20 hover:shadow-[#BBA473]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group"
+              className="w-full bg-gradient-to-r from-[#dea402] to-[#b38302] text-black font-bold text-lg py-4 rounded-lg hover:from-[#f0ba0a] hover:to-[#8a6e02] disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#dea402]/20 hover:shadow-[#dea402]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {isLoading ? (
@@ -284,14 +275,14 @@ export default function EnterOTP({
                 <button
                   onClick={handleResend}
                   disabled={isLoading}
-                  className="text-[#BBA473] hover:text-[#d4bc89] text-sm font-medium flex items-center justify-center gap-2 mx-auto transition-colors"
+                  className="text-[#dea402] hover:text-[#f0ba0a] text-sm font-medium flex items-center justify-center gap-2 mx-auto transition-colors"
                 >
                   <RefreshCw size={14} />
                   Resend Code
                 </button>
               ) : (
                 <p className="text-gray-500 text-sm">
-                  Resend code in <span className="text-[#BBA473] font-mono">{timer}s</span>
+                  Resend code in <span className="text-[#dea402] font-mono">{timer}s</span>
                 </p>
               )}
             </div>
@@ -301,9 +292,9 @@ export default function EnterOTP({
 
         {/* Footer Text */}
         <div className="text-center mt-8 space-y-2">
-          <p className="text-[#BBA473]/50 text-xs tracking-widest uppercase">Secured by Save In Gold</p>
-          <p className="text-[#BBA473]/30 text-[10px] tracking-wider">
-            v{APP_VERSION} &middot; &copy; {new Date().getFullYear()} Save In Gold
+          <p className="text-[#dea402]/50 text-xs tracking-widest uppercase">Secured by BBH</p>
+          <p className="text-[#dea402]/30 text-[10px] tracking-wider">
+            v{APP_VERSION} &middot; &copy; {new Date().getFullYear()} BBH
           </p>
         </div>
 

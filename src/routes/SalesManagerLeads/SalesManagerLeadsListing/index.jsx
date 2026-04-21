@@ -655,7 +655,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
 
   return (
     <>
-      <div className={`min-h-screen bg-[#1A1A1A] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`min-h-screen bg-[#4a1015] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
 
         {/* ── Drawer backdrop overlay ──────────────────────────────────────── */}
         {drawerOpen && (
@@ -672,10 +672,10 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         <div className="mb-8 animate-fadeIn">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
                 Lead Management
               </h1>
-              <p className="text-gray-400 mt-2">Manage and track your Save In Gold mobile application leads</p>
+              <p className="text-gray-400 mt-2">Manage and track your BBH mobile application leads</p>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -686,21 +686,21 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     setDrawerOpen(true);
                   }
                 }}
-                className="btn-animated btn-gold w-fit bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black font-bold text-lg py-4 rounded-lg disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#BBA473]/20 hover:shadow-[#BBA473]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group ml-auto"
+                className="btn-animated btn-gold w-fit bg-gradient-to-r from-[#dea402] to-[#b38302] text-black font-bold text-lg py-4 rounded-lg disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#dea402]/20 hover:shadow-[#dea402]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group ml-auto"
               >
                 <span className="inline-block">Add New Lead</span>
               </button>
 
               {/* Agent Filter */}
               <div className="flex items-center gap-4 ml-auto">
-                <label className="text-[#E8D5A3] font-medium text-sm whitespace-nowrap">
+                <label className="text-[#f5cc3a] font-medium text-sm whitespace-nowrap">
                   Filter by Agent:
                 </label>
                 <div className="relative w-full max-w-xs min-w-64">
                   <select
                     value={selectedAgentFilter}
                     onChange={(e) => setSelectedAgentFilter(e.target.value)}
-                    className="w-full px-4 py-2 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300 hover:border-[#BBA473]"
+                    className="w-full px-4 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 hover:border-[#dea402]"
                   >
                     <option value="">All Agents</option>
                     {agents.map((agent) => (
@@ -709,7 +709,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-1 top-1/2 bg-[#1a1a1a] transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                  <ChevronDown className="absolute right-1 top-1/2 bg-[#4a1015] transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                 </div>
               </div>
 
@@ -728,11 +728,11 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* ── Bulk Actions Bar ──────────────────────────────────────────── */}
         {selectedLeads.length > 0 && (
           <div className="mb-4 animate-fadeIn">
-            <div className="bg-[#262626] border border-[#BBA473]/30 rounded-xl px-5 py-3 flex flex-wrap items-center gap-3 shadow-lg shadow-[#BBA473]/5">
+            <div className="bg-[#262626] border border-[#dea402]/30 rounded-xl px-5 py-3 flex flex-wrap items-center gap-3 shadow-lg shadow-[#dea402]/5">
               {/* Selected count */}
-              <div className="flex items-center gap-2 pr-4 border-r border-[#BBA473]/20">
-                <div className="w-7 h-7 rounded-lg bg-[#BBA473]/20 flex items-center justify-center">
-                  <Check className="w-3.5 h-3.5 text-[#BBA473]" />
+              <div className="flex items-center gap-2 pr-4 border-r border-[#dea402]/20">
+                <div className="w-7 h-7 rounded-lg bg-[#dea402]/20 flex items-center justify-center">
+                  <Check className="w-3.5 h-3.5 text-[#dea402]" />
                 </div>
                 <span className="text-white font-medium text-sm">
                   {selectedLeads.length} lead{selectedLeads.length !== 1 ? 's' : ''} selected
@@ -742,7 +742,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               {/* Bulk Status Update */}
               <div className="relative bulk-dropdown-container">
                 {showBulkStatusDropdown && (
-                  <div className="absolute top-full left-0 mt-2 bg-[#1f1f1f] border border-[#BBA473]/30 rounded-xl shadow-2xl z-20 min-w-[200px] py-1 animate-fadeIn">
+                  <div className="absolute top-full left-0 mt-2 bg-[#1f1f1f] border border-[#dea402]/30 rounded-xl shadow-2xl z-20 min-w-[200px] py-1 animate-fadeIn">
                     {bulkStatusOptions.map((status) => (
                       <button
                         key={status.value}
@@ -778,7 +778,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${showBulkAssignDropdown ? 'rotate-180' : ''}`} />
                 </button>
                 {showBulkAssignDropdown && (
-                  <div className="absolute top-full left-0 mt-2 bg-[#1f1f1f] border border-[#BBA473]/30 rounded-xl shadow-2xl z-20 min-w-[260px] py-1 animate-fadeIn max-h-[300px] overflow-y-auto bulk-actions-scrollbar">
+                  <div className="absolute top-full left-0 mt-2 bg-[#1f1f1f] border border-[#dea402]/30 rounded-xl shadow-2xl z-20 min-w-[260px] py-1 animate-fadeIn max-h-[300px] overflow-y-auto bulk-actions-scrollbar">
                     {/* Assign to Myself */}
                     <button
                       onClick={async () => {
@@ -795,8 +795,8 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       disabled={bulkAssigning}
                       className="w-full px-4 py-2.5 text-left hover:bg-white/[0.06] transition-colors text-sm flex items-center gap-3 border-b border-white/[0.06] disabled:opacity-50"
                     >
-                      <UserPlus className="w-4 h-4 text-[#BBA473]" />
-                      <span className="text-[#BBA473] font-medium">Assign to Myself</span>
+                      <UserPlus className="w-4 h-4 text-[#dea402]" />
+                      <span className="text-[#dea402] font-medium">Assign to Myself</span>
                     </button>
                     {/* Agents list */}
                     <div className="py-1">
@@ -814,7 +814,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                           disabled={bulkAssigning}
                           className="w-full px-4 py-2.5 text-left hover:bg-white/[0.06] transition-colors text-sm flex items-center gap-3 disabled:opacity-50"
                         >
-                          <div className="w-6 h-6 rounded-full bg-[#BBA473]/20 flex items-center justify-center text-[#BBA473] text-xs font-semibold flex-shrink-0">
+                          <div className="w-6 h-6 rounded-full bg-[#dea402]/20 flex items-center justify-center text-[#dea402] text-xs font-semibold flex-shrink-0">
                             {agent.firstName?.[0]}{agent.lastName?.[0]}
                           </div>
                           <div className="min-w-0">
@@ -868,7 +868,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* ── Main Tabs (Level 1) ─────────────────────────────────────────── */}
         <div className="mb-4 animate-fadeIn">
           <div className="overflow-x-auto tabs-scroll-container">
-            <div className="flex gap-1 border-b border-[#BBA473]/30 min-w-max">
+            <div className="flex gap-1 border-b border-[#dea402]/30 min-w-max">
               {allTabs.map((tab) => {
                 const tabCount = getTabCount(tab);
                 const critical = isCriticalTab(tab);
@@ -882,8 +882,8 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       px-5 py-3 font-medium transition-all duration-200 border-b-2 whitespace-nowrap
                       flex items-center gap-2 rounded-t-md
                       ${isActive
-                        ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                        : 'border-transparent text-gray-400 hover:text-gray-200 hover:bg-[#2A2A2A]'
+                        ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                        : 'border-transparent text-gray-400 hover:text-gray-200 hover:bg-[#5c1a20]'
                       }
                     `}
                   >
@@ -895,7 +895,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                           leading-none rounded-full
                           ${critical
                             ? 'text-white bg-red-500 animate-pulse'
-                            : 'text-[#BBA473] bg-[#BBA473]/15 border border-[#BBA473]/30'
+                            : 'text-[#dea402] bg-[#dea402]/15 border border-[#dea402]/30'
                           }
                         `}
                       >
@@ -912,7 +912,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* ── Sub Tabs (Level 2) — hidden for source/event tabs ───────────── */}
         {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
-            <div className="flex gap-2 border-b border-[#BBA473]/20 min-w-max pl-4">
+            <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-4">
               {getSubTabs().map((subTab) => {
                 const count = leadsCount?.[subTab?.replace(/\s+/g, '')];
                 const isActiveSub = activeSubTab === subTab;
@@ -924,8 +924,8 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     onClick={() => handleSubTabChange(subTab)}
                     className={`px-5 py-2.5 font-medium transition-all duration-300 border-b-2 whitespace-nowrap text-sm flex items-center gap-2 ${
                       isActiveSub
-                        ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                        ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                     }`}
                   >
                     <span className="capitalize">{subTab}</span>
@@ -933,7 +933,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       <span className={`inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full ${
                         subCritical
                           ? 'text-white bg-red-500 animate-pulse'
-                          : 'text-[#BBA473] bg-[#BBA473]/15 border border-[#BBA473]/30'
+                          : 'text-[#dea402] bg-[#dea402]/15 border border-[#dea402]/30'
                       }`}>
                         {count}
                       </span>
@@ -948,7 +948,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* Sub Sub Tabs (Level 3) */}
         {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
-            <div className="flex gap-2 border-b border-[#BBA473]/20 min-w-max pl-8">
+            <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-8">
               {getSubSubTabs().map((subSubTab) => {
                 const count = leadsCount?.[subSubTab?.replace(/\s+/g, '')];
                 return (
@@ -957,13 +957,13 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     onClick={() => handleSubSubTabChange(subSubTab)}
                     className={`px-4 py-2 font-medium transition-all duration-300 border-b-2 whitespace-nowrap text-sm flex items-center gap-2 ${
                       activeSubSubTab === subSubTab
-                        ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                        ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                     }`}
                   >
                     <span className="capitalize">{subSubTab}</span>
                     {count ? (
-                      <span className="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full text-[#BBA473] bg-[#BBA473]/15 border border-[#BBA473]/30">
+                      <span className="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full text-[#dea402] bg-[#dea402]/15 border border-[#dea402]/30">
                         {count}
                       </span>
                     ) : ''}
@@ -977,7 +977,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* Sub Sub Sub Tabs (Level 4) */}
         {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
-            <div className="flex gap-2 border-b border-[#BBA473]/20 min-w-max pl-12">
+            <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-12">
               {getSubSubSubTabs().map((subSubSubTab) => {
                 const count = leadsCount?.[subSubSubTab?.replace(/\s+/g, '')];
                 return (
@@ -986,13 +986,13 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     onClick={() => handleSubSubSubTabChange(subSubSubTab)}
                     className={`px-4 py-2 font-medium transition-all duration-300 border-b-2 whitespace-nowrap text-sm flex items-center gap-2 ${
                       activeSubSubSubTab === subSubSubTab
-                        ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                        ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                     }`}
                   >
                     <span className="capitalize">{subSubSubTab}</span>
                     {count ? (
-                      <span className="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full text-[#BBA473] bg-[#BBA473]/15 border border-[#BBA473]/30">
+                      <span className="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full text-[#dea402] bg-[#dea402]/15 border border-[#dea402]/30">
                         {count}
                       </span>
                     ) : ''}
@@ -1006,7 +1006,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         {/* Sub Sub Sub Sub Tabs (Level 5) */}
         {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubSubSubTabs().length > 0 && (
           <div className="mb-6 overflow-x-auto animate-fadeIn">
-            <div className="flex gap-2 border-b border-[#BBA473]/20 min-w-max pl-16">
+            <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-16">
               {getSubSubSubSubTabs().map((subSubSubSubTab) => {
                 const count = leadsCount?.[subSubSubSubTab?.replace(/\s+/g, '')];
                 const isDepositCritical = subSubSubSubTab === 'Deposit';
@@ -1016,8 +1016,8 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     onClick={() => handleSubSubSubSubTabChange(subSubSubSubTab)}
                     className={`px-4 py-2 font-medium transition-all duration-300 border-b-2 whitespace-nowrap text-sm flex items-center gap-2 ${
                       activeSubSubSubSubTab === subSubSubSubTab
-                        ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                        ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                        : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                     }`}
                   >
                     <span className="capitalize">{subSubSubSubTab}</span>
@@ -1025,7 +1025,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       <span className={`inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none rounded-full ${
                         isDepositCritical
                           ? 'text-white bg-red-500 animate-pulse'
-                          : 'text-[#BBA473] bg-[#BBA473]/15 border border-[#BBA473]/30'
+                          : 'text-[#dea402] bg-[#dea402]/15 border border-[#dea402]/30'
                       }`}>
                         {count}
                       </span>
@@ -1046,16 +1046,16 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               placeholder="Search by name, email, phone, nationality, residency, or source..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300 hover:border-[#BBA473]"
+              className="w-full pl-10 pr-4 py-3 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 hover:border-[#dea402]"
             />
           </div>
         </div>
 
         {/* Table Container */}
-        <div className="bg-[#2A2A2A] rounded-xl shadow-2xl overflow-hidden border border-[#BBA473]/20 animate-fadeIn">
+        <div className="bg-[#5c1a20] rounded-xl shadow-2xl overflow-hidden border border-[#dea402]/20 animate-fadeIn">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-[#1A1A1A] border-b border-[#BBA473]/30">
+              <thead className="bg-[#4a1015] border-b border-[#dea402]/30">
                 <tr>
                   <th className="text-center px-4 py-4 w-12">
                     <input
@@ -1066,23 +1066,23 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       className="dark-checkbox"
                     />
                   </th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Lead ID</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Name</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Phone</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Nationality</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Agent</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Source</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Kiosk - Lead - Task</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Created At</th>
-                  <th className="text-center px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Actions</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Lead ID</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Name</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Phone</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Nationality</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Agent</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Source</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Kiosk - Lead - Task</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Created At</th>
+                  <th className="text-center px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#BBA473]/10">
+              <tbody className="divide-y divide-[#dea402]/10">
                 {loading ? (
                   <tr>
                     <td colSpan="10" className="px-6 py-12 text-center text-gray-400">
                       <div className="flex flex-col items-center gap-3">
-                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#BBA473]"></div>
+                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#dea402]"></div>
                         <span>Loading leads...</span>
                       </div>
                     </td>
@@ -1099,7 +1099,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       key={lead.id}
                       onClick={(e) => handleRowClick(lead, e)}
                       className={`hover:bg-[#3A3A3A] transition-all duration-300 group cursor-pointer ${
-                        selectedLeads.includes(lead.id) ? 'bg-[#BBA473]/[0.06]' : ''
+                        selectedLeads.includes(lead.id) ? 'bg-[#dea402]/[0.06]' : ''
                       }`}
                     >
                       <td className="px-4 py-4 text-center" onClick={(e) => e.stopPropagation()}>
@@ -1113,7 +1113,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       <td className="px-6 py-4 text-gray-300 font-mono text-sm">{lead.leadId || lead.id.slice(-6)}</td>
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <span className="font-medium capitalize text-white group-hover:text-[#BBA473] transition-colors duration-300">
+                          <span className="font-medium capitalize text-white group-hover:text-[#dea402] transition-colors duration-300">
                             {lead.name}
                           </span>
                         </div>
@@ -1173,7 +1173,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                           )} */}
                           <button
                             onClick={() => handleEdit(lead)}
-                            className="p-2 rounded-lg bg-[#BBA473]/20 text-[#BBA473] hover:bg-[#BBA473] hover:text-black transition-all duration-300 hover:scale-110"
+                            className="p-2 rounded-lg bg-[#dea402]/20 text-[#dea402] hover:bg-[#dea402] hover:text-black transition-all duration-300 hover:scale-110"
                             title="Edit"
                           >
                             <Edit className="w-4 h-4" />
@@ -1195,7 +1195,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
           </div>
 
           {/* Pagination */}
-          <div className="px-6 py-4 bg-[#1A1A1A] border-t border-[#BBA473]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div className="px-6 py-4 bg-[#4a1015] border-t border-[#dea402]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="text-gray-400 text-sm">
                 Showing <span className="text-white font-semibold">{showingFrom}</span> to{' '}
@@ -1205,19 +1205,19 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               <div className="relative">
                 <button
                   onClick={() => setShowPerPageDropdown(!showPerPageDropdown)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30"
                 >
                   <span className="text-sm">{itemsPerPage} per page</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showPerPageDropdown && (
-                  <div className="absolute bottom-full mb-2 right-0 bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
+                  <div className="absolute bottom-full mb-2 right-0 bg-[#5c1a20] border border-[#dea402]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
                     {perPageOptions.map(option => (
                       <button
                         key={option}
                         onClick={() => handlePerPageChange(option)}
                         className={`w-full px-4 py-2 text-left hover:bg-[#3A3A3A] transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                          option === itemsPerPage ? 'bg-[#BBA473]/20 text-[#BBA473]' : 'text-white'
+                          option === itemsPerPage ? 'bg-[#dea402]/20 text-[#dea402]' : 'text-white'
                         }`}
                       >
                         {option} per page
@@ -1232,7 +1232,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -1241,7 +1241,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                 <>
                   <button
                     onClick={() => handlePageChange(1)}
-                    className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                    className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                   >
                     1
                   </button>
@@ -1255,8 +1255,8 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                   onClick={() => handlePageChange(page)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 border ${
                     currentPage === page
-                      ? 'bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black border-[#BBA473] font-semibold shadow-lg'
-                      : 'bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] border-[#BBA473]/30 hover:border-[#BBA473]'
+                      ? 'bg-gradient-to-r from-[#dea402] to-[#b38302] text-black border-[#dea402] font-semibold shadow-lg'
+                      : 'bg-[#5c1a20] text-white hover:bg-[#3A3A3A] border-[#dea402]/30 hover:border-[#dea402]'
                   }`}
                 >
                   {page}
@@ -1268,7 +1268,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                   {currentPage < totalPages - 2 && <span className="text-gray-400">...</span>}
                   <button
                     onClick={() => handlePageChange(totalPages)}
-                    className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                    className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                   >
                     {totalPages}
                   </button>
@@ -1278,7 +1278,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -1297,16 +1297,16 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
           /* Fix horizontal scroll hover bg */
           .tabs-scroll-container {
             scrollbar-width: thin;
-            scrollbar-color: #BBA473 #1a1a1a;
+            scrollbar-color: #dea402 #4a1015;
           }
           .tabs-scroll-container::-webkit-scrollbar {
             height: 4px;
           }
           .tabs-scroll-container::-webkit-scrollbar-track {
-            background: #1a1a1a;
+            background: #4a1015;
           }
           .tabs-scroll-container::-webkit-scrollbar-thumb {
-            background-color: #BBA473;
+            background-color: #dea402;
             border-radius: 2px;
           }
           /* Bulk actions dropdown scrollbar */
@@ -1317,25 +1317,25 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
             appearance: none;
             width: 16px;
             height: 16px;
-            border: 2px solid rgba(187, 164, 115, 0.35);
+            border: 2px solid rgba(222, 164, 2, 0.35);
             border-radius: 4px;
-            background-color: #1A1A1A;
+            background-color: #4a1015;
             cursor: pointer;
             position: relative;
             transition: all 0.2s ease;
             flex-shrink: 0;
           }
           .dark-checkbox:hover {
-            border-color: rgba(187, 164, 115, 0.6);
+            border-color: rgba(222, 164, 2, 0.6);
             background-color: #222;
           }
           .dark-checkbox:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(187, 164, 115, 0.25);
+            box-shadow: 0 0 0 2px rgba(222, 164, 2, 0.25);
           }
           .dark-checkbox:checked {
-            background-color: #BBA473;
-            border-color: #BBA473;
+            background-color: #dea402;
+            border-color: #dea402;
           }
           .dark-checkbox:checked::after {
             content: '';
@@ -1344,13 +1344,13 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
             top: 1px;
             width: 5px;
             height: 9px;
-            border: solid #000;
+            border: solid #1a0405;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
           }
           .dark-checkbox:indeterminate {
-            background-color: #BBA473;
-            border-color: #BBA473;
+            background-color: #dea402;
+            border-color: #dea402;
           }
           .dark-checkbox:indeterminate::after {
             content: '';
@@ -1359,7 +1359,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
             top: 5px;
             width: 8px;
             height: 2px;
-            background: #000;
+            background: #1a0405;
             border-radius: 1px;
           }
           .bulk-actions-scrollbar::-webkit-scrollbar {
@@ -1369,11 +1369,11 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
             background: transparent;
           }
           .bulk-actions-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(187, 164, 115, 0.15);
+            background: rgba(222, 164, 2, 0.15);
             border-radius: 10px;
           }
           .bulk-actions-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(187, 164, 115, 0.3);
+            background: rgba(222, 164, 2, 0.3);
           }
         `}</style>
       </div>
@@ -1381,20 +1381,20 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
       {/* Assigned Lead Modal */}
       {showAssignedLeadModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fadeIn">
-          <div className="bg-[#2A2A2A] rounded-xl shadow-2xl border border-[#BBA473]/30 max-w-md w-full p-6 transform transition-all duration-300 scale-100">
+          <div className="bg-[#5c1a20] rounded-xl shadow-2xl border border-[#dea402]/30 max-w-md w-full p-6 transform transition-all duration-300 scale-100">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                 <AlertTriangle className="w-6 h-6 text-yellow-500" />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-[#BBA473] mb-2">Cannot Modify Assigned Lead</h3>
+                <h3 className="text-xl font-bold text-[#dea402] mb-2">Cannot Modify Assigned Lead</h3>
                 <p className="text-gray-300 leading-relaxed">{assignedLeadMessage}</p>
               </div>
             </div>
             <div className="mt-6 flex justify-end">
               <button
                 onClick={() => setShowAssignedLeadModal(false)}
-                className="px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black hover:from-[#d4bc89] hover:to-[#a69363] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#BBA473]/40 transform hover:scale-105 active:scale-95"
+                className="px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black hover:from-[#f0ba0a] hover:to-[#8a6e02] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#dea402]/40 transform hover:scale-105 active:scale-95"
               >
                 Understood
               </button>
@@ -1421,7 +1421,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
           onClick={handleCloseSourceChangeModal}
         >
           <div
-            className={`bg-[#2A2A2A] rounded-2xl shadow-2xl border border-[#BBA473]/30 max-w-md w-full transform transition-all duration-200 ${sourceChangeClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'} overflow-hidden`}
+            className={`bg-[#5c1a20] rounded-2xl shadow-2xl border border-[#dea402]/30 max-w-md w-full transform transition-all duration-200 ${sourceChangeClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'} overflow-hidden`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -1449,7 +1449,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                 {sourceChangeLead && (
                   <>
                     {/* Lead info card */}
-                    <div className="p-4 bg-[#1A1A1A] rounded-xl border border-orange-500/20 mb-5">
+                    <div className="p-4 bg-[#4a1015] rounded-xl border border-orange-500/20 mb-5">
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-10 h-10 rounded-full bg-orange-500/15 flex items-center justify-center text-orange-400 text-sm font-bold flex-shrink-0">
                           {sourceChangeLead.name?.charAt(0)?.toUpperCase() || '?'}
@@ -1485,17 +1485,17 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                 <div className="space-y-5">
                   {/* Lead Source */}
                   <div className="space-y-2">
-                    <label className="text-sm text-[#E8D5A3] font-medium block">
+                    <label className="text-sm text-[#f5cc3a] font-medium block">
                       Lead Source <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
                         value={sourceChangeSource}
                         onChange={(e) => { setSourceChangeSource(e.target.value); setSourceChangeErrors(prev => ({ ...prev, source: undefined })); }}
-                        className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 appearance-none ${
+                        className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 appearance-none ${
                           sourceChangeErrors.source
                             ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                            : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                            : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                         }`}
                       >
                         <option value="">Select Source</option>
@@ -1510,17 +1510,17 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
 
                   {/* Kiosk Team */}
                   <div className="space-y-2">
-                    <label className="text-sm text-[#E8D5A3] font-medium block">
+                    <label className="text-sm text-[#f5cc3a] font-medium block">
                       Kiosk Team <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
                         value={sourceChangeKioskMember}
                         onChange={(e) => { setSourceChangeKioskMember(e.target.value); setSourceChangeErrors(prev => ({ ...prev, kioskMember: undefined })); }}
-                        className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 appearance-none ${
+                        className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 appearance-none ${
                           sourceChangeErrors.kioskMember
                             ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                            : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                            : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                         }`}
                       >
                         <option value="">Select Kiosk Member</option>
@@ -1557,7 +1557,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                 <button
                   onClick={handleSourceChangeSubmit}
                   disabled={sourceChangeSubmitting}
-                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black hover:from-[#d4bc89] hover:to-[#a69363] transition-all duration-300 shadow-lg hover:shadow-[#BBA473]/30 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black hover:from-[#f0ba0a] hover:to-[#8a6e02] transition-all duration-300 shadow-lg hover:shadow-[#dea402]/30 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {sourceChangeSubmitting ? (
                     <span className="flex items-center gap-2">
@@ -1575,16 +1575,16 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
       {/* Delete Confirmation Modal */}
       {showDeleteConfirmModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fadeIn">
-          <div className="bg-[#2A2A2A] rounded-xl shadow-2xl border border-[#BBA473]/30 max-w-md w-full p-6 transform transition-all duration-300 scale-100">
+          <div className="bg-[#5c1a20] rounded-xl shadow-2xl border border-[#dea402]/30 max-w-md w-full p-6 transform transition-all duration-300 scale-100">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
                 <Trash2 className="w-6 h-6 text-red-500" />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-[#BBA473] mb-2">Delete Lead</h3>
+                <h3 className="text-xl font-bold text-[#dea402] mb-2">Delete Lead</h3>
                 <p className="text-gray-300 leading-relaxed mb-1">Are you sure you want to delete this lead?</p>
                 {leadToDelete && (
-                  <div className="mt-3 p-3 bg-[#1A1A1A] rounded-lg border border-[#BBA473]/20">
+                  <div className="mt-3 p-3 bg-[#4a1015] rounded-lg border border-[#dea402]/20">
                     <p className="text-white capitalize font-semibold">{leadToDelete.name}</p>
                     <p className="text-gray-400 text-sm">{formatPhoneDisplay(leadToDelete.phone)}</p>
                   </div>

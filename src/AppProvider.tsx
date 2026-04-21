@@ -10,64 +10,42 @@ import { Wrench, Sparkles, ArrowRight } from 'lucide-react';
 
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Enhanced Grid Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-        {/* Brighter Major Grid Lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.07)_1px,transparent_1px)] bg-[size:200px_200px]"></div>
-
-        {/* Radial Glows */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(187,164,115,0.15),transparent_70%)]"></div>
-
-        {/* Animated Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#BBA473] rounded-full mix-blend-screen filter blur-[128px] opacity-10 animate-pulse" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#8E7D5A] rounded-full mix-blend-screen filter blur-[128px] opacity-5 animate-pulse" style={{ animationDuration: '7s' }}></div>
+    <div className="min-h-screen bg-[#1a0405] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Cinematic background layers */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(222,164,2,0.12),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_120%,rgba(74,16,21,0.6),transparent_70%)]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#dea402] rounded-full filter blur-[200px] opacity-[0.04]" style={{ animation: 'pulse 5s ease-in-out infinite' }}></div>
       </div>
 
       {/* Loading Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8">
-
-        {/* Animated Logo Container */}
-        <div className="relative">
-          {/* Outer Ring */}
-          <div className="absolute inset-0 w-24 h-24 rounded-full border-2 border-[#BBA473]/20 animate-ping" style={{ animationDuration: '2s' }}></div>
-          
-          {/* Middle Ring */}
-          <div className="absolute inset-0 w-24 h-24 rounded-full border-4 border-t-[#BBA473] border-r-[#BBA473]/50 border-b-[#BBA473]/20 border-l-[#BBA473]/50 animate-spin"></div>
-          
-          {/* Inner Glow */}
-          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#BBA473]/30 to-[#8E7D5A]/30 backdrop-blur-sm flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] animate-pulse shadow-lg shadow-[#BBA473]/50"></div>
+      <div className="relative z-10 flex flex-col items-center gap-10">
+        {/* Animated Logo */}
+        <div className="relative w-28 h-28">
+          <div className="absolute inset-0 rounded-full border border-[#dea402]/10" style={{ animation: 'ping 2.5s cubic-bezier(0,0,0.2,1) infinite' }}></div>
+          <div className="absolute inset-0 rounded-full border-2 border-t-[#dea402] border-r-transparent border-b-transparent border-l-transparent animate-spin" style={{ animationDuration: '1.5s' }}></div>
+          <div className="absolute inset-2 rounded-full border border-t-transparent border-r-[#dea402]/40 border-b-transparent border-l-transparent animate-spin" style={{ animationDuration: '2.5s', animationDirection: 'reverse' }}></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#dea402] via-[#f0ba0a] to-[#b38302] shadow-[0_0_40px_rgba(222,164,2,0.3)]" style={{ animation: 'pulse 2s ease-in-out infinite' }}></div>
           </div>
         </div>
 
-        {/* Loading Text */}
-        <div className="text-center space-y-3">
-          <h2 className="text-2xl font-bold text-white tracking-tight animate-fadeIn">
-            Save In Gold
-          </h2>
-          <div className="flex items-center gap-2 justify-center">
-            <div className="w-2 h-2 rounded-full bg-[#BBA473] animate-bounce" style={{ animationDelay: '0s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-[#BBA473] animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-[#BBA473] animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+        {/* Brand */}
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl font-bold tracking-[0.2em] text-white/90" style={{ animation: 'fadeIn 0.8s ease-out forwards' }}>BBH</h2>
+          <div className="flex items-center gap-1.5 justify-center">
+            {[0, 0.15, 0.3].map((delay, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#dea402]" style={{ animation: `bounce 1.2s ease-in-out ${delay}s infinite` }}></div>
+            ))}
           </div>
-          <p className="text-[#BBA473]/80 text-sm font-medium uppercase tracking-widest animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-            Loading your experience
+          <p className="text-[#dea402]/50 text-xs font-medium uppercase tracking-[0.3em]" style={{ animation: 'fadeIn 1s ease-out 0.3s forwards', opacity: 0 }}>
+            Loading
           </p>
         </div>
       </div>
 
       <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
     </div>
   );
@@ -111,172 +89,65 @@ function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetError
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Enhanced Grid Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-        {/* Brighter Major Grid Lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(187,164,115,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(187,164,115,0.07)_1px,transparent_1px)] bg-[size:200px_200px]"></div>
-
-        {/* Radial Glows */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(187,164,115,0.15),transparent_70%)]"></div>
-
-        {/* Animated Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#BBA473] rounded-full mix-blend-screen filter blur-[128px] opacity-10 animate-pulse" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#8E7D5A] rounded-full mix-blend-screen filter blur-[128px] opacity-5 animate-pulse" style={{ animationDuration: '7s' }}></div>
+    <div className="min-h-screen bg-[#1a0405] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Cinematic background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(222,164,2,0.08),transparent_70%)]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#4a1015] rounded-full filter blur-[200px] opacity-30"></div>
       </div>
 
       {/* Main Content */}
-      <div className="w-full max-w-2xl relative z-10 animate-slideUp">
-        {/* Card Container */}
-        <div className="bg-[#1a1a1a]/60 backdrop-blur-xl border border-[#BBA473]/20 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          
-          {/* Top shine border */}
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#BBA473]/50 to-transparent opacity-50"></div>
+      <div className="w-full max-w-lg relative z-10" style={{ animation: 'slideUp 0.6s ease-out forwards' }}>
+        <div className="relative bg-[#37090b]/70 backdrop-blur-2xl border border-[#dea402]/10 rounded-3xl p-10 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.5)]">
+          {/* Top accent line */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-[#dea402] to-transparent rounded-full"></div>
 
-          {/* Icon - Tools Working */}
+          {/* Icon */}
           <div className="flex justify-center mb-8">
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-[#BBA473]/20 rounded-full blur-xl animate-pulse"></div>
-              
-              {/* Icon container */}
-              <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#BBA473]/20 to-[#8E7D5A]/20 border-2 border-[#BBA473]/30 flex items-center justify-center">
-                <Wrench className="w-12 h-12 text-[#BBA473] animate-wiggle" />
-                
-                {/* Sparkles */}
-                <Sparkles className="w-5 h-5 text-[#BBA473] absolute -top-2 -right-2 animate-pulse" />
-                <Sparkles className="w-4 h-4 text-[#BBA473] absolute -bottom-1 -left-1 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              </div>
+            <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#dea402]/15 to-transparent border border-[#dea402]/20 flex items-center justify-center" style={{ animation: 'glowPulse 3s ease-in-out infinite' }}>
+              <Wrench className="w-10 h-10 text-[#dea402]" style={{ animation: 'wiggle 3s ease-in-out infinite' }} />
+              <Sparkles className="w-4 h-4 text-[#dea402]/60 absolute -top-1.5 -right-1.5" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
             </div>
           </div>
 
           {/* Heading */}
-          <div className="text-center mb-8 space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
-              We're On It!
-            </h1>
-            <p className="text-[#BBA473]/90 text-lg md:text-xl font-medium">
-              Just a quick moment while we fine-tune things
-            </p>
-            <p className="text-gray-400 text-sm md:text-base max-w-md mx-auto">
-              Our system is performing some optimizations to give you the best experience.
-            </p>
+          <div className="text-center mb-8 space-y-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-white tracking-tight">We're On It</h1>
+            <p className="text-white/40 text-sm max-w-sm mx-auto">Our system is performing optimizations. This will only take a moment.</p>
           </div>
 
-          {/* Progress Bar */}
-          <div className="mb-8 space-y-3">
-            <div className="w-full h-2 bg-[#0f0f0f]/80 rounded-full overflow-hidden border border-[#BBA473]/10">
-              <div 
-                className="h-full bg-gradient-to-r from-[#BBA473] via-[#d4b886] to-[#BBA473] rounded-full transition-all duration-500 ease-out relative overflow-hidden"
-                style={{ width: `${progress}%` }}
-              >
-                {/* Shimmer effect on progress bar */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
-              </div>
+          {/* Progress */}
+          <div className="mb-8 space-y-2">
+            <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-[#dea402] to-[#f0ba0a] rounded-full transition-all duration-700 ease-out" style={{ width: `${progress}%` }}></div>
             </div>
-            
-            {/* Status text */}
-            <p className="text-center text-[#BBA473]/70 text-sm transition-all duration-300">
-              {statusText}
-            </p>
+            <p className="text-center text-white/30 text-xs">{statusText}</p>
           </div>
 
-          {/* Status Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <div className="bg-[#0f0f0f]/60 border border-[#BBA473]/10 rounded-lg p-4 text-center group hover:border-[#BBA473]/30 transition-all duration-300">
-              <div className="w-3 h-3 rounded-full bg-[#BBA473] mx-auto mb-2 animate-pulse"></div>
-              <p className="text-white text-sm font-medium">System Check</p>
-              <p className="text-gray-500 text-xs mt-1">Running</p>
-            </div>
-            
-            <div className="bg-[#0f0f0f]/60 border border-[#BBA473]/10 rounded-lg p-4 text-center group hover:border-[#BBA473]/30 transition-all duration-300">
-              <div className="w-3 h-3 rounded-full bg-[#BBA473] mx-auto mb-2 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <p className="text-white text-sm font-medium">Loading Data</p>
-              <p className="text-gray-500 text-xs mt-1">In Progress</p>
-            </div>
-            
-            <div className="bg-[#0f0f0f]/60 border border-[#BBA473]/10 rounded-lg p-4 text-center group hover:border-[#BBA473]/30 transition-all duration-300">
-              <div className="w-3 h-3 rounded-full bg-[#BBA473]/50 mx-auto mb-2 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-              <p className="text-white text-sm font-medium">Finalizing</p>
-              <p className="text-gray-500 text-xs mt-1">Pending</p>
-            </div>
-          </div>
-
-          {/* Action Button */}
-          <div className="text-center">
+          {/* Action */}
+          <div className="text-center space-y-3">
             <button
               onClick={resetErrorBoundary}
-              className="group relative px-8 py-4 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black font-bold text-base md:text-lg rounded-lg transition-all duration-300 shadow-lg shadow-[#BBA473]/20 hover:shadow-[#BBA473]/40 transform hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+              className="group w-full px-6 py-3.5 bg-[#dea402] hover:bg-[#f0ba0a] text-[#1a0405] font-semibold text-sm rounded-xl transition-all duration-300 shadow-[0_0_30px_rgba(222,164,2,0.15)] hover:shadow-[0_0_40px_rgba(222,164,2,0.25)]"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 Continue to Dashboard
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" />
               </span>
-              
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
             </button>
-            
-            <p className="text-gray-500 text-xs mt-4">
-              Taking longer than expected? 
-              <button 
-                onClick={() => globalThis.location.assign(globalThis.location.origin)}
-                className="text-[#BBA473] hover:text-[#d4b886] ml-1 underline underline-offset-2 transition-colors"
-              >
-                Refresh the page
-              </button>
-            </p>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="flex items-center justify-center gap-2 pt-8">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#BBA473]/50"></div>
-            <div className="w-2 h-2 rounded-full bg-[#BBA473] animate-pulse"></div>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#BBA473]/50"></div>
+            <button onClick={() => globalThis.location.assign(globalThis.location.origin)} className="text-white/30 hover:text-[#dea402] text-xs transition-colors duration-300">
+              Refresh the page
+            </button>
           </div>
         </div>
 
-        {/* Footer Text */}
-        <div className="text-center mt-8">
-          <p className="text-[#BBA473]/60 text-xs tracking-widest uppercase">
-            Powered by Save In Gold
-          </p>
-        </div>
+        <p className="text-center mt-6 text-white/20 text-[10px] tracking-[0.3em] uppercase">BBH CRM</p>
       </div>
 
       <style>{`
-        @keyframes slideUp {
-          from { 
-            opacity: 0; 
-            transform: translateY(30px); 
-          }
-          to { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
-        }
-        .animate-slideUp {
-          animation: slideUp 0.6s ease-out forwards;
-        }
-        
-        @keyframes wiggle {
-          0%, 100% { transform: rotate(-12deg); }
-          50% { transform: rotate(12deg); }
-        }
-        .animate-wiggle {
-          animation: wiggle 2s ease-in-out infinite;
-        }
-        
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes wiggle { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+        @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 20px rgba(222,164,2,0.05); } 50% { box-shadow: 0 0 40px rgba(222,164,2,0.12); } }
       `}</style>
     </div>
   );
@@ -291,7 +162,7 @@ export function AppProvider({ children }: AppProviderProps) {
     <React.Suspense fallback={<LoadingFallback />}>
       <Provider store={store}>
         <Theme
-          accentColor="mint"
+          accentColor="amber"
           grayColor="gray"
           panelBackground="solid"
           scaling="100%"

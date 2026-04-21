@@ -337,13 +337,13 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
       {/* Modal */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
         <div 
-          className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden border border-[#BBA473]/30 transform transition-all duration-300 scale-100"
+          className="bg-gradient-to-br from-[#4a1015] to-[#252525] rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden border border-[#dea402]/30 transform transition-all duration-300 scale-100"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] border-b border-[#BBA473]/30 p-6 flex items-center justify-between sticky top-0 z-10">
+          <div className="bg-gradient-to-r from-[#5c1a20] to-[#1F1F1F] border-b border-[#dea402]/30 p-6 flex items-center justify-between sticky top-0 z-10">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#dea402] to-[#b38302] flex items-center justify-center">
                 <FileText className="w-6 h-6 text-black" />
               </div>
               <div>
@@ -363,9 +363,9 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
           <div className="p-6 overflow-y-auto max-h-[calc(90vh-240px)] custom-scrollbar">
             <div className="space-y-6">
               {/* Basic Information */}
-              <div className="bg-[#2A2A2A] rounded-xl p-5 border border-[#BBA473]/20">
+              <div className="bg-[#5c1a20] rounded-xl p-5 border border-[#dea402]/20">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#BBA473]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#dea402]"></div>
                   Basic Information
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -379,8 +379,8 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       onChange={(e) => handleInputChange('name', e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ''))}
                       onBlur={() => setTouched(prev => ({ ...prev, name: true }))}
                       placeholder="my_template_name"
-                      className={`w-full px-4 py-2.5 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 bg-[#1A1A1A] text-white transition-all duration-300 ${
-                        validationErrors.name ? 'border-red-500' : 'border-[#BBA473]/30 focus:border-[#BBA473]'
+                      className={`w-full px-4 py-2.5 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 bg-[#4a1015] text-white transition-all duration-300 ${
+                        validationErrors.name ? 'border-red-500' : 'border-[#dea402]/30 focus:border-[#dea402]'
                       }`}
                     />
                     {validationErrors.name ? (
@@ -398,7 +398,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       <select
                         value={templateData.category}
                         onChange={(e) => handleInputChange('category', e.target.value)}
-                        className="w-full px-4 py-2.5 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300 appearance-none cursor-pointer"
+                        className="w-full px-4 py-2.5 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 appearance-none cursor-pointer"
                       >
                         {categories.map(cat => (
                           <option key={cat.value} value={cat.value}>{cat.label}</option>
@@ -416,7 +416,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       <select
                         value={templateData.language}
                         onChange={(e) => handleInputChange('language', e.target.value)}
-                        className="w-full px-4 py-2.5 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300 appearance-none cursor-pointer"
+                        className="w-full px-4 py-2.5 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 appearance-none cursor-pointer"
                       >
                         {languages.map(lang => (
                           <option key={lang.value} value={lang.value}>{lang.label}</option>
@@ -429,9 +429,9 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Header */}
-              <div className="bg-[#2A2A2A] rounded-xl p-5 border border-[#BBA473]/20">
+              <div className="bg-[#5c1a20] rounded-xl p-5 border border-[#dea402]/20">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#BBA473]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#dea402]"></div>
                   Header (Optional)
                 </h3>
                 
@@ -446,8 +446,8 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                           onClick={() => handleHeaderChange('type', type.value)}
                           className={`p-3 rounded-lg border-2 transition-all duration-300 flex flex-col items-center gap-2 ${
                             templateData.header.type === type.value
-                              ? 'border-[#BBA473] bg-[#BBA473]/10 text-[#BBA473]'
-                              : 'border-[#BBA473]/30 bg-[#1A1A1A] text-gray-400 hover:border-[#BBA473]/50'
+                              ? 'border-[#dea402] bg-[#dea402]/10 text-[#dea402]'
+                              : 'border-[#dea402]/30 bg-[#4a1015] text-gray-400 hover:border-[#dea402]/50'
                           }`}
                         >
                           {Icon && <Icon className="w-5 h-5" />}
@@ -466,7 +466,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       </label>
                       <button
                         onClick={() => insertVariable('header')}
-                        className="text-xs text-[#BBA473] hover:text-[#d4bc89] transition-colors flex items-center gap-1"
+                        className="text-xs text-[#dea402] hover:text-[#f0ba0a] transition-colors flex items-center gap-1"
                       >
                         <Plus className="w-3 h-3" />
                         Add Variable
@@ -478,7 +478,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       onChange={(e) => handleHeaderChange('text', e.target.value)}
                       placeholder="Enter header text (max 60 chars)"
                       maxLength={60}
-                      className="w-full px-4 py-2.5 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300"
+                      className="w-full px-4 py-2.5 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300"
                     />
                     <div className="flex justify-between items-center mt-1">
                       <p className="text-xs text-gray-500">Use {'{1}'}, {'{2}'} for variables</p>
@@ -497,7 +497,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                       value={templateData.header.mediaUrl}
                       onChange={(e) => handleHeaderChange('mediaUrl', e.target.value)}
                       placeholder="https://example.com/media.jpg"
-                      className="w-full px-4 py-2.5 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300"
+                      className="w-full px-4 py-2.5 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300"
                     />
                     <p className="text-xs text-gray-500 mt-1">
                       Public URL to your {templateData.header.type.toLowerCase()} file
@@ -507,15 +507,15 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Body */}
-              <div className="bg-[#2A2A2A] rounded-xl p-5 border border-[#BBA473]/20">
+              <div className="bg-[#5c1a20] rounded-xl p-5 border border-[#dea402]/20">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#BBA473]"></div>
+                    <div className="w-2 h-2 rounded-full bg-[#dea402]"></div>
                     Message Body <span className="text-red-400">*</span>
                   </h3>
                   <button
                     onClick={() => setShowVariableHelper(!showVariableHelper)}
-                    className="text-xs text-[#BBA473] hover:text-[#d4bc89] transition-colors flex items-center gap-1"
+                    className="text-xs text-[#dea402] hover:text-[#f0ba0a] transition-colors flex items-center gap-1"
                   >
                     <AlertCircle className="w-3 h-3" />
                     Variable Guide
@@ -537,7 +537,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                 <div className="mb-2">
                   <button
                     onClick={() => insertVariable('body')}
-                    className="mb-2 text-sm text-[#BBA473] hover:text-[#d4bc89] transition-colors flex items-center gap-1"
+                    className="mb-2 text-sm text-[#dea402] hover:text-[#f0ba0a] transition-colors flex items-center gap-1"
                   >
                     <Plus className="w-4 h-4" />
                     Add Variable
@@ -551,8 +551,8 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                   placeholder="Enter your message body here... Use {1}, {2} for variables"
                   rows={6}
                   maxLength={1024}
-                  className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 bg-[#1A1A1A] text-white transition-all duration-300 resize-none ${
-                    validationErrors.body ? 'border-red-500' : 'border-[#BBA473]/30 focus:border-[#BBA473]'
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 bg-[#4a1015] text-white transition-all duration-300 resize-none ${
+                    validationErrors.body ? 'border-red-500' : 'border-[#dea402]/30 focus:border-[#dea402]'
                   }`}
                 />
                 <div className="flex justify-between items-center mt-1">
@@ -568,9 +568,9 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Footer */}
-              <div className="bg-[#2A2A2A] rounded-xl p-5 border border-[#BBA473]/20">
+              <div className="bg-[#5c1a20] rounded-xl p-5 border border-[#dea402]/20">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#BBA473]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#dea402]"></div>
                   Footer (Optional)
                 </h3>
                 <input
@@ -579,7 +579,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                   onChange={(e) => handleInputChange('footer', e.target.value)}
                   placeholder="Add a footer text (max 60 chars)"
                   maxLength={60}
-                  className="w-full px-4 py-2.5 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300"
+                  className="w-full px-4 py-2.5 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300"
                 />
                 <div className="flex justify-between items-center mt-1">
                   <p className="text-xs text-gray-500">Small text at the bottom of your message</p>
@@ -588,16 +588,16 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
               </div>
 
               {/* Buttons */}
-              <div className="bg-[#2A2A2A] rounded-xl p-5 border border-[#BBA473]/20">
+              <div className="bg-[#5c1a20] rounded-xl p-5 border border-[#dea402]/20">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#BBA473]"></div>
+                    <div className="w-2 h-2 rounded-full bg-[#dea402]"></div>
                     Buttons (Optional)
                   </h3>
                   <button
                     onClick={addButton}
                     disabled={templateData.buttons.length >= 3}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:from-[#d4bc89] hover:to-[#a69363] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:from-[#f0ba0a] hover:to-[#8a6e02] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Plus className="w-4 h-4" />
                     Add Button
@@ -608,7 +608,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
 
                 <div className="space-y-4">
                   {templateData.buttons.map((button, index) => (
-                    <div key={button.id} className="bg-[#1A1A1A] rounded-lg p-4 border border-[#BBA473]/20">
+                    <div key={button.id} className="bg-[#4a1015] rounded-lg p-4 border border-[#dea402]/20">
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-sm font-semibold text-white">Button {index + 1}</span>
                         <button
@@ -628,7 +628,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                               <select
                                 value={button.type}
                                 onChange={(e) => handleButtonChange(button.id, 'type', e.target.value)}
-                                className="w-full px-3 py-2 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#2A2A2A] text-white transition-all duration-300 appearance-none cursor-pointer text-sm"
+                                className="w-full px-3 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#5c1a20] text-white transition-all duration-300 appearance-none cursor-pointer text-sm"
                               >
                                 {buttonTypes.map(type => (
                                   <option key={type.value} value={type.value}>{type.label}</option>
@@ -648,20 +648,20 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                               onChange={(e) => handleButtonChange(button.id, 'text', e.target.value)}
                               placeholder="Click here"
                               maxLength={25}
-                              className="w-full px-3 py-2 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#2A2A2A] text-white transition-all duration-300 text-sm"
+                              className="w-full px-3 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#5c1a20] text-white transition-all duration-300 text-sm"
                             />
                           </div>
                         </div>
 
                         {button.type === 'CALL_TO_ACTION' && (
-                          <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#BBA473]/10">
+                          <div className="grid grid-cols-2 gap-3 pt-2 border-t border-[#dea402]/10">
                             <div>
                               <label className="block text-xs font-medium text-gray-400 mb-1.5">Action Type</label>
                               <div className="relative">
                                 <select
                                   value={button.actionType}
                                   onChange={(e) => handleButtonChange(button.id, 'actionType', e.target.value)}
-                                  className="w-full px-3 py-2 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#2A2A2A] text-white transition-all duration-300 appearance-none cursor-pointer text-sm"
+                                  className="w-full px-3 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#5c1a20] text-white transition-all duration-300 appearance-none cursor-pointer text-sm"
                                 >
                                   {actionTypes.map(type => (
                                     <option key={type.value} value={type.value}>{type.label}</option>
@@ -680,7 +680,7 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
                                 value={button.actionValue}
                                 onChange={(e) => handleButtonChange(button.id, 'actionValue', e.target.value)}
                                 placeholder={button.actionType === 'PHONE_NUMBER' ? '+1234567890' : 'https://example.com'}
-                                className="w-full px-3 py-2 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#2A2A2A] text-white transition-all duration-300 text-sm"
+                                className="w-full px-3 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#5c1a20] text-white transition-all duration-300 text-sm"
                               />
                             </div>
                           </div>
@@ -720,23 +720,23 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
           </div>
 
           {/* Footer Actions */}
-          <div className="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] border-t border-[#BBA473]/30 p-6 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#5c1a20] to-[#1F1F1F] border-t border-[#dea402]/30 p-6 flex items-center justify-between">
             <button
               onClick={handleReset}
-              className="px-6 py-2.5 bg-[#3A3A3A] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#BBA473]/20"
+              className="px-6 py-2.5 bg-[#3A3A3A] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#dea402]/20"
             >
               Reset
             </button>
             <div className="flex gap-3">
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 bg-[#3A3A3A] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#BBA473]/20"
+                className="px-6 py-2.5 bg-[#3A3A3A] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#dea402]/20"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSubmit}
-                className="px-6 py-2.5 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-lg font-semibold transition-all duration-300 hover:from-[#d4bc89] hover:to-[#a69363] shadow-lg hover:shadow-xl"
+                className="px-6 py-2.5 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-lg font-semibold transition-all duration-300 hover:from-[#f0ba0a] hover:to-[#8a6e02] shadow-lg hover:shadow-xl"
               >
                 Create Template
               </button>
@@ -751,16 +751,16 @@ const InboxTemplateModal = ({ isOpen, onClose }) => {
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: #1A1A1A;
+          background: #4a1015;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #BBA473 0%, #8E7D5A 100%);
+          background: linear-gradient(180deg, #dea402 0%, #b38302 100%);
           border-radius: 4px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #d4bc89 0%, #a69363 100%);
+          background: linear-gradient(180deg, #f0ba0a 0%, #8a6e02 100%);
         }
       `}</style>
     </>

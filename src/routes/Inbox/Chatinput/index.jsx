@@ -656,7 +656,7 @@ const ChatInput = ({
       </div>
     )}
 
-    <div className="bg-[#1e1e1e] border-t border-[#333] px-4 py-3 flex-shrink-0">
+    <div className="bg-[#3a0c0f] border-t border-[#333] px-4 py-3 flex-shrink-0">
       {isRecording ? (
         // Voice Recording UI
         <div className="flex items-center gap-3 bg-red-500/8 border border-red-500/20 rounded-2xl px-4 py-3">
@@ -687,7 +687,7 @@ const ChatInput = ({
           </button>
           <button
             onClick={stopVoiceRecording}
-            className="w-11 h-11 rounded-full bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-lg flex-shrink-0"
+            className="w-11 h-11 rounded-full bg-gradient-to-r from-[#dea402] to-[#b38302] text-black flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-lg flex-shrink-0"
             title="Send"
           >
             <Send className="w-5 h-5" />
@@ -707,7 +707,7 @@ const ChatInput = ({
                 placeholder="Type a message..."
                 rows="1"
                 disabled={isSending}
-                className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#3a3a3a] rounded-xl text-white text-sm placeholder-gray-500 resize-none transition-all duration-200 focus:outline-none focus:border-[#BBA473]/60 disabled:opacity-50"
+                className="w-full px-4 py-3 bg-[#5c1a20] border border-[#3a3a3a] rounded-xl text-white text-sm placeholder-gray-500 resize-none transition-all duration-200 focus:outline-none focus:border-[#dea402]/60 disabled:opacity-50"
                 style={{ minHeight: '44px', maxHeight: '120px' }}
               />
             </div>
@@ -717,7 +717,7 @@ const ChatInput = ({
               <button
                 onClick={() => handleSendMessage()}
                 disabled={!messageInput.trim() || isSending}
-                className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black flex items-center justify-center flex-shrink-0 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#dea402] to-[#b38302] text-black flex items-center justify-center flex-shrink-0 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSending ? (
                   <RefreshCw className="w-4.5 h-4.5 animate-spin" />
@@ -729,7 +729,7 @@ const ChatInput = ({
               <button
                 onClick={startVoiceRecording}
                 disabled={isSending}
-                className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black flex items-center justify-center flex-shrink-0 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-xl bg-gradient-to-r from-[#dea402] to-[#b38302] text-black flex items-center justify-center flex-shrink-0 transition-all duration-200 hover:scale-105 active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 title="Record Voice Message"
               >
                 <Mic className="w-4.5 h-4.5" />
@@ -746,8 +746,8 @@ const ChatInput = ({
                   onClick={() => setShowEmojiPicker(!showEmojiPicker)}
                   className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                     showEmojiPicker
-                      ? 'bg-[#BBA473] text-black'
-                      : 'text-gray-400 hover:text-[#BBA473] hover:bg-[#BBA473]/10'
+                      ? 'bg-[#dea402] text-black'
+                      : 'text-gray-400 hover:text-[#dea402] hover:bg-[#dea402]/10'
                   }`}
                   title="Emoji"
                 >
@@ -772,7 +772,7 @@ const ChatInput = ({
               <button
                 onClick={handleFileAttachment}
                 disabled={isSending}
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#BBA473] hover:bg-[#BBA473]/10 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#dea402] hover:bg-[#dea402]/10 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
                 title="Attach file"
               >
                 <Paperclip className="w-4 h-4" />
@@ -782,7 +782,7 @@ const ChatInput = ({
               <button
                 onClick={handleCameraCapture}
                 disabled={isSending}
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#BBA473] hover:bg-[#BBA473]/10 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-[#dea402] hover:bg-[#dea402]/10 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
                 title="Camera"
               >
                 <Camera className="w-4 h-4" />
@@ -794,7 +794,7 @@ const ChatInput = ({
               {/* Template */}
               <button
                 onClick={() => setShowTemplatePicker(true)}
-                className="h-7 px-2.5 rounded-lg flex items-center gap-1.5 text-gray-400 hover:text-[#BBA473] hover:bg-[#BBA473]/10 transition-all duration-200 text-xs"
+                className="h-7 px-2.5 rounded-lg flex items-center gap-1.5 text-gray-400 hover:text-[#dea402] hover:bg-[#dea402]/10 transition-all duration-200 text-xs"
                 title="Send Template"
               >
                 <FileText className="w-3.5 h-3.5" />

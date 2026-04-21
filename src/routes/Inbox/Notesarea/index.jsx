@@ -46,9 +46,9 @@ const NotesArea = ({ notes, setNotes, newNote, setNewNote, contact }) => {
   return (
     <div className="p-6 space-y-4">
       {/* Add Note Form */}
-      <div className="bg-[#2A2A2A] rounded-xl p-4 border border-[#BBA473]/20">
+      <div className="bg-[#5c1a20] rounded-xl p-4 border border-[#dea402]/20">
         <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-          <StickyNote className="w-4 h-4 text-[#BBA473]" />
+          <StickyNote className="w-4 h-4 text-[#dea402]" />
           Add Internal Note
         </h4>
         <textarea
@@ -56,13 +56,13 @@ const NotesArea = ({ notes, setNotes, newNote, setNewNote, contact }) => {
           onChange={(e) => setNewNote(e.target.value)}
           placeholder="Type a note (only visible to your team)..."
           rows="3"
-          className="w-full px-4 py-3 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white placeholder-gray-500 resize-none transition-all duration-300 text-sm"
+          className="w-full px-4 py-3 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white placeholder-gray-500 resize-none transition-all duration-300 text-sm"
         />
         <div className="flex justify-end mt-3">
           <button
             onClick={handleAddNote}
             disabled={!newNote.trim()}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:from-[#d4bc89] hover:to-[#a69363] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:from-[#f0ba0a] hover:to-[#8a6e02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95"
           >
             <StickyNote className="w-4 h-4" />
             Add Note
@@ -80,7 +80,7 @@ const NotesArea = ({ notes, setNotes, newNote, setNewNote, contact }) => {
       ) : (
         <div className="space-y-3">
           {notes.map((note) => (
-            <div key={note.id} className="bg-[#2A2A2A] rounded-xl p-4 border border-[#BBA473]/10 group hover:border-[#BBA473]/30 transition-all duration-300">
+            <div key={note.id} className="bg-[#5c1a20] rounded-xl p-4 border border-[#dea402]/10 group hover:border-[#dea402]/30 transition-all duration-300">
               <div className="flex items-start justify-between gap-3 mb-2">
                 <div className="flex items-center gap-2 text-xs text-gray-400">
                   <User className="w-3 h-3" />

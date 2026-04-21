@@ -325,13 +325,13 @@ const BranchManagement = () => {
           toast.success(result.message || 'Branch deleted successfully!', {
             duration: 3000,
             style: {
-              background: '#2A2A2A',
+              background: '#5c1a20',
               color: '#fff',
-              border: '1px solid #BBA473',
+              border: '1px solid #dea402',
             },
             iconTheme: {
-              primary: '#BBA473',
-              secondary: '#1A1A1A',
+              primary: '#dea402',
+              secondary: '#4a1015',
             },
           });
           
@@ -454,13 +454,13 @@ const BranchManagement = () => {
           toast.success(result.message || result.data?.message || `Branch ${editingBranch ? 'updated' : 'created'} successfully!`, {
             duration: 3000,
             style: {
-              background: '#2A2A2A',
+              background: '#5c1a20',
               color: '#fff',
-              border: '1px solid #BBA473',
+              border: '1px solid #dea402',
             },
             iconTheme: {
-              primary: '#BBA473',
-              secondary: '#1A1A1A',
+              primary: '#dea402',
+              secondary: '#4a1015',
             },
           });
           resetForm();
@@ -520,25 +520,25 @@ const BranchManagement = () => {
   const customSelectStyles = {
     control: (provided, state) => ({
       ...provided,
-      backgroundColor: '#1A1A1A',
+      backgroundColor: '#4a1015',
       borderColor: state.isFocused 
-        ? '#BBA473' 
+        ? '#dea402' 
         : formik.touched.branchMembers && formik.errors.branchMembers 
           ? '#ef4444' 
-          : 'rgba(187, 164, 115, 0.3)',
+          : 'rgba(222, 164, 2, 0.3)',
       borderWidth: '2px',
       borderRadius: '0.5rem',
       padding: '0.25rem',
-      boxShadow: state.isFocused ? '0 0 0 2px rgba(187, 164, 115, 0.5)' : 'none',
+      boxShadow: state.isFocused ? '0 0 0 2px rgba(222, 164, 2, 0.5)' : 'none',
       '&:hover': {
-        borderColor: '#BBA473',
+        borderColor: '#dea402',
       },
       minHeight: '48px',
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: '#2A2A2A',
-      border: '2px solid rgba(187, 164, 115, 0.3)',
+      backgroundColor: '#5c1a20',
+      border: '2px solid rgba(222, 164, 2, 0.3)',
       borderRadius: '0.5rem',
       boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
       zIndex: 30,
@@ -551,35 +551,35 @@ const BranchManagement = () => {
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isSelected 
-        ? 'rgba(187, 164, 115, 0.2)' 
+        ? 'rgba(222, 164, 2, 0.2)' 
         : state.isFocused 
           ? '#3A3A3A' 
           : 'transparent',
-      color: state.isSelected ? '#BBA473' : '#fff',
+      color: state.isSelected ? '#dea402' : '#fff',
       padding: '0.75rem 1rem',
       cursor: 'pointer',
       '&:active': {
-        backgroundColor: 'rgba(187, 164, 115, 0.3)',
+        backgroundColor: 'rgba(222, 164, 2, 0.3)',
       },
     }),
     multiValue: (provided) => ({
       ...provided,
-      backgroundColor: 'rgba(187, 164, 115, 0.2)',
+      backgroundColor: 'rgba(222, 164, 2, 0.2)',
       borderRadius: '0.375rem',
-      border: '1px solid rgba(187, 164, 115, 0.3)',
+      border: '1px solid rgba(222, 164, 2, 0.3)',
     }),
     multiValueLabel: (provided) => ({
       ...provided,
-      color: '#BBA473',
+      color: '#dea402',
       padding: '0.25rem 0.5rem',
     }),
     multiValueRemove: (provided) => ({
       ...provided,
-      color: '#BBA473',
+      color: '#dea402',
       cursor: 'pointer',
       '&:hover': {
-        backgroundColor: '#BBA473',
-        color: '#1A1A1A',
+        backgroundColor: '#dea402',
+        color: '#4a1015',
       },
     }),
     placeholder: (provided) => ({
@@ -599,37 +599,37 @@ const BranchManagement = () => {
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
-      color: '#BBA473',
+      color: '#dea402',
       '&:hover': {
-        color: '#d4bc89',
+        color: '#f0ba0a',
       },
     }),
     clearIndicator: (provided) => ({
       ...provided,
-      color: '#BBA473',
+      color: '#dea402',
       '&:hover': {
-        color: '#d4bc89',
+        color: '#f0ba0a',
       },
     }),
   };
 
   return (
     <>
-      <div className={`min-h-screen bg-[#1A1A1A] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`min-h-screen bg-[#4a1015] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Header */}
         <div className="mb-8 animate-fadeIn">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
                 Branch Management
               </h1>
-              <p className="text-gray-400 mt-2">Manage your Save In Gold branches locations and information</p>
+              <p className="text-gray-400 mt-2">Manage your BBH branches locations and information</p>
             </div>
 
             <div className="flex flex-col gap-3">
             <button
               onClick={handleAddBranch}
-              className="group relative w-fit inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#BBA473]/40 transform hover:scale-105 active:scale-95 ml-auto"
+              className="group relative w-fit inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#dea402]/40 transform hover:scale-105 active:scale-95 ml-auto"
             >
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               <Building2 className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:rotate-12" />
@@ -651,15 +651,15 @@ const BranchManagement = () => {
 
         {/* Tabs */}
         <div className="mb-6 overflow-x-auto animate-fadeIn">
-          <div className="flex gap-2 border-b border-[#BBA473]/30 min-w-max">
+          <div className="flex gap-2 border-b border-[#dea402]/30 min-w-max">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-3 font-medium transition-all duration-300 border-b-2 whitespace-nowrap ${
                   activeTab === tab
-                    ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                    : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                    ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                    : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                 }`}
               >
                 {tab}
@@ -677,28 +677,28 @@ const BranchManagement = () => {
               placeholder="Search by name, location, manager, or email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border-2 border-[#BBA473]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BBA473]/50 focus:border-[#BBA473] bg-[#1A1A1A] text-white transition-all duration-300 hover:border-[#BBA473]"
+              className="w-full pl-10 pr-4 py-3 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 hover:border-[#dea402]"
             />
           </div>
         </div>
 
         {/* Table Container */}
-        <div className="bg-[#2A2A2A] rounded-xl shadow-2xl overflow-hidden border border-[#BBA473]/20 animate-fadeIn">
+        <div className="bg-[#5c1a20] rounded-xl shadow-2xl overflow-hidden border border-[#dea402]/20 animate-fadeIn">
           {/* Table */}
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-[#1A1A1A] border-b border-[#BBA473]/30">
+              <thead className="bg-[#4a1015] border-b border-[#dea402]/30">
                 <tr>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Branch ID</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Branch Name</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Location</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Manager</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Phone</th>
-                  <th className="text-left px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Email</th>
-                  <th className="text-center px-6 py-4 text-[#E8D5A3] font-semibold text-sm uppercase tracking-wider">Actions</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Branch ID</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Branch Name</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Location</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Manager</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Phone</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Email</th>
+                  <th className="text-center px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#BBA473]/10">
+              <tbody className="divide-y divide-[#dea402]/10">
                 {loading ? (
                   <tr>
                     <td colSpan="7" className="px-6 py-12 text-center text-gray-400">
@@ -722,17 +722,17 @@ const BranchManagement = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 aspect-square rounded-full bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                          <div className="w-10 h-10 aspect-square rounded-full bg-gradient-to-br from-[#dea402] to-[#b38302] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                             <Building2 className="w-5 h-5 text-black" />
                           </div>
-                          <span className="font-medium text-white group-hover:text-[#BBA473] transition-colors duration-300">
+                          <span className="font-medium text-white group-hover:text-[#dea402] transition-colors duration-300">
                             {branch.branchName}
                           </span>
                         </div>
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-start gap-2 max-w-xs">
-                          <MapPin className="w-4 h-4 text-[#BBA473] mt-0.5 flex-shrink-0" />
+                          <MapPin className="w-4 h-4 text-[#dea402] mt-0.5 flex-shrink-0" />
                           <span className="text-gray-300 text-sm">{branch.branchLocation}</span>
                         </div>
                       </td>
@@ -743,7 +743,7 @@ const BranchManagement = () => {
                         <div className="flex justify-center gap-2">
                           <button
                             onClick={() => handleEdit(branch)}
-                            className="p-2 rounded-lg bg-[#BBA473]/20 text-[#BBA473] hover:bg-[#BBA473] hover:text-black transition-all duration-300 hover:scale-110"
+                            className="p-2 rounded-lg bg-[#dea402]/20 text-[#dea402] hover:bg-[#dea402] hover:text-black transition-all duration-300 hover:scale-110"
                             title="Edit"
                           >
                             <Edit className="w-4 h-4" />
@@ -765,7 +765,7 @@ const BranchManagement = () => {
           </div>
 
           {/* Pagination */}
-          <div className="px-6 py-4 bg-[#1A1A1A] border-t border-[#BBA473]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div className="px-6 py-4 bg-[#4a1015] border-t border-[#dea402]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <div className="text-gray-400 text-sm">
                 Showing <span className="text-white font-semibold">{showingFrom}</span> to{' '}
@@ -775,19 +775,19 @@ const BranchManagement = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowPerPageDropdown(!showPerPageDropdown)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30"
                 >
                   <span className="text-sm">{itemsPerPage} per page</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showPerPageDropdown && (
-                  <div className="absolute bottom-full mb-2 right-0 bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
+                  <div className="absolute bottom-full mb-2 right-0 bg-[#5c1a20] border border-[#dea402]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
                     {perPageOptions.map(option => (
                       <button
                         key={option}
                         onClick={() => handlePerPageChange(option)}
                         className={`w-full px-4 py-2 text-left hover:bg-[#3A3A3A] transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                          option === itemsPerPage ? 'bg-[#BBA473]/20 text-[#BBA473]' : 'text-white'
+                          option === itemsPerPage ? 'bg-[#dea402]/20 text-[#dea402]' : 'text-white'
                         }`}
                       >
                         {option} per page
@@ -802,7 +802,7 @@ const BranchManagement = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -811,7 +811,7 @@ const BranchManagement = () => {
                 <>
                   <button
                     onClick={() => handlePageChange(1)}
-                    className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                    className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                   >
                     1
                   </button>
@@ -825,8 +825,8 @@ const BranchManagement = () => {
                   onClick={() => handlePageChange(page)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 border ${
                     currentPage === page
-                      ? 'bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black border-[#BBA473] font-semibold shadow-lg'
-                      : 'bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] border-[#BBA473]/30 hover:border-[#BBA473]'
+                      ? 'bg-gradient-to-r from-[#dea402] to-[#b38302] text-black border-[#dea402] font-semibold shadow-lg'
+                      : 'bg-[#5c1a20] text-white hover:bg-[#3A3A3A] border-[#dea402]/30 hover:border-[#dea402]'
                   }`}
                 >
                   {page}
@@ -838,7 +838,7 @@ const BranchManagement = () => {
                   {currentPage < totalPages - 2 && <span className="text-gray-400">...</span>}
                   <button
                     onClick={() => handlePageChange(totalPages)}
-                    className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                    className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                   >
                     {totalPages}
                   </button>
@@ -848,7 +848,7 @@ const BranchManagement = () => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -859,15 +859,15 @@ const BranchManagement = () => {
 
       {/* Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 w-full lg:w-2/5 bg-[#1A1A1A] shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed inset-y-0 right-0 w-full lg:w-2/5 bg-[#4a1015] shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
           drawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="h-full flex flex-col">
           {/* Drawer Header */}
-          <div className="flex items-center justify-between p-6 border-b border-[#BBA473]/30 bg-gradient-to-r from-[#BBA473]/10 to-transparent">
+          <div className="flex items-center justify-between p-6 border-b border-[#dea402]/30 bg-gradient-to-r from-[#dea402]/10 to-transparent">
             <div>
-              <h2 className="text-2xl font-bold text-[#BBA473]">
+              <h2 className="text-2xl font-bold text-[#dea402]">
                 {editingBranch ? 'Edit Branch' : 'Add New Branch'}
               </h2>
               <p className="text-gray-400 text-sm mt-1">
@@ -876,7 +876,7 @@ const BranchManagement = () => {
             </div>
             <button
               onClick={handleCloseDrawer}
-              className="p-2 rounded-lg hover:bg-[#2A2A2A] transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
+              className="p-2 rounded-lg hover:bg-[#5c1a20] transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
             >
               <X className="w-6 h-6" />
             </button>
@@ -885,15 +885,15 @@ const BranchManagement = () => {
           {/* Drawer Form */}
           <form onSubmit={formik.handleSubmit} className="flex-1 overflow-y-auto p-6 space-y-6">
             {/* Branch Information */}
-            <div className="bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg p-6 space-y-4">
-              <h3 className="text-lg font-semibold text-white border-b border-[#BBA473]/30 pb-3">
+            <div className="bg-[#5c1a20] border border-[#dea402]/30 rounded-lg p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-white border-b border-[#dea402]/30 pb-3">
                 Branch Information
               </h3>
 
               <div className="grid grid-cols-1 gap-4">
                 {/* Branch Name */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Branch Name <span className="text-red-500">*</span>
                   </label>
                   {!isBranchMembersVisible && (
@@ -904,10 +904,10 @@ const BranchManagement = () => {
                       value={formik.values.branchName}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                      className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                         formik.touched.branchName && formik.errors.branchName
                           ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                          : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                          : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                       }`}
                     />
                   )}
@@ -918,7 +918,7 @@ const BranchManagement = () => {
 
                 {/* Branch Location */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Branch Location <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -928,10 +928,10 @@ const BranchManagement = () => {
                     value={formik.values.branchLocation}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.branchLocation && formik.errors.branchLocation
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.branchLocation && formik.errors.branchLocation && (
@@ -941,7 +941,7 @@ const BranchManagement = () => {
 
                 {/* Phone Number - International Phone Input */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <PhoneInput
@@ -963,7 +963,7 @@ const BranchManagement = () => {
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -973,10 +973,10 @@ const BranchManagement = () => {
                     value={formik.values.branchEmail}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.branchEmail && formik.errors.branchEmail
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.branchEmail && formik.errors.branchEmail && (
@@ -986,7 +986,7 @@ const BranchManagement = () => {
 
                 {/* Password */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Branch Password {!editingBranch && <span className="text-red-500">*</span>}
                     {editingBranch && <span className="text-gray-500 text-xs ml-2">(Leave blank to keep current)</span>}
                   </label>
@@ -998,10 +998,10 @@ const BranchManagement = () => {
                       value={formik.values.branchPassword}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className={`w-full px-4 py-3 pr-20 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                      className={`w-full px-4 py-3 pr-20 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                         formik.touched.branchPassword && formik.errors.branchPassword
                           ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                          : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                          : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                       }`}
                     />
                     <button
@@ -1022,7 +1022,7 @@ const BranchManagement = () => {
                         const generatedPassword = generatePassword();
                         formik.setFieldValue('branchPassword', generatedPassword);
                       }}
-                      className="flex items-center gap-2 px-3 py-1.5 text-xs bg-[#BBA473]/20 text-[#BBA473] rounded-lg hover:bg-[#BBA473]/30 transition-all duration-300 border border-[#BBA473]/30"
+                      className="flex items-center gap-2 px-3 py-1.5 text-xs bg-[#dea402]/20 text-[#dea402] rounded-lg hover:bg-[#dea402]/30 transition-all duration-300 border border-[#dea402]/30"
                     >
                       <RefreshCw className="w-3 h-3" />
                       Generate Password
@@ -1033,7 +1033,7 @@ const BranchManagement = () => {
 
                 {/* Kiosk Members Multi-Select using react-select */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Kiosk Members <span className="text-red-500">*</span>
                   </label>
                   {!isBranchMembersVisible && (
@@ -1066,7 +1066,7 @@ const BranchManagement = () => {
 
                 {/* Sales Manager Select */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Sales Manager <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -1074,10 +1074,10 @@ const BranchManagement = () => {
                     value={formik.values.salesManager}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.salesManager && formik.errors.salesManager
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   >
                     <option value="" disabled>
@@ -1097,9 +1097,9 @@ const BranchManagement = () => {
             </div>
 
             {/* Coordinates */}
-            <div className="bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg p-6 space-y-4">
-              <div className="flex items-center gap-2 border-b border-[#BBA473]/30 pb-3">
-                <MapPin className="w-5 h-5 text-[#BBA473]" />
+            <div className="bg-[#5c1a20] border border-[#dea402]/30 rounded-lg p-6 space-y-4">
+              <div className="flex items-center gap-2 border-b border-[#dea402]/30 pb-3">
+                <MapPin className="w-5 h-5 text-[#dea402]" />
                 <h3 className="text-lg font-semibold text-white">GPS Coordinates</h3>
               </div>
 
@@ -1110,7 +1110,7 @@ const BranchManagement = () => {
               <div className="grid grid-cols-2 gap-4">
                 {/* Latitude */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Latitude <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -1121,10 +1121,10 @@ const BranchManagement = () => {
                     value={formik.values.latitude}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.latitude && formik.errors.latitude
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.latitude && formik.errors.latitude && (
@@ -1134,7 +1134,7 @@ const BranchManagement = () => {
 
                 {/* Longitude */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Longitude <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -1145,10 +1145,10 @@ const BranchManagement = () => {
                     value={formik.values.longitude}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.longitude && formik.errors.longitude
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.longitude && formik.errors.longitude && (
@@ -1159,7 +1159,7 @@ const BranchManagement = () => {
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex gap-3 sticky bottom-0 bg-[#1A1A1A] pt-4 border-t border-[#BBA473]/30">
+            <div className="flex gap-3 sticky bottom-0 bg-[#4a1015] pt-4 border-t border-[#dea402]/30">
               <button
                 type="button"
                 onClick={handleCloseDrawer}
@@ -1171,7 +1171,7 @@ const BranchManagement = () => {
                 <button
                   type="submit"
                   disabled={formik.isSubmitting}
-                  className="flex-1 px-4 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black hover:from-[#d4bc89] hover:to-[#a69363] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#BBA473]/40 transform hover:scale-105 active:scale-95"
+                  className="flex-1 px-4 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black hover:from-[#f0ba0a] hover:to-[#8a6e02] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#dea402]/40 transform hover:scale-105 active:scale-95"
                 >
                   {formik.isSubmitting 
                     ? (editingBranch ? 'Updating Branch...' : 'Creating Branch...') 
@@ -1203,7 +1203,7 @@ const BranchManagement = () => {
           to { opacity: 1; }
         }
         body{
-          background-color: #000;
+          background-color: #1a0405;
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
@@ -1219,23 +1219,23 @@ const BranchManagement = () => {
         .phone-input-custom .PhoneInputInput {
           width: 100%;
           padding: 0.75rem 1rem;
-          border: 2px solid rgba(187, 164, 115, 0.3);
+          border: 2px solid rgba(222, 164, 2, 0.3);
           border-radius: 0.5rem;
-          background-color: #1A1A1A;
+          background-color: #4a1015;
           color: white;
           font-size: 1rem;
           transition: all 0.3s ease;
         }
         
         .phone-input-custom .PhoneInputInput:hover {
-          border-color: #BBA473;
+          border-color: #dea402;
         }
         
         .phone-input-custom .PhoneInputInput:focus {
           outline: none;
-          border-color: #BBA473;
+          border-color: #dea402;
           ring: 2;
-          ring-color: rgba(187, 164, 115, 0.5);
+          ring-color: rgba(222, 164, 2, 0.5);
         }
         
         .phone-input-error .PhoneInputInput {
@@ -1250,14 +1250,14 @@ const BranchManagement = () => {
         .phone-input-custom .PhoneInputCountry {
           margin-right: 0.5rem;
           padding: 0.5rem;
-          background-color: #1A1A1A;
-          border: 2px solid rgba(187, 164, 115, 0.3);
+          background-color: #4a1015;
+          border: 2px solid rgba(222, 164, 2, 0.3);
           border-radius: 0.5rem;
           transition: all 0.3s ease;
         }
 
         .phone-input-custom .PhoneInputCountry:hover {
-          border-color: #BBA473;
+          border-color: #dea402;
         }
 
         .phone-input-custom .PhoneInputCountryIcon {
@@ -1266,7 +1266,7 @@ const BranchManagement = () => {
         }
 
         .phone-input-custom .PhoneInputCountrySelectArrow {
-          color: #BBA473;
+          color: #dea402;
           opacity: 0.8;
           margin-left: 0.5rem;
         }

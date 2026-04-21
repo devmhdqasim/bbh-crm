@@ -228,19 +228,19 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
   });
 
   return (
-    <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#252525] z-10 flex flex-col animate-slideInRight">
+    <div className="absolute inset-0 bg-gradient-to-br from-[#4a1015] to-[#252525] z-10 flex flex-col animate-slideInRight">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] border-b border-[#BBA473]/30 p-5 flex-shrink-0">
+      <div className="bg-gradient-to-r from-[#5c1a20] to-[#1F1F1F] border-b border-[#dea402]/30 p-5 flex-shrink-0">
         <div className="flex items-center gap-3">
           <button
             onClick={onClose}
-            className="p-2 rounded-lg bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473] transition-all duration-300"
+            className="p-2 rounded-lg bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402] transition-all duration-300"
           >
             <X className="w-5 h-5" />
           </button>
           <div className="flex-1">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <FileText className="w-5 h-5 text-[#BBA473]" />
+              <FileText className="w-5 h-5 text-[#dea402]" />
               {selectedTemplate ? 'Configure Template' : 'Send Template'}
             </h3>
             <p className="text-gray-400 text-sm mt-0.5">
@@ -253,7 +253,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
             <button
               onClick={fetchTemplates}
               disabled={isLoading}
-              className="p-2 rounded-lg bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473] transition-all duration-300 disabled:opacity-50"
+              className="p-2 rounded-lg bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402] transition-all duration-300 disabled:opacity-50"
               title="Refresh templates"
             >
               <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
@@ -271,7 +271,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search templates..."
-                className="w-full pl-10 pr-4 py-2.5 bg-[#1A1A1A] border border-[#BBA473]/30 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#BBA473] transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-[#4a1015] border border-[#dea402]/30 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#dea402] transition-all"
               />
             </div>
             {categories.length > 1 && (
@@ -279,7 +279,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-3 py-2.5 bg-[#1A1A1A] border border-[#BBA473]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#BBA473] transition-all appearance-none cursor-pointer"
+                  className="w-full px-3 py-2.5 bg-[#4a1015] border border-[#dea402]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#dea402] transition-all appearance-none cursor-pointer"
                 >
                   <option value="all">All</option>
                   {categories.map(cat => (
@@ -297,7 +297,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
       <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center h-full">
-            <Loader2 className="w-10 h-10 text-[#BBA473] animate-spin mb-3" />
+            <Loader2 className="w-10 h-10 text-[#dea402] animate-spin mb-3" />
             <p className="text-gray-400 text-sm">Loading templates...</p>
           </div>
         ) : selectedTemplate ? (
@@ -306,13 +306,13 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
             {/* Back button */}
             <button
               onClick={() => { setSelectedTemplate(null); setParamValues({}); setVariableGroups({ header: [], body: [], buttons: [] }); }}
-              className="text-sm text-[#BBA473] hover:text-[#d4bc89] transition-colors"
+              className="text-sm text-[#dea402] hover:text-[#f0ba0a] transition-colors"
             >
               &larr; Back to templates
             </button>
 
             {/* Template name */}
-            <div className="bg-[#2A2A2A] rounded-xl p-4 border border-[#BBA473]/20">
+            <div className="bg-[#5c1a20] rounded-xl p-4 border border-[#dea402]/20">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs text-gray-400 mb-1">Template</p>
@@ -324,11 +324,11 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
 
             {/* Parameter inputs */}
             {Object.keys(paramValues).length > 0 && (
-              <div className="bg-[#2A2A2A] rounded-xl p-4 border border-[#BBA473]/20 space-y-4">
+              <div className="bg-[#5c1a20] rounded-xl p-4 border border-[#dea402]/20 space-y-4">
                 <p className="text-sm font-semibold text-white">Fill in variables</p>
                 {variableGroups.header.length > 0 && (
                   <div className="space-y-2">
-                    <p className="text-xs text-[#BBA473] font-medium">Header Variables</p>
+                    <p className="text-xs text-[#dea402] font-medium">Header Variables</p>
                     {variableGroups.header.map(key => (
                       <div key={`header-${key}`}>
                         <label className="block text-xs text-gray-400 mb-1">Header {`{{${key}}}`}</label>
@@ -337,7 +337,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                           value={paramValues[`header_${key}`] || ''}
                           onChange={(e) => setParamValues(prev => ({ ...prev, [`header_${key}`]: e.target.value }))}
                           placeholder={`Enter value for header {{${key}}}`}
-                          className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#BBA473]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#BBA473] transition-all"
+                          className="w-full px-3 py-2 bg-[#4a1015] border border-[#dea402]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#dea402] transition-all"
                         />
                       </div>
                     ))}
@@ -346,7 +346,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                 {variableGroups.body.length > 0 && (
                   <div className="space-y-2">
                     {(variableGroups.header.length > 0 || variableGroups.buttons.length > 0) && (
-                      <p className="text-xs text-[#BBA473] font-medium">Body Variables</p>
+                      <p className="text-xs text-[#dea402] font-medium">Body Variables</p>
                     )}
                     {variableGroups.body.map(key => (
                       <div key={`body-${key}`}>
@@ -356,7 +356,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                           value={paramValues[`body_${key}`] || ''}
                           onChange={(e) => setParamValues(prev => ({ ...prev, [`body_${key}`]: e.target.value }))}
                           placeholder={`Enter value for body {{${key}}}`}
-                          className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#BBA473]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#BBA473] transition-all"
+                          className="w-full px-3 py-2 bg-[#4a1015] border border-[#dea402]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#dea402] transition-all"
                         />
                       </div>
                     ))}
@@ -364,7 +364,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                 )}
                 {variableGroups.buttons.length > 0 && (
                   <div className="space-y-2">
-                    <p className="text-xs text-[#BBA473] font-medium">Button Variables</p>
+                    <p className="text-xs text-[#dea402] font-medium">Button Variables</p>
                     {variableGroups.buttons.map(key => (
                       <div key={`btn-${key}`}>
                         <label className="block text-xs text-gray-400 mb-1">Button {`{{${key}}}`}</label>
@@ -373,7 +373,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                           value={paramValues[`button_${key}`] || ''}
                           onChange={(e) => setParamValues(prev => ({ ...prev, [`button_${key}`]: e.target.value }))}
                           placeholder={`Enter value for button {{${key}}}`}
-                          className="w-full px-3 py-2 bg-[#1A1A1A] border border-[#BBA473]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#BBA473] transition-all"
+                          className="w-full px-3 py-2 bg-[#4a1015] border border-[#dea402]/30 rounded-lg text-white text-sm focus:outline-none focus:border-[#dea402] transition-all"
                         />
                       </div>
                     ))}
@@ -383,7 +383,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
             )}
 
             {/* Preview */}
-            <div className="bg-[#2A2A2A] rounded-xl p-4 border border-[#BBA473]/20">
+            <div className="bg-[#5c1a20] rounded-xl p-4 border border-[#dea402]/20">
               <p className="text-xs text-gray-400 mb-2">Preview</p>
               <div className="bg-gradient-to-r from-[#005C4B] to-[#128C7E] rounded-xl px-4 py-3 text-white text-sm leading-relaxed whitespace-pre-wrap">
                 {getPreviewText(selectedTemplate)}
@@ -392,8 +392,8 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
           </div>
         ) : filteredTemplates.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center p-8">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#BBA473]/20 to-[#8E7D5A]/20 flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-10 h-10 text-[#BBA473]" />
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#dea402]/20 to-[#b38302]/20 flex items-center justify-center mx-auto mb-4">
+              <FileText className="w-10 h-10 text-[#dea402]" />
             </div>
             <h4 className="text-xl font-bold text-white mb-2">
               {searchQuery || selectedCategory !== 'all' ? 'No templates found' : 'No templates available'}
@@ -417,11 +417,11 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
               return (
                 <div
                   key={template.id || template.elementName || index}
-                  className={`bg-[#2A2A2A] rounded-xl border overflow-hidden transition-all duration-300 cursor-pointer
+                  className={`bg-[#5c1a20] rounded-xl border overflow-hidden transition-all duration-300 cursor-pointer
                     ${isSelecting
-                      ? 'ring-2 ring-[#BBA473] scale-[0.98] bg-[#BBA473]/10 border-[#BBA473]'
+                      ? 'ring-2 ring-[#dea402] scale-[0.98] bg-[#dea402]/10 border-[#dea402]'
                       : isApproved
-                        ? 'border-[#BBA473]/20 hover:border-[#BBA473]/50 hover:shadow-lg hover:shadow-[#BBA473]/10 active:scale-[0.99]'
+                        ? 'border-[#dea402]/20 hover:border-[#dea402]/50 hover:shadow-lg hover:shadow-[#dea402]/10 active:scale-[0.99]'
                         : 'border-gray-600/30 hover:border-gray-500/40'
                     }`}
                   onClick={() => {
@@ -451,7 +451,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0 ml-3">
                       {isApproved ? (
-                        <ChevronRight className={`w-4 h-4 text-[#BBA473] transition-transform duration-300 ${isSelecting ? 'translate-x-1' : ''}`} />
+                        <ChevronRight className={`w-4 h-4 text-[#dea402] transition-transform duration-300 ${isSelecting ? 'translate-x-1' : ''}`} />
                       ) : (
                         isExpanded ? (
                           <ChevronUp className="w-4 h-4 text-gray-400" />
@@ -464,7 +464,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
 
                   {/* Expanded preview (only for non-approved templates) */}
                   {isExpanded && !isApproved && (
-                    <div className="px-4 pb-4 border-t border-[#BBA473]/10 pt-3">
+                    <div className="px-4 pb-4 border-t border-[#dea402]/10 pt-3">
                       <p className="text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">{body}</p>
                     </div>
                   )}
@@ -476,7 +476,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
       </div>
 
       {/* Footer */}
-      <div className="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] border-t border-[#BBA473]/30 p-4 flex-shrink-0">
+      <div className="bg-gradient-to-r from-[#5c1a20] to-[#1F1F1F] border-t border-[#dea402]/30 p-4 flex-shrink-0">
         {selectedTemplate ? (
           <div className="flex gap-3">
             <button
@@ -488,7 +488,7 @@ const TemplatePicker = ({ contact, onClose, setMessages, refreshContacts }) => {
             <button
               onClick={handleSendTemplate}
               disabled={isSending || (selectedTemplate.status || '').toUpperCase() !== 'APPROVED'}
-              className="flex-1 px-4 py-3 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-xl transition-all font-semibold hover:from-[#d4bc89] hover:to-[#a69363] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-3 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-xl transition-all font-semibold hover:from-[#f0ba0a] hover:to-[#8a6e02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSending ? (
                 <>

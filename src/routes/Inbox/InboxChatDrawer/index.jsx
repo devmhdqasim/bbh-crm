@@ -566,7 +566,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
 
   // Chat background presets
   const chatBgColors = [
-    { label: 'Default', value: '#1A1A1A' },
+    { label: 'Default', value: '#4a1015' },
     { label: 'Charcoal', value: '#0D0D0D' },
     { label: 'Dark Slate', value: '#1E293B' },
     { label: 'Midnight', value: '#0F172A' },
@@ -574,40 +574,40 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
     { label: 'Dark Olive', value: '#1A1C16' },
     { label: 'Espresso', value: '#1C1410' },
     { label: 'Dark Plum', value: '#1A1020' },
-    { label: 'Gold Tint', value: 'linear-gradient(180deg, #1A1A1A 0%, #1F1B14 100%)' },
+    { label: 'Gold Tint', value: 'linear-gradient(180deg, #4a1015 0%, #1F1B14 100%)' },
     { label: 'Ocean', value: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)' },
-    { label: 'Ember', value: 'linear-gradient(180deg, #1A1A1A 0%, #1C1410 100%)' },
+    { label: 'Ember', value: 'linear-gradient(180deg, #4a1015 0%, #1C1410 100%)' },
     { label: 'Aurora', value: 'linear-gradient(180deg, #0F172A 0%, #1A1020 100%)' },
   ];
 
   const chatBgPatterns = [
-    { label: 'Dots', value: 'pattern:dots', bg: '#1A1A1A', css: 'radial-gradient(circle, #2A2A2A 1px, transparent 1px)', size: '20px 20px' },
-    { label: 'Grid', value: 'pattern:grid', bg: '#1A1A1A', css: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', size: '24px 24px' },
-    { label: 'Diagonal', value: 'pattern:diagonal', bg: '#1A1A1A', css: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #222 10px, #222 11px)', size: 'auto' },
-    { label: 'Cross', value: 'pattern:cross', bg: '#1A1A1A', css: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', size: '32px 32px' },
-    { label: 'Gold Dots', value: 'pattern:golddots', bg: '#1A1A1A', css: 'radial-gradient(circle, #BBA47315 1px, transparent 1px)', size: '18px 18px' },
-    { label: 'Gold Grid', value: 'pattern:goldgrid', bg: '#1A1A1A', css: 'linear-gradient(#BBA47310 1px, transparent 1px), linear-gradient(90deg, #BBA47310 1px, transparent 1px)', size: '28px 28px' },
-    { label: 'Checkers', value: 'pattern:checkers', bg: '#1A1A1A', css: 'conic-gradient(#1E1E1E 90deg, #1A1A1A 90deg 180deg, #1E1E1E 180deg 270deg, #1A1A1A 270deg)', size: '40px 40px' },
-    { label: 'Waves', value: 'pattern:waves', bg: '#1A1A1A', css: 'repeating-linear-gradient(135deg, transparent, transparent 6px, #22222280 6px, #22222280 7px, transparent 7px, transparent 13px, #22222240 13px, #22222240 14px)', size: 'auto' },
-    { label: 'Hex', value: 'pattern:hex', bg: '#1A1A1A', css: 'radial-gradient(circle at 0% 50%, #252525 25%, transparent 25%), radial-gradient(circle at 100% 50%, #252525 25%, transparent 25%)', size: '30px 52px' },
+    { label: 'Dots', value: 'pattern:dots', bg: '#4a1015', css: 'radial-gradient(circle, #5c1a20 1px, transparent 1px)', size: '20px 20px' },
+    { label: 'Grid', value: 'pattern:grid', bg: '#4a1015', css: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', size: '24px 24px' },
+    { label: 'Diagonal', value: 'pattern:diagonal', bg: '#4a1015', css: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #222 10px, #222 11px)', size: 'auto' },
+    { label: 'Cross', value: 'pattern:cross', bg: '#4a1015', css: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', size: '32px 32px' },
+    { label: 'Gold Dots', value: 'pattern:golddots', bg: '#4a1015', css: 'radial-gradient(circle, #dea40215 1px, transparent 1px)', size: '18px 18px' },
+    { label: 'Gold Grid', value: 'pattern:goldgrid', bg: '#4a1015', css: 'linear-gradient(#dea40210 1px, transparent 1px), linear-gradient(90deg, #dea40210 1px, transparent 1px)', size: '28px 28px' },
+    { label: 'Checkers', value: 'pattern:checkers', bg: '#4a1015', css: 'conic-gradient(#3a0c0f 90deg, #4a1015 90deg 180deg, #3a0c0f 180deg 270deg, #4a1015 270deg)', size: '40px 40px' },
+    { label: 'Waves', value: 'pattern:waves', bg: '#4a1015', css: 'repeating-linear-gradient(135deg, transparent, transparent 6px, #22222280 6px, #22222280 7px, transparent 7px, transparent 13px, #22222240 13px, #22222240 14px)', size: 'auto' },
+    { label: 'Hex', value: 'pattern:hex', bg: '#4a1015', css: 'radial-gradient(circle at 0% 50%, #252525 25%, transparent 25%), radial-gradient(circle at 100% 50%, #252525 25%, transparent 25%)', size: '30px 52px' },
     { label: 'Fine Dots', value: 'pattern:finedots', bg: '#0F172A', css: 'radial-gradient(circle, #1E293B 0.5px, transparent 0.5px)', size: '12px 12px' },
-    { label: 'Plaid', value: 'pattern:plaid', bg: '#1A1A1A', css: 'linear-gradient(#22222280 1px, transparent 1px), linear-gradient(90deg, #22222280 1px, transparent 1px), linear-gradient(#22222240 2px, transparent 2px), linear-gradient(90deg, #22222240 2px, transparent 2px)', size: '20px 20px, 20px 20px, 60px 60px, 60px 60px' },
-    { label: 'Zigzag', value: 'pattern:zigzag', bg: '#1A1A1A', css: 'linear-gradient(135deg, #222 25%, transparent 25%), linear-gradient(225deg, #222 25%, transparent 25%), linear-gradient(315deg, #222 25%, transparent 25%), linear-gradient(45deg, #222 25%, transparent 25%)', size: '20px 20px' },
+    { label: 'Plaid', value: 'pattern:plaid', bg: '#4a1015', css: 'linear-gradient(#22222280 1px, transparent 1px), linear-gradient(90deg, #22222280 1px, transparent 1px), linear-gradient(#22222240 2px, transparent 2px), linear-gradient(90deg, #22222240 2px, transparent 2px)', size: '20px 20px, 20px 20px, 60px 60px, 60px 60px' },
+    { label: 'Zigzag', value: 'pattern:zigzag', bg: '#4a1015', css: 'linear-gradient(135deg, #222 25%, transparent 25%), linear-gradient(225deg, #222 25%, transparent 25%), linear-gradient(315deg, #222 25%, transparent 25%), linear-gradient(45deg, #222 25%, transparent 25%)', size: '20px 20px' },
   ];
 
   const chatBgImages = [
-    { label: 'Topography', value: 'image:topography', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cpath d='M306 300c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51zm-102 0c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51zm-102 0c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51z' fill='none' stroke='%23252525' stroke-width='1'/%3E%3C/svg%3E")` },
-    { label: 'Bubbles', value: 'image:bubbles', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='25' cy='25' r='15' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='75' cy='75' r='20' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='70' cy='20' r='8' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3Ccircle cx='20' cy='70' r='12' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3C/svg%3E")` },
+    { label: 'Topography', value: 'image:topography', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cpath d='M306 300c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51zm-102 0c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51zm-102 0c0-28 23-51 51-51s51 23 51 51-23 51-51 51-51-23-51-51z' fill='none' stroke='%23252525' stroke-width='1'/%3E%3C/svg%3E")` },
+    { label: 'Bubbles', value: 'image:bubbles', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='25' cy='25' r='15' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='75' cy='75' r='20' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='70' cy='20' r='8' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3Ccircle cx='20' cy='70' r='12' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3C/svg%3E")` },
     { label: 'Stars', value: 'image:stars', bg: '#0F172A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23334155'/%3E%3Ccircle cx='60' cy='30' r='0.5' fill='%23475569'/%3E%3Ccircle cx='100' cy='15' r='1.2' fill='%23334155'/%3E%3Ccircle cx='30' cy='60' r='0.7' fill='%23475569'/%3E%3Ccircle cx='80' cy='70' r='1' fill='%23334155'/%3E%3Ccircle cx='50' cy='90' r='0.5' fill='%23475569'/%3E%3Ccircle cx='110' cy='100' r='0.8' fill='%23334155'/%3E%3Ccircle cx='15' cy='100' r='1' fill='%23475569'/%3E%3Ccircle cx='90' cy='50' r='0.6' fill='%23334155'/%3E%3C/svg%3E")` },
-    { label: 'Diamonds', value: 'image:diamonds', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4L44 24L24 44L4 24Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3C/svg%3E")` },
-    { label: 'Hexagons', value: 'image:hexagons', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84Z' fill='none' stroke='%23252525' stroke-width='0.3'/%3E%3C/svg%3E")` },
-    { label: 'Triangles', value: 'image:triangles', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpath d='M30 0L60 52H0Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3C/svg%3E")` },
-    { label: 'Gold Hex', value: 'image:goldhex', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50Z' fill='none' stroke='%23BBA473' stroke-width='0.3' opacity='0.12'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84Z' fill='none' stroke='%23BBA473' stroke-width='0.2' opacity='0.08'/%3E%3C/svg%3E")` },
-    { label: 'Circuits', value: 'image:circuits', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40h20m0 0v-20m0 0h20m0 0v40m0 0h20m0 0v-20m0 0h20' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23252525'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%23252525'/%3E%3Ccircle cx='60' cy='20' r='2' fill='%23252525'/%3E%3C/svg%3E")` },
+    { label: 'Diamonds', value: 'image:diamonds', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4L44 24L24 44L4 24Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3C/svg%3E")` },
+    { label: 'Hexagons', value: 'image:hexagons', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84Z' fill='none' stroke='%23252525' stroke-width='0.3'/%3E%3C/svg%3E")` },
+    { label: 'Triangles', value: 'image:triangles', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpath d='M30 0L60 52H0Z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3C/svg%3E")` },
+    { label: 'Gold Hex', value: 'image:goldhex', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50Z' fill='none' stroke='%23BBA473' stroke-width='0.3' opacity='0.12'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84Z' fill='none' stroke='%23BBA473' stroke-width='0.2' opacity='0.08'/%3E%3C/svg%3E")` },
+    { label: 'Circuits', value: 'image:circuits', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40h20m0 0v-20m0 0h20m0 0v40m0 0h20m0 0v-20m0 0h20' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23252525'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%23252525'/%3E%3Ccircle cx='60' cy='20' r='2' fill='%23252525'/%3E%3C/svg%3E")` },
     { label: 'Waves', value: 'image:waves', bg: '#0F172A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20'%3E%3Cpath d='M0 10c25-10 25 10 50 0s25 10 50 0' fill='none' stroke='%231E293B' stroke-width='1'/%3E%3C/svg%3E")` },
     { label: 'Leaves', value: 'image:leaves', bg: '#1A1C16', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 10c15 0 20 15 20 30s-20 30-20 30S20 55 20 40s5-30 20-30z' fill='none' stroke='%23252820' stroke-width='0.5'/%3E%3Cpath d='M40 10v60' fill='none' stroke='%23252820' stroke-width='0.3'/%3E%3C/svg%3E")` },
     { label: 'Moroccan', value: 'image:moroccan', bg: '#1C1410', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 0a20 20 0 010 40 20 20 0 010-40M0 20a20 20 0 0140 0 20 20 0 01-40 0' fill='none' stroke='%23261E16' stroke-width='0.5'/%3E%3C/svg%3E")` },
-    { label: 'Scales', value: 'image:scales', bg: '#1A1A1A', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20a20 20 0 0140 0' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3Cpath d='M20 20a20 20 0 0140 0' fill='none' stroke='%23222' stroke-width='0.5' transform='translate(-20,20)'/%3E%3C/svg%3E")` },
+    { label: 'Scales', value: 'image:scales', bg: '#4a1015', svg: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20a20 20 0 0140 0' fill='none' stroke='%23252525' stroke-width='0.5'/%3E%3Cpath d='M20 20a20 20 0 0140 0' fill='none' stroke='%23222' stroke-width='0.5' transform='translate(-20,20)'/%3E%3C/svg%3E")` },
   ];
 
   const handleChatBgChange = useCallback((bg) => {
@@ -1202,7 +1202,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
       />
 
       {/* Drawer */}
-      <div className={`fixed right-0 top-0 h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] shadow-2xl z-50 flex transform transition-all duration-300 ease-out ${
+      <div className={`fixed right-0 top-0 h-full bg-gradient-to-br from-[#4a1015] to-[#252525] shadow-2xl z-50 flex transform transition-all duration-300 ease-out ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       } ${isMaximized ? 'w-full' : showProfileSidebar ? 'w-full lg:w-[950px]' : 'w-full md:w-[560px] lg:w-[720px]'}`}>
         {contact && (
@@ -1254,14 +1254,14 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                       <div className="flex gap-3">
                         <button
                           onClick={() => window.open(`tel:${contact.phone}`, '_blank')}
-                          className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105"
+                          className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#dea402] to-[#b38302] text-black rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105"
                         >
                           <Phone className="w-4 h-4" />
                           Call Contact
                         </button>
                         <button
                           onClick={() => setContactNotFound(false)}
-                          className="px-4 py-2.5 bg-[#3A3A3A] text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#BBA473]/20"
+                          className="px-4 py-2.5 bg-[#3A3A3A] text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#4A4A4A] border border-[#dea402]/20"
                         >
                           Dismiss
                         </button>
@@ -1305,7 +1305,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
 
               {/* Chat Settings Panel */}
               {showChatSettings && (
-                <div className="border-b border-[#BBA473]/20 bg-[#222222] animate-slideDown flex-shrink-0">
+                <div className="border-b border-[#dea402]/20 bg-[#222222] animate-slideDown flex-shrink-0">
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-sm font-semibold text-white">Chat Background</h4>
@@ -1328,7 +1328,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                             onClick={() => handleChatBgChange(preset.value)}
                             className={`group relative rounded-lg h-10 border-2 transition-all duration-200 hover:scale-105 ${
                               isActive
-                                ? 'border-[#BBA473] ring-1 ring-[#BBA473]/50'
+                                ? 'border-[#dea402] ring-1 ring-[#dea402]/50'
                                 : 'border-[#333] hover:border-[#555]'
                             }`}
                             style={{ background: preset.value }}
@@ -1336,7 +1336,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                           >
                             {isActive && (
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-[#BBA473]" />
+                                <div className="w-2 h-2 rounded-full bg-[#dea402]" />
                               </div>
                             )}
                             <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -1358,7 +1358,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                             onClick={() => handleChatBgChange(preset.value)}
                             className={`group relative rounded-lg h-10 border-2 transition-all duration-200 hover:scale-105 overflow-hidden ${
                               isActive
-                                ? 'border-[#BBA473] ring-1 ring-[#BBA473]/50'
+                                ? 'border-[#dea402] ring-1 ring-[#dea402]/50'
                                 : 'border-[#333] hover:border-[#555]'
                             }`}
                             style={{
@@ -1370,7 +1370,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                           >
                             {isActive && (
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-[#BBA473] shadow-[0_0_4px_#BBA473]" />
+                                <div className="w-2 h-2 rounded-full bg-[#dea402] shadow-[0_0_4px_#dea402]" />
                               </div>
                             )}
                             <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -1392,7 +1392,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                             onClick={() => handleChatBgChange(preset.value)}
                             className={`group relative rounded-lg h-10 border-2 transition-all duration-200 hover:scale-105 overflow-hidden ${
                               isActive
-                                ? 'border-[#BBA473] ring-1 ring-[#BBA473]/50'
+                                ? 'border-[#dea402] ring-1 ring-[#dea402]/50'
                                 : 'border-[#333] hover:border-[#555]'
                             }`}
                             style={{
@@ -1403,7 +1403,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                           >
                             {isActive && (
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-[#BBA473] shadow-[0_0_4px_#BBA473]" />
+                                <div className="w-2 h-2 rounded-full bg-[#dea402] shadow-[0_0_4px_#dea402]" />
                               </div>
                             )}
                             <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -1426,12 +1426,12 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                   if (chatBg.startsWith('pattern:')) {
                     const p = chatBgPatterns.find(pt => pt.value === chatBg);
                     if (p) return { backgroundColor: p.bg, backgroundImage: p.css, backgroundSize: p.size };
-                    return { backgroundColor: '#1A1A1A' };
+                    return { backgroundColor: '#4a1015' };
                   }
                   if (chatBg.startsWith('image:')) {
                     const img = chatBgImages.find(i => i.value === chatBg);
                     if (img) return { backgroundColor: img.bg, backgroundImage: img.svg };
-                    return { backgroundColor: '#1A1A1A' };
+                    return { backgroundColor: '#4a1015' };
                   }
                   return { background: chatBg };
                 })()}
@@ -1447,7 +1447,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
                           left: `${mousePos.x * 100}%`,
                           top: `${mousePos.y * 100}%`,
                           transform: 'translate(-50%, -50%)',
-                          background: 'radial-gradient(circle, rgba(255,140,50,0.04) 0%, rgba(187,164,115,0.06) 30%, transparent 70%)',
+                          background: 'radial-gradient(circle, rgba(255,140,50,0.04) 0%, rgba(222,164,2,0.06) 30%, transparent 70%)',
                         }}
                       />
                       {/* Shooting star 1 */}
@@ -1500,10 +1500,10 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
 
               {/* Reply Preview Bar */}
               {replyToMessage && (
-                <div className="bg-[#1e1e1e] border-t border-[#333] px-4 pt-3 flex-shrink-0">
-                  <div className="flex items-start gap-3 bg-[#2A2A2A] rounded-xl px-3 py-2.5 border-l-[3px] border-[#BBA473]">
+                <div className="bg-[#3a0c0f] border-t border-[#333] px-4 pt-3 flex-shrink-0">
+                  <div className="flex items-start gap-3 bg-[#5c1a20] rounded-xl px-3 py-2.5 border-l-[3px] border-[#dea402]">
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold text-[#BBA473]">
+                      <p className="text-xs font-semibold text-[#dea402]">
                         {replyToMessage.sender === 'user' ? 'You' : contact?.name?.split(' ')[0] || 'Contact'}
                       </p>
                       <p className="text-sm text-gray-300 truncate">
@@ -1602,21 +1602,21 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
           onClick={handleMediaPreviewCancel}
         >
           <div
-            className="bg-[#1E1E1E] rounded-2xl border border-[#BBA473]/20 shadow-2xl max-w-md w-full overflow-hidden animate-scaleIn"
+            className="bg-[#3a0c0f] rounded-2xl border border-[#dea402]/20 shadow-2xl max-w-md w-full overflow-hidden animate-scaleIn"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-[#333]">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#BBA473]/15 flex items-center justify-center">
+                <div className="w-9 h-9 rounded-full bg-[#dea402]/15 flex items-center justify-center">
                   {mediaPreviewType === 'image' ? (
-                    <ImageIcon className="w-4 h-4 text-[#BBA473]" />
+                    <ImageIcon className="w-4 h-4 text-[#dea402]" />
                   ) : mediaPreviewType === 'video' ? (
-                    <Video className="w-4 h-4 text-[#BBA473]" />
+                    <Video className="w-4 h-4 text-[#dea402]" />
                   ) : mediaPreviewType === 'document' ? (
-                    <FileText className="w-4 h-4 text-[#BBA473]" />
+                    <FileText className="w-4 h-4 text-[#dea402]" />
                   ) : (
-                    <Music className="w-4 h-4 text-[#BBA473]" />
+                    <Music className="w-4 h-4 text-[#dea402]" />
                   )}
                 </div>
                 <div>
@@ -1637,7 +1637,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
             </div>
 
             {/* Preview Area */}
-            <div className="p-5 flex items-center justify-center bg-[#161616] min-h-[200px]">
+            <div className="p-5 flex items-center justify-center bg-[#2d070a] min-h-[200px]">
               {mediaPreviewType === 'image' && (
                 <img
                   src={mediaPreviewUrl}
@@ -1656,8 +1656,8 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
               )}
               {mediaPreviewType === 'audio' && (
                 <div className="w-full flex flex-col items-center gap-4 py-6">
-                  <div className="w-20 h-20 rounded-full bg-[#BBA473]/10 flex items-center justify-center">
-                    <Music className="w-10 h-10 text-[#BBA473]" />
+                  <div className="w-20 h-20 rounded-full bg-[#dea402]/10 flex items-center justify-center">
+                    <Music className="w-10 h-10 text-[#dea402]" />
                   </div>
                   <p className="text-gray-400 text-sm truncate max-w-[280px]">{mediaPreviewFile.name}</p>
                   <audio
@@ -1682,13 +1682,13 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
             <div className="flex items-center gap-3 px-5 py-4 border-t border-[#333]">
               <button
                 onClick={handleMediaPreviewCancel}
-                className="flex-1 px-4 py-2.5 rounded-xl bg-[#2A2A2A] text-gray-300 text-sm font-medium hover:bg-[#333] transition-colors border border-[#3A3A3A]"
+                className="flex-1 px-4 py-2.5 rounded-xl bg-[#5c1a20] text-gray-300 text-sm font-medium hover:bg-[#333] transition-colors border border-[#3A3A3A]"
               >
                 Cancel
               </button>
               <button
                 onClick={handleMediaPreviewConfirm}
-                className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black text-sm font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#dea402] to-[#b38302] text-black text-sm font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
                 Send
@@ -1777,8 +1777,8 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
         }
 
         @keyframes highlightPulse {
-          0% { background-color: rgba(187, 164, 115, 0.2); }
-          50% { background-color: rgba(187, 164, 115, 0.4); }
+          0% { background-color: rgba(222, 164, 2, 0.2); }
+          50% { background-color: rgba(222, 164, 2, 0.4); }
           100% { background-color: transparent; }
         }
 
@@ -1799,16 +1799,16 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: #1A1A1A;
+          background: #4a1015;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #BBA473 0%, #8E7D5A 100%);
+          background: linear-gradient(180deg, #dea402 0%, #b38302 100%);
           border-radius: 4px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #d4bc89 0%, #a69363 100%);
+          background: linear-gradient(180deg, #f0ba0a 0%, #8a6e02 100%);
         }
 
         /* Shooting star animations — angled diagonal fall */
@@ -1848,7 +1848,7 @@ const InboxChatDrawer = ({ isOpen, onClose, contact, refreshContacts }) => {
           right: 100%;
           width: 90px;
           height: 2px;
-          background: linear-gradient(to left, rgba(255,200,80,0.7), rgba(255,120,30,0.4) 30%, rgba(187,164,115,0.2) 60%, transparent);
+          background: linear-gradient(to left, rgba(255,200,80,0.7), rgba(255,120,30,0.4) 30%, rgba(222,164,2,0.2) 60%, transparent);
           transform-origin: right center;
           transform: translateY(-50%);
           border-radius: 1px;

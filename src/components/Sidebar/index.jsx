@@ -141,29 +141,29 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
       {/* Mobile Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-[#0A0A0A] border border-[#BBA473]/20 text-[#BBA473] rounded-lg shadow-lg hover:bg-[#161616] transition-all duration-300 active:scale-95"
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-[#1a0405] border border-[#dea402]/20 text-[#dea402] rounded-lg shadow-lg hover:bg-[#2d070a] transition-all duration-300 active:scale-95"
       >
         <Menu size={24} />
       </button>
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 bg-[#0A0A0A]/95 backdrop-blur-xl text-gray-300 p-3 border-r border-[#BBA473]/10
+        className={`fixed inset-y-0 left-0 bg-gradient-to-b from-[#1a0405] via-[#200607] to-[#1a0405] backdrop-blur-xl text-gray-300 p-3 border-r border-white/[0.06]
         overflow-y-auto overflow-x-hidden flex flex-col h-screen transform transition-all duration-500 ease-in-out z-30
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0
         ${isCollapsed ? 'w-20' : 'w-64'}
         ${isLoaded ? 'opacity-100' : 'opacity-0'}
-        sidebar-custom-scrollbar shadow-2xl`}
+        sidebar-custom-scrollbar shadow-[20px_0_60px_-15px_rgba(0,0,0,0.4)]`}
       >
-        {/* Subtle right edge glow */}
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-[#BBA473]/20 via-transparent to-[#BBA473]/20 pointer-events-none"></div>
+        {/* Right edge highlight */}
+        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-[#dea402]/15 via-transparent to-[#dea402]/15 pointer-events-none"></div>
         {/* Close Button (Mobile Only) */}
         <button
           onClick={toggleSidebar}
-          className="absolute top-4 right-4 lg:hidden p-2 hover:bg-[#BBA473]/20 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 hover:rotate-90"
+          className="absolute top-4 right-4 lg:hidden p-2 hover:bg-[#dea402]/20 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 hover:rotate-90"
         >
-          <X className="text-[#BBA473]" size={20} />
+          <X className="text-[#dea402]" size={20} />
         </button>
 
         {/* Logo with Enhanced Animation */}
@@ -172,13 +172,13 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
             <div className="relative w-10 h-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 flex-shrink-0">
               <img
                 src={logo}
-                alt="SaveInGold Logo"
-                className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(187,164,115,0.5)]"
+                alt="BBH Logo"
+                className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(222,164,2,0.5)]"
               />
             </div>
             <div className={`flex items-baseline overflow-hidden whitespace-nowrap transition-all duration-500 ${isCollapsed ? 'w-0 opacity-0 ml-0' : 'w-auto opacity-100 ml-3'}`}>
-              <span className="text-xl font-bold text-white transition-all duration-300 group-hover:text-[#BBA473] tracking-wide">
-                Save In GOLD
+              <span className="text-xl font-bold text-white transition-all duration-300 group-hover:text-[#dea402] tracking-wide">
+                BBH
               </span>
             </div>
           </div>
@@ -200,13 +200,13 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                       onClick={() => !isCollapsed && toggleMenu(item.label)}
                       className={`w-full flex justify-between items-center py-3 px-4 rounded-lg transition-all duration-300 active:scale-95 group relative
                         ${isCollapsed ? 'justify-center' : ''}
-                        hover:bg-[#BBA473]/10 hover:text-[#BBA473]`}
+                        hover:bg-[#dea402]/10 hover:text-[#dea402]`}
                       title={isCollapsed ? item.label : ''}
                     >
                       <div className="flex items-center gap-3 relative z-10">
                         <item.icon
                           size={20}
-                          className={`flex-shrink-0 transition-colors duration-300 ${openMenus[item.label] ? 'text-[#BBA473]' : ''}`}
+                          className={`flex-shrink-0 transition-colors duration-300 ${openMenus[item.label] ? 'text-[#dea402]' : ''}`}
                         />
                         <span className={`font-medium transition-all duration-500 ${isCollapsed ? 'w-0 opacity-0 hidden' : 'w-auto opacity-100'}`}>
                           {item.label}
@@ -215,7 +215,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                       {!isCollapsed && (
                         <ChevronRight
                           size={18}
-                          className={`transition-all duration-300 relative z-10 ${openMenus[item.label] ? 'rotate-90 text-[#BBA473]' : ''}`}
+                          className={`transition-all duration-300 relative z-10 ${openMenus[item.label] ? 'rotate-90 text-[#dea402]' : ''}`}
                         />
                       )}
                     </button>
@@ -239,8 +239,8 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                                 href={subItem.href}
                                 className={`block py-2 px-4 rounded-lg transition-all duration-300 active:scale-95 group relative border border-transparent
                                   ${isLinkActive(subItem.href)
-                                    ? 'bg-[#BBA473]/20 text-[#BBA473] border-[#BBA473]/30 shadow-[0_0_15px_rgba(187,164,115,0.1)]'
-                                    : 'hover:bg-[#BBA473]/5 hover:text-[#BBA473]'}`}
+                                    ? 'bg-[#dea402]/20 text-[#dea402] border-[#dea402]/30 shadow-[0_0_15px_rgba(222,164,2,0.1)]'
+                                    : 'hover:bg-[#dea402]/5 hover:text-[#dea402]'}`}
                               >
                                 <div className="flex items-center gap-3 relative z-10">
                                   <subItem.icon size={18} />
@@ -248,7 +248,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                                 </div>
                                 {/* Active Indicator */}
                                 {isLinkActive(subItem.href) && (
-                                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#BBA473] rounded-r-full animate-pulse shadow-[0_0_10px_#BBA473]"></div>
+                                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#dea402] rounded-r-full animate-pulse shadow-[0_0_10px_#dea402]"></div>
                                 )}
                               </a>
                             </li>
@@ -264,8 +264,8 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                     className={`flex items-center py-3 px-4 rounded-lg transition-all duration-300 active:scale-95 group relative border border-transparent
                       ${isCollapsed ? 'justify-center' : ''}
                       ${isLinkActive(item.href)
-                        ? 'bg-[#BBA473]/20 text-[#BBA473] border-[#BBA473]/30 shadow-[0_0_15px_rgba(187,164,115,0.1)]'
-                        : 'hover:bg-[#BBA473]/10 hover:text-[#BBA473]'}`}
+                        ? 'bg-[#dea402]/20 text-[#dea402] border-[#dea402]/30 shadow-[0_0_15px_rgba(222,164,2,0.1)]'
+                        : 'hover:bg-[#dea402]/10 hover:text-[#dea402]'}`}
                     title={isCollapsed ? item.label : ''}
                   >
                     <div className="flex items-center gap-3 relative z-10">
@@ -276,7 +276,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
                         />
                         {/* Unread badge on icon (visible when collapsed) */}
                         {item.label === 'Inbox' && isCollapsed && unreadTotal > 0 && (
-                          <span className="absolute -top-2.5 -right-3 min-w-[20px] h-[20px] rounded-full flex items-center justify-center px-1 text-[11px] font-extrabold tracking-tight bg-gradient-to-br from-[#ef4444] to-[#b91c1c] text-white ring-2 ring-[#0A0A0A] shadow-[0_0_10px_rgba(239,68,68,0.5)]">
+                          <span className="absolute -top-2.5 -right-3 min-w-[20px] h-[20px] rounded-full flex items-center justify-center px-1 text-[11px] font-extrabold tracking-tight bg-gradient-to-br from-[#ef4444] to-[#b91c1c] text-white ring-2 ring-[#1a0405] shadow-[0_0_10px_rgba(239,68,68,0.5)]">
                             {unreadTotal}
                           </span>
                         )}
@@ -295,7 +295,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
 
                     {/* Active Indicator */}
                     {isLinkActive(item.href) && (
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#BBA473] rounded-r-full animate-pulse shadow-[0_0_10px_#BBA473]"></div>
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#dea402] rounded-r-full animate-pulse shadow-[0_0_10px_#dea402]"></div>
                     )}
                   </a>
                 )}
@@ -305,7 +305,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
         </nav>
 
         {/* Bottom Menu Items (Settings & Logout) with Enhanced Styling */}
-        <div className="mt-auto pt-4 border-t border-[#BBA473]/10 space-y-2">
+        <div className="mt-auto pt-4 border-t border-[#dea402]/10 space-y-2">
           {bottomMenuItems.map((item, index) => (
             <a
               key={index}
@@ -313,8 +313,8 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
               className={`flex items-center py-3 px-4 rounded-lg transition-all duration-500 active:scale-95 group relative border border-transparent
                 ${isCollapsed ? 'justify-center' : ''}
                 ${isLinkActive(item.href)
-                  ? 'bg-[#BBA473]/20 text-[#BBA473] border-[#BBA473]/30'
-                  : 'hover:bg-[#BBA473]/10 hover:text-[#BBA473]'}
+                  ? 'bg-[#dea402]/20 text-[#dea402] border-[#dea402]/30'
+                  : 'hover:bg-[#dea402]/10 hover:text-[#dea402]'}
                 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
               style={{ transitionDelay: `${(filteredMenuItems.length + index + 1) * 50}ms` }}
               title={isCollapsed ? item.label : ''}
@@ -353,9 +353,9 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
           <button
             onClick={toggleCollapse}
             className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} py-3 px-4
-              bg-gradient-to-r from-[#BBA473]/10 to-[#8E7D5A]/10 border border-[#BBA473]/20
-              text-[#BBA473] rounded-lg transition-all duration-500 active:scale-95
-              group cursor-pointer relative overflow-hidden hover:border-[#BBA473]/40
+              bg-gradient-to-r from-[#dea402]/10 to-[#b38302]/10 border border-[#dea402]/20
+              text-[#dea402] rounded-lg transition-all duration-500 active:scale-95
+              group cursor-pointer relative overflow-hidden hover:border-[#dea402]/40
               ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
             style={{ transitionDelay: `${(filteredMenuItems.length + bottomMenuItems.length + 2) * 50}ms` }}
             title={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
@@ -392,7 +392,7 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
         }
         
         body{
-          background-color: #000;
+          background-color: #1a0405;
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
@@ -424,13 +424,13 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
         }
 
         .sidebar-custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(187, 164, 115, 0.3);
+          background: rgba(222, 164, 2, 0.3);
           border-radius: 10px;
           transition: all 0.3s ease;
         }
 
         .sidebar-custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(187, 164, 115, 0.6);
+          background: rgba(222, 164, 2, 0.6);
         }
 
         /* Smooth transitions for collapse */

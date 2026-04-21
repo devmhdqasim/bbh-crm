@@ -425,20 +425,20 @@ const AgentManagement = () => {
 
   return (
     <>
-      <div className={`min-h-screen bg-[#1A1A1A] text-white p-6 transition-all duration-700 relative ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`min-h-screen bg-[#4a1015] text-white p-6 transition-all duration-700 relative ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Header */}
         <div className="mb-8 animate-fadeIn">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
                 Agents Management
               </h1>
-              <p className="text-gray-400 mt-2">Manage all Save In Gold Agents</p>
+              <p className="text-gray-400 mt-2">Manage all BBH Agents</p>
             </div>
             <div className="flex flex-col gap-3">
               <button
                 onClick={handleAddAgent}
-                className="btn-animated btn-gold w-fit bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black font-bold text-lg py-4 rounded-lg disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#BBA473]/20 hover:shadow-[#BBA473]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group ml-auto"
+                className="btn-animated btn-gold w-fit bg-gradient-to-r from-[#dea402] to-[#b38302] text-black font-bold text-lg py-4 rounded-lg disabled:from-[#6b6354] disabled:to-[#5a5447] disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none transition-all duration-300 shadow-lg shadow-[#dea402]/20 hover:shadow-[#dea402]/40 transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden group ml-auto"
               >
                 {!showPassIcon && <span className="inline-block">Add New Agent</span>}
               </button>
@@ -508,7 +508,7 @@ const AgentManagement = () => {
           to { opacity: 1; }
         }
         body{
-          background-color: #000;
+          background-color: #1a0405;
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
@@ -518,9 +518,9 @@ const AgentManagement = () => {
         .phone-input-custom .PhoneInputInput {
           width: 100%;
           padding: 0.75rem 1rem;
-          border: 2px solid rgba(187, 164, 115, 0.3);
+          border: 2px solid rgba(222, 164, 2, 0.3);
           border-radius: 0.5rem;
-          background-color: #1A1A1A;
+          background-color: #4a1015;
           color: white;
           font-size: 1rem;
           transition: all 0.3s ease;
@@ -528,13 +528,13 @@ const AgentManagement = () => {
         }
 
         .phone-input-custom .PhoneInputInput:hover {
-          border-color: #BBA473;
+          border-color: #dea402;
         }
 
         .phone-input-custom .PhoneInputInput:focus {
-          border-color: #BBA473;
+          border-color: #dea402;
           ring: 2px;
-          ring-color: rgba(187, 164, 115, 0.5);
+          ring-color: rgba(222, 164, 2, 0.5);
         }
 
         .phone-input-error .PhoneInputInput {
@@ -549,14 +549,14 @@ const AgentManagement = () => {
         .phone-input-custom .PhoneInputCountry {
           margin-right: 0.5rem;
           padding: 0.5rem;
-          background-color: #1A1A1A;
-          border: 2px solid rgba(187, 164, 115, 0.3);
+          background-color: #4a1015;
+          border: 2px solid rgba(222, 164, 2, 0.3);
           border-radius: 0.5rem;
           transition: all 0.3s ease;
         }
 
         .phone-input-custom .PhoneInputCountry:hover {
-          border-color: #BBA473;
+          border-color: #dea402;
         }
 
         .phone-input-custom .PhoneInputCountryIcon {
@@ -565,7 +565,7 @@ const AgentManagement = () => {
         }
 
         .phone-input-custom .PhoneInputCountrySelectArrow {
-          color: #BBA473;
+          color: #dea402;
           opacity: 0.8;
           margin-left: 0.5rem;
         }

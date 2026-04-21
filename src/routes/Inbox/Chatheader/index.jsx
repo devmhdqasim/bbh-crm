@@ -183,7 +183,7 @@ const ChatHeader = ({
       doc.rect(0, footerY - 3, pageWidth, 0.5, 'F');
       doc.setFontSize(7);
       doc.setTextColor(130, 130, 130);
-      doc.text('SaveInGold CRM - Chat Export', margin, footerY);
+      doc.text('BBH CRM - Chat Export', margin, footerY);
       doc.text(`${textMessages.length} messages`, pageWidth - margin - doc.getTextWidth(`${textMessages.length} messages`), footerY);
 
       const safeName = (contact.name || 'chat').replace(/[^a-zA-Z0-9]/g, '_');
@@ -208,37 +208,37 @@ const ChatHeader = ({
   };
 
   return (
-    <div className="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] border-b border-[#BBA473]/30 p-5 shadow-lg flex-shrink-0">
+    <div className="bg-gradient-to-r from-[#5c1a20] to-[#1F1F1F] border-b border-[#dea402]/30 p-5 shadow-lg flex-shrink-0">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 flex-1 min-w-0">
           <div className="relative flex-shrink-0 group">
             {contact.avatar ? (
-              <div className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] shadow-lg ring-2 ring-[#BBA473]/20 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#dea402] to-[#b38302] shadow-lg ring-2 ring-[#dea402]/20 transition-transform duration-300 group-hover:scale-110">
                 <img
                   src={contact.avatar}
                   alt={contact.name}
-                  className="w-full h-full rounded-full object-cover border-2 border-[#1A1A1A]"
+                  className="w-full h-full rounded-full object-cover border-2 border-[#4a1015]"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
-                <div className="hidden w-full h-full rounded-full bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] items-center justify-center">
+                <div className="hidden w-full h-full rounded-full bg-gradient-to-br from-[#dea402] to-[#b38302] items-center justify-center">
                   <span className="text-2xl font-bold text-white">
                     {contact.name.charAt(0).toUpperCase()}
                   </span>
                 </div>
               </div>
             ) : (
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#BBA473] to-[#8E7D5A] flex items-center justify-center shadow-lg ring-2 ring-[#BBA473]/20 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#dea402] to-[#b38302] flex items-center justify-center shadow-lg ring-2 ring-[#dea402]/20 transition-transform duration-300 group-hover:scale-110">
                 <span className="text-2xl font-bold text-white">
                   {contact.name.charAt(0).toUpperCase()}
                 </span>
               </div>
             )}
             {isConnected && (
-              <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-[#2A2A2A] animate-pulse" title="Real-time updates active"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-[#5c1a20] animate-pulse" title="Real-time updates active"></div>
             )}
           </div>
           <div className="flex-1 min-w-0">
@@ -273,8 +273,8 @@ const ChatHeader = ({
             onClick={() => setShowMessageSearch(!showMessageSearch)}
             className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
               showMessageSearch
-                ? 'bg-[#BBA473] text-black'
-                : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                ? 'bg-[#dea402] text-black'
+                : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
             }`}
             title="Search Messages"
           >
@@ -286,8 +286,8 @@ const ChatHeader = ({
             disabled={isGeneratingPdf || !messages.length}
             className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
               isGeneratingPdf
-                ? 'bg-[#BBA473]/30 text-[#BBA473] cursor-wait'
-                : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                ? 'bg-[#dea402]/30 text-[#dea402] cursor-wait'
+                : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
             } ${!messages.length ? 'opacity-40 cursor-not-allowed' : ''}`}
             title="Download Chat as PDF"
           >
@@ -296,7 +296,7 @@ const ChatHeader = ({
 
           {/* <button
             onClick={() => setShowReminderModal(true)}
-            className="p-2 rounded-lg bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473] transition-all duration-200 hover:scale-105"
+            className="p-2 rounded-lg bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402] transition-all duration-200 hover:scale-105"
             title="Set Reminder"
           >
             <Bell className="w-4.5 h-4.5" />
@@ -306,8 +306,8 @@ const ChatHeader = ({
             onClick={() => setShowProfileSidebar(!showProfileSidebar)}
             className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
               showProfileSidebar
-                ? 'bg-[#BBA473] text-black'
-                : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                ? 'bg-[#dea402] text-black'
+                : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
             }`}
             title="Contact Info"
           >
@@ -320,8 +320,8 @@ const ChatHeader = ({
               onClick={() => setIsMaximized(!isMaximized)}
               className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
                 isMaximized
-                  ? 'bg-[#BBA473] text-black'
-                  : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                  ? 'bg-[#dea402] text-black'
+                  : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
               }`}
               title={isMaximized ? 'Minimize' : 'Maximize'}
             >
@@ -337,8 +337,8 @@ const ChatHeader = ({
                 showMoreMenu || isBlocked || isSpam
                   ? isBlocked || isSpam
                     ? 'bg-red-500/20 text-red-400'
-                    : 'bg-[#BBA473] text-black'
-                  : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                    : 'bg-[#dea402] text-black'
+                  : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
               }`}
               title="More Options"
             >
@@ -347,7 +347,7 @@ const ChatHeader = ({
 
             {/* Dropdown Menu */}
             {showMoreMenu && (
-              <div className="absolute right-0 top-full mt-2 w-56 bg-[#2A2A2A] border border-[#BBA473]/20 rounded-xl shadow-2xl overflow-hidden z-[60] animate-scaleIn">
+              <div className="absolute right-0 top-full mt-2 w-56 bg-[#5c1a20] border border-[#dea402]/20 rounded-xl shadow-2xl overflow-hidden z-[60] animate-scaleIn">
                 <div className="p-1.5">
                   <button
                     onClick={() => {
@@ -401,7 +401,7 @@ const ChatHeader = ({
           </div>
 
           {/* Divider */}
-          <div className="w-px h-6 bg-[#BBA473]/20 mx-0.5"></div>
+          <div className="w-px h-6 bg-[#dea402]/20 mx-0.5"></div>
 
           <button
             onClick={onClose}
@@ -416,8 +416,8 @@ const ChatHeader = ({
             onClick={() => onToggleChatSettings?.()}
             className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
               showChatSettings
-                ? 'bg-[#BBA473] text-black'
-                : 'bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]'
+                ? 'bg-[#dea402] text-black'
+                : 'bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]'
             }`}
             title="Chat Settings"
           >
@@ -429,7 +429,7 @@ const ChatHeader = ({
       {/* Message Search Bar */}
       {showMessageSearch && activeTab === 'chat' && handleMessageSearch && (
         <div className="mt-4 animate-slideDown">
-          <div className="flex items-center gap-2 bg-[#1A1A1A] rounded-lg p-2 border border-[#BBA473]/30">
+          <div className="flex items-center gap-2 bg-[#4a1015] rounded-lg p-2 border border-[#dea402]/30">
             <Search className="w-4 h-4 text-gray-400 ml-2" />
             <input
               type="text"
@@ -445,13 +445,13 @@ const ChatHeader = ({
                 </span>
                 <button
                   onClick={() => navigateSearch('prev')}
-                  className="p-1 rounded bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]"
+                  className="p-1 rounded bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => navigateSearch('next')}
-                  className="p-1 rounded bg-[#BBA473]/10 hover:bg-[#BBA473]/20 text-[#BBA473]"
+                  className="p-1 rounded bg-[#dea402]/10 hover:bg-[#dea402]/20 text-[#dea402]"
                 >
                   <ChevronLeft className="w-4 h-4 rotate-180" />
                 </button>

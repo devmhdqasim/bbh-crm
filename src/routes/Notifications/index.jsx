@@ -313,9 +313,9 @@ const NotificationsPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#1A1A1A] text-white p-6 flex items-center justify-center">
+      <div className="min-h-screen bg-[#4a1015] text-white p-6 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#BBA473] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#dea402] mx-auto mb-4"></div>
           <p className="text-gray-400">Loading notifications...</p>
         </div>
       </div>
@@ -327,16 +327,16 @@ const NotificationsPage = () => {
       {/* Firebase Notification Component */}
       <NotificationComponent onNotificationReceived={handleNotificationReceived} />
       
-      <div className={`min-h-screen bg-[#1A1A1A] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`min-h-screen bg-[#4a1015] text-white p-6 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Header */}
         <div className="mb-8 animate-fadeIn">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-[#BBA473]/20 to-[#8E7D5A]/20 rounded-xl border border-[#BBA473]/30">
-                <Bell className="w-8 h-8 text-[#BBA473]" />
+              <div className="p-3 bg-gradient-to-br from-[#dea402]/20 to-[#b38302]/20 rounded-xl border border-[#dea402]/30">
+                <Bell className="w-8 h-8 text-[#dea402]" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] bg-clip-text text-transparent">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
                   Notifications
                 </h1>
                 <p className="text-gray-400 mt-2">
@@ -355,7 +355,7 @@ const NotificationsPage = () => {
               {unreadCount > 0 && (
                 <button
                   onClick={markAllAsRead}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2A2A2A] hover:bg-[#3A3A3A] text-white border border-[#BBA473]/30 hover:border-[#BBA473]/50 transition-all duration-300"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5c1a20] hover:bg-[#3A3A3A] text-white border border-[#dea402]/30 hover:border-[#dea402]/50 transition-all duration-300"
                 >
                   <CheckCheck className="w-4 h-4" />
                   <span className="text-sm font-medium">Mark All Read</span>
@@ -377,15 +377,15 @@ const NotificationsPage = () => {
 
         {/* Tabs */}
         <div className="mb-6 overflow-x-auto animate-fadeIn">
-          <div className="flex gap-2 border-b border-[#BBA473]/30 min-w-max">
+          <div className="flex gap-2 border-b border-[#dea402]/30 min-w-max">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleTabChange(tab)}
                 className={`px-6 py-3 font-medium transition-all duration-300 border-b-2 whitespace-nowrap ${
                   activeTab === tab
-                    ? 'border-[#BBA473] text-[#BBA473] bg-[#BBA473]/10'
-                    : 'border-transparent text-gray-400 hover:text-white hover:bg-[#2A2A2A]'
+                    ? 'border-[#dea402] text-[#dea402] bg-[#dea402]/10'
+                    : 'border-transparent text-gray-400 hover:text-white hover:bg-[#5c1a20]'
                 }`}
               >
                 {tab}
@@ -400,16 +400,16 @@ const NotificationsPage = () => {
         </div>
 
         {/* Notifications List */}
-        <div className="bg-[#2A2A2A] rounded-xl shadow-2xl overflow-hidden border border-[#BBA473]/20 animate-fadeIn">
+        <div className="bg-[#5c1a20] rounded-xl shadow-2xl overflow-hidden border border-[#dea402]/20 animate-fadeIn">
           {/* Select All Header */}
           {notifications.length > 0 && (
-            <div className="flex items-center justify-between px-6 py-3 bg-[#1A1A1A] border-b border-[#BBA473]/30">
+            <div className="flex items-center justify-between px-6 py-3 bg-[#4a1015] border-b border-[#dea402]/30">
               <label className="flex items-center gap-3 cursor-pointer group">
                 <input
                   type="checkbox"
                   checked={selectedNotifications.length === notifications.length && notifications.length > 0}
                   onChange={toggleSelectAll}
-                  className="w-4 h-4 rounded border-[#BBA473]/30 bg-[#1A1A1A] text-[#BBA473] focus:ring-2 focus:ring-[#BBA473]/50 cursor-pointer"
+                  className="w-4 h-4 rounded border-[#dea402]/30 bg-[#4a1015] text-[#dea402] focus:ring-2 focus:ring-[#dea402]/50 cursor-pointer"
                 />
                 <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
                   Select All ({notifications.length})
@@ -425,11 +425,11 @@ const NotificationsPage = () => {
           )}
 
           {/* Notifications */}
-          <div className="divide-y divide-[#BBA473]/10">
+          <div className="divide-y divide-[#dea402]/10">
             {currentNotifications.length === 0 ? (
               <div className="px-6 py-16 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#BBA473]/10 mb-4">
-                  <Bell className="w-8 h-8 text-[#BBA473]/50" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#dea402]/10 mb-4">
+                  <Bell className="w-8 h-8 text-[#dea402]/50" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-300 mb-2">No Notifications</h3>
                 <p className="text-gray-500">
@@ -443,8 +443,8 @@ const NotificationsPage = () => {
                 <div
                   key={notification.id}
                   className={`group relative px-6 py-4 hover:bg-[#3A3A3A] transition-all duration-300 ${
-                    notification.unread ? 'bg-[#BBA473]/5' : ''
-                  } ${selectedNotifications.includes(notification.id) ? 'bg-[#BBA473]/10' : ''}`}
+                    notification.unread ? 'bg-[#dea402]/5' : ''
+                  } ${selectedNotifications.includes(notification.id) ? 'bg-[#dea402]/10' : ''}`}
                 >
                   <div className="flex gap-4">
                     {/* Checkbox */}
@@ -453,7 +453,7 @@ const NotificationsPage = () => {
                         type="checkbox"
                         checked={selectedNotifications.includes(notification.id)}
                         onChange={() => toggleSelectNotification(notification.id)}
-                        className="w-4 h-4 rounded border-[#BBA473]/30 bg-[#1A1A1A] text-[#BBA473] focus:ring-2 focus:ring-[#BBA473]/50 cursor-pointer"
+                        className="w-4 h-4 rounded border-[#dea402]/30 bg-[#4a1015] text-[#dea402] focus:ring-2 focus:ring-[#dea402]/50 cursor-pointer"
                         onClick={(e) => e.stopPropagation()}
                       />
                     </div>
@@ -468,11 +468,11 @@ const NotificationsPage = () => {
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h3 className="text-white font-semibold text-sm group-hover:text-[#BBA473] transition-colors">
+                            <h3 className="text-white font-semibold text-sm group-hover:text-[#dea402] transition-colors">
                               {notification.title}
                             </h3>
                             {notification.unread && (
-                              <div className="w-2 h-2 rounded-full bg-[#BBA473] animate-pulse"></div>
+                              <div className="w-2 h-2 rounded-full bg-[#dea402] animate-pulse"></div>
                             )}
                           </div>
                           <p className="text-gray-400 text-sm leading-relaxed">
@@ -487,7 +487,7 @@ const NotificationsPage = () => {
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-[#BBA473]/70 text-xs">
+                        <span className="text-[#dea402]/70 text-xs">
                           {formatTime(notification.time)}
                         </span>
 
@@ -496,7 +496,7 @@ const NotificationsPage = () => {
                           {notification.unread && (
                             <button
                               onClick={() => markAsRead(notification.id)}
-                              className="p-1.5 rounded-lg bg-[#BBA473]/20 hover:bg-[#BBA473]/30 text-[#BBA473] transition-all duration-300"
+                              className="p-1.5 rounded-lg bg-[#dea402]/20 hover:bg-[#dea402]/30 text-[#dea402] transition-all duration-300"
                               title="Mark as read"
                             >
                               <Check className="w-4 h-4" />
@@ -520,7 +520,7 @@ const NotificationsPage = () => {
 
           {/* Pagination */}
           {notifications.length > 0 && (
-            <div className="px-6 py-4 bg-[#1A1A1A] border-t border-[#BBA473]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div className="px-6 py-4 bg-[#4a1015] border-t border-[#dea402]/30 flex flex-col lg:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="text-gray-400 text-sm">
                   Showing <span className="text-white font-semibold">{showingFrom}</span> to{' '}
@@ -530,19 +530,19 @@ const NotificationsPage = () => {
                 <div className="relative">
                   <button
                     onClick={() => setShowPerPageDropdown(!showPerPageDropdown)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30"
                   >
                     <span className="text-sm">{itemsPerPage} per page</span>
                     <ChevronDown className="w-4 h-4" />
                   </button>
                   {showPerPageDropdown && (
-                    <div className="absolute bottom-full mb-2 right-0 bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
+                    <div className="absolute bottom-full mb-2 right-0 bg-[#5c1a20] border border-[#dea402]/30 rounded-lg shadow-xl z-10 min-w-[150px]">
                       {perPageOptions.map(option => (
                         <button
                           key={option}
                           onClick={() => handlePerPageChange(option)}
                           className={`w-full px-4 py-2 text-left hover:bg-[#3A3A3A] transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                            option === itemsPerPage ? 'bg-[#BBA473]/20 text-[#BBA473]' : 'text-white'
+                            option === itemsPerPage ? 'bg-[#dea402]/20 text-[#dea402]' : 'text-white'
                           }`}
                         >
                           {option} per page
@@ -557,7 +557,7 @@ const NotificationsPage = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                  className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -566,7 +566,7 @@ const NotificationsPage = () => {
                   <>
                     <button
                       onClick={() => handlePageChange(1)}
-                      className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                      className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                     >
                       1
                     </button>
@@ -580,8 +580,8 @@ const NotificationsPage = () => {
                     onClick={() => handlePageChange(page)}
                     className={`px-4 py-2 rounded-lg transition-all duration-300 border ${
                       currentPage === page
-                        ? 'bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black border-[#BBA473] font-semibold shadow-lg'
-                        : 'bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] border-[#BBA473]/30 hover:border-[#BBA473]'
+                        ? 'bg-gradient-to-r from-[#dea402] to-[#b38302] text-black border-[#dea402] font-semibold shadow-lg'
+                        : 'bg-[#5c1a20] text-white hover:bg-[#3A3A3A] border-[#dea402]/30 hover:border-[#dea402]'
                     }`}
                   >
                     {page}
@@ -593,7 +593,7 @@ const NotificationsPage = () => {
                     {currentPage < totalPages - 2 && <span className="text-gray-400">...</span>}
                     <button
                       onClick={() => handlePageChange(totalPages)}
-                      className="px-4 py-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473]"
+                      className="px-4 py-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402]"
                     >
                       {totalPages}
                     </button>
@@ -603,7 +603,7 @@ const NotificationsPage = () => {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="p-2 rounded-lg bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#BBA473]/30 hover:border-[#BBA473] disabled:hover:border-[#BBA473]/30"
+                  className="p-2 rounded-lg bg-[#5c1a20] text-white hover:bg-[#3A3A3A] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 border border-[#dea402]/30 hover:border-[#dea402] disabled:hover:border-[#dea402]/30"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>

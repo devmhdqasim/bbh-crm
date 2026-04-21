@@ -22,14 +22,14 @@ const AgentFormDrawer = ({
     <>
       {/* Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 w-full lg:w-2/5 bg-[#1A1A1A] shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed inset-y-0 right-0 w-full lg:w-2/5 bg-[#4a1015] shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
           drawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="h-full flex flex-col">
-          <div className="flex items-center justify-between p-6 border-b border-[#BBA473]/30 bg-gradient-to-r from-[#BBA473]/10 to-transparent">
+          <div className="flex items-center justify-between p-6 border-b border-[#dea402]/30 bg-gradient-to-r from-[#dea402]/10 to-transparent">
             <div>
-              <h2 className="text-2xl font-bold text-[#BBA473]">
+              <h2 className="text-2xl font-bold text-[#dea402]">
                 {editingAgent ? 'Edit Agent' : 'Add New Agent'}
               </h2>
               <p className="text-gray-400 text-sm mt-1">
@@ -38,7 +38,7 @@ const AgentFormDrawer = ({
             </div>
             <button
               onClick={handleCloseDrawer}
-              className="p-2 rounded-lg hover:bg-[#2A2A2A] transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
+              className="p-2 rounded-lg hover:bg-[#5c1a20] transition-all duration-300 text-gray-400 hover:text-white hover:rotate-90"
             >
               <X className="w-6 h-6" />
             </button>
@@ -46,15 +46,15 @@ const AgentFormDrawer = ({
 
           <form onSubmit={formik.handleSubmit} className="flex-1 overflow-y-auto p-6 space-y-6">
             {/* Personal Information Section */}
-            <div className="bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg p-6 space-y-4">
-              <h3 className="text-lg font-semibold text-white border-b border-[#BBA473]/30 pb-3">
+            <div className="bg-[#5c1a20] border border-[#dea402]/30 rounded-lg p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-white border-b border-[#dea402]/30 pb-3">
                 Personal Information
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* First Name */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     First Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -64,10 +64,10 @@ const AgentFormDrawer = ({
                     value={formik.values.firstName}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.firstName && formik.errors.firstName
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.firstName && formik.errors.firstName && (
@@ -77,7 +77,7 @@ const AgentFormDrawer = ({
 
                 {/* Last Name */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Last Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -87,10 +87,10 @@ const AgentFormDrawer = ({
                     value={formik.values.lastName}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.lastName && formik.errors.lastName
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.lastName && formik.errors.lastName && (
@@ -100,7 +100,7 @@ const AgentFormDrawer = ({
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -110,10 +110,10 @@ const AgentFormDrawer = ({
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                       formik.touched.email && formik.errors.email
                         ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                        : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                        : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                     }`}
                   />
                   {formik.touched.email && formik.errors.email && (
@@ -123,7 +123,7 @@ const AgentFormDrawer = ({
 
                 {/* Date of Birth with Calendar */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
@@ -134,16 +134,16 @@ const AgentFormDrawer = ({
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       max={new Date().toISOString().split('T')[0]}
-                      className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                      className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                         formik.touched.dateOfBirth && formik.errors.dateOfBirth
                           ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                          : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                          : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                       }`}
                       style={{
                         colorScheme: 'dark'
                       }}
                     />
-                    <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#BBA473] pointer-events-none" />
+                    <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#dea402] pointer-events-none" />
                   </div>
                   {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
                     <div className="text-red-400 text-sm animate-pulse">{formik.errors.dateOfBirth}</div>
@@ -152,7 +152,7 @@ const AgentFormDrawer = ({
 
                 {/* Phone - International */}
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   {!showPassIcon && (
@@ -177,15 +177,15 @@ const AgentFormDrawer = ({
             </div>
 
             {/* Professional Information Section */}
-            <div className="bg-[#2A2A2A] border border-[#BBA473]/30 rounded-lg p-6 space-y-4">
-              <h3 className="text-lg font-semibold text-white border-b border-[#BBA473]/30 pb-3">
+            <div className="bg-[#5c1a20] border border-[#dea402]/30 rounded-lg p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-white border-b border-[#dea402]/30 pb-3">
                 Professional Information
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Department */}
                 <div className="space-y-2">
-                  <label className="text-sm text-[#E8D5A3] font-medium block">
+                  <label className="text-sm text-[#f5cc3a] font-medium block">
                     Department <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
@@ -194,10 +194,10 @@ const AgentFormDrawer = ({
                       value={formik.values.department}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 appearance-none ${
+                      className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 appearance-none ${
                         formik.touched.department && formik.errors.department
                           ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                          : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                          : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                       }`}
                     >
                       <option value="">Select Department</option>
@@ -205,7 +205,7 @@ const AgentFormDrawer = ({
                         <option key={dept} value={dept}>{dept}</option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#BBA473] pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#dea402] pointer-events-none" />
                   </div>
                   {formik.touched.department && formik.errors.department && (
                     <div className="text-red-400 text-sm animate-pulse">{formik.errors.department}</div>
@@ -215,7 +215,7 @@ const AgentFormDrawer = ({
                 {/* Password - only for new agents */}
                 {!editingAgent && (
                   <div className="space-y-2">
-                    <label className="text-sm text-[#E8D5A3] font-medium block">
+                    <label className="text-sm text-[#f5cc3a] font-medium block">
                       Password <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
@@ -227,10 +227,10 @@ const AgentFormDrawer = ({
                             value={formik.values.password}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className={`w-full px-4 py-3 pr-24 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#1A1A1A] text-white transition-all duration-300 ${
+                            className={`w-full px-4 py-3 pr-24 border-2 rounded-lg focus:outline-none focus:ring-2 bg-[#4a1015] text-white transition-all duration-300 ${
                               formik.touched.password && formik.errors.password
                                 ? 'border-red-500 focus:border-red-400 focus:ring-red-500/50'
-                                : 'border-[#BBA473]/30 focus:border-[#BBA473] focus:ring-[#BBA473]/50 hover:border-[#BBA473]'
+                                : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                             }`}
                           />
                       )}
@@ -245,7 +245,7 @@ const AgentFormDrawer = ({
                         <button
                           type="button"
                           onClick={generatePassword}
-                          className="h-7 px-2 flex items-center justify-center bg-[#BBA473] text-black rounded-md hover:bg-[#d4bc89] focus:outline-none text-xs transition-all duration-300 hover:scale-105"
+                          className="h-7 px-2 flex items-center justify-center bg-[#dea402] text-black rounded-md hover:bg-[#f0ba0a] focus:outline-none text-xs transition-all duration-300 hover:scale-105"
                           title="Generate Password"
                         >
                           <RefreshCw className="h-3 w-3 mr-1" />
@@ -262,12 +262,12 @@ const AgentFormDrawer = ({
 
               {/* Image Upload Section */}
               <div className="space-y-2 pt-4">
-                <label className="text-sm text-[#E8D5A3] font-medium block">
+                <label className="text-sm text-[#f5cc3a] font-medium block">
                   Profile Image
                 </label>
                 
                 {!imagePreview ? (
-                  <div className="border-2 border-dashed border-[#BBA473]/30 rounded-lg p-6 text-center hover:border-[#BBA473] transition-all duration-300">
+                  <div className="border-2 border-dashed border-[#dea402]/30 rounded-lg p-6 text-center hover:border-[#dea402] transition-all duration-300">
                     <input
                       id="image-upload"
                       type="file"
@@ -289,7 +289,7 @@ const AgentFormDrawer = ({
                     <img
                       src={imagePreview}
                       alt="Preview"
-                      className="w-32 h-32 object-cover rounded-lg border-2 border-[#BBA473]"
+                      className="w-32 h-32 object-cover rounded-lg border-2 border-[#dea402]"
                     />
                     <button
                       type="button"
@@ -308,7 +308,7 @@ const AgentFormDrawer = ({
             </div>
 
             {/* Submit Buttons */}
-            <div className="flex gap-3 sticky bottom-0 bg-[#1A1A1A] pt-4 border-t border-[#BBA473]/30">
+            <div className="flex gap-3 sticky bottom-0 bg-[#4a1015] pt-4 border-t border-[#dea402]/30">
               <button
                 type="button"
                 onClick={handleCloseDrawer}
@@ -319,7 +319,7 @@ const AgentFormDrawer = ({
               <button
                 type="submit"
                 disabled={formik.isSubmitting}
-                className="flex-1 px-4 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#BBA473] to-[#8E7D5A] text-black hover:from-[#d4bc89] hover:to-[#a69363] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#BBA473]/40 transform hover:scale-105 active:scale-95"
+                className="flex-1 px-4 py-3 rounded-lg font-semibold bg-gradient-to-r from-[#dea402] to-[#b38302] text-black hover:from-[#f0ba0a] hover:to-[#8a6e02] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#dea402]/40 transform hover:scale-105 active:scale-95"
               >
                 {formik.isSubmitting 
                   ? (editingAgent ? 'Updating...' : 'Creating...') 
