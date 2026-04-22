@@ -751,7 +751,7 @@ const Tasks = () => {
     if (isNaN(date)) return 'Invalid Date';
 
     const options = {
-      timeZone: "Asia/Dubai",
+      timeZone: "Asia/Baghdad",
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -771,7 +771,7 @@ const Tasks = () => {
     if (isNaN(date)) return 'Invalid Date';
 
     const options = {
-      timeZone: "Asia/Dubai",
+      timeZone: "Asia/Baghdad",
       day: "2-digit",
       month: "short",
       year: "numeric",

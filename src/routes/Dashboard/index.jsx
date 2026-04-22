@@ -233,7 +233,7 @@ const Dashboard = () => {
   // Get selected kiosk member's name
   const getKioskMemberName = () => {
     if (selectedKioskMember === 'all') {
-      return 'All Kiosk Members';
+      return 'All Baghdad Branch Members';
     }
     const member = kioskMemberOptions.find(m => m.kioskMemberId === selectedKioskMember);
     return member ? `${member.firstName} ${member.lastName}` : 'Unknown';
@@ -470,7 +470,7 @@ const Dashboard = () => {
                 isClearable={true}
               />
 
-              {/* Kiosk Member Filter */}
+              {/* Baghdad Branch Member Filter */}
               {kioskMemberOptions.length > 0 && userRole !== 'Agent' && (
                 <div className='flex items-center gap-3'>
                   <label htmlFor="" className='text-[#f5cc3a] font-medium text-sm whitespace-nowrap'>
@@ -489,7 +489,7 @@ const Dashboard = () => {
                       }}
                     >
                       <option value="all" className="bg-[#4a1015] text-white">
-                        All Kiosk Members
+                        All Baghdad Branch Members
                       </option>
                       {kioskMemberOptions.map((member) => (
                         <option
@@ -532,7 +532,7 @@ const Dashboard = () => {
           {/* Stats Grid with Enhanced Cards */}
           {!loading && dashboardData && (
             <div className="animate-fade-in">
-              {/* Kiosk Member Total Leads Card */}
+              {/* Baghdad Branch Member Total Leads Card */}
               {kioskMemberOptions.length > 0 && userRole !== 'Agent' && (
                 <div className="mb-6">
                   <div

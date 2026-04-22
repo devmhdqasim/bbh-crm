@@ -3,7 +3,7 @@ import { Search, ChevronDown, ChevronLeft, ChevronRight, Edit, Trash2, UserPlus,
 import InboxChatDrawer from '../../Inbox/InboxChatDrawer';
 import DateRangePicker from '../../../components/DateRangePicker';
 import { deleteLead } from '../../../services/leadService';
-import { getSalesEventLeads, getAllSalesManagerLeads, updateMobileUserSource } from '../../../services/leadService';
+import { getAllSalesManagerLeads, updateMobileUserSource } from '../../../services/leadService';
 import toast from 'react-hot-toast';
 import { useCRM } from '../../../context/CRMContext';
 
@@ -44,10 +44,6 @@ const SalesManagerLeadsListing = ({
   setTotalLeads,
   setLoading,
   debouncedSearchQuery,
-  eventLeadsCount,
-  setEventLeadsCount,
-  mobileLeadsCount,
-  setMobileLeadsCount,
   ramadanLeadsCount,
   setRamadanLeadsCount,
   kioskMembers = [],
@@ -79,8 +75,8 @@ const SalesManagerLeadsListing = ({
   const [showBulkAssignDropdown, setShowBulkAssignDropdown] = useState(false);
   const [bulkAssigning, setBulkAssigning] = useState(false);
 
-  // Static tabs — Event Leads onwards will be appended dynamically
-  const staticTabs = ['All', 'Assigned', 'Not Assigned', 'Contacted', 'Event Leads'];
+  // Static tabs
+  const staticTabs = ['All', 'Assigned', 'Not Assigned', 'Contacted'];
   const perPageOptions = [10, 20, 30, 50, 100];
 
   // ─── Dynamic source tabs from crmLeadSourceSummary ───────────────────────────
@@ -109,7 +105,7 @@ const SalesManagerLeadsListing = ({
   // Build dynamic source tabs: exclude null _id, skip sources already covered or not wanted
   // 'Event' is already the 'Event Leads' static tab.
   // 'Kiosk' and 'Goldie' are excluded per product requirement.
-  const excludedSources = ['Event'];
+  const excludedSources = ['Event', 'Mobile', 'MobileApp', 'Website'];
   const dynamicSourceTabs = leadSourceSummary
     .filter(s => s._id && !excludedSources.map(e => e.toLowerCase()).includes(s._id.toLowerCase()))
     .map(s => ({ name: s._id, count: s.total }));
@@ -120,7 +116,7 @@ const SalesManagerLeadsListing = ({
   ];
 
   // Special tabs that have their own fetch logic inside this component
-  const selfFetchingTabs = ['Event Leads', ...dynamicSourceTabs.map(t => t.name)];
+  const selfFetchingTabs = [...dynamicSourceTabs.map(t => t.name)];
 
   // Clear selection when tab, page, or filters change
   useEffect(() => {
@@ -146,84 +142,11 @@ const SalesManagerLeadsListing = ({
 
   // ─── Fetch leads based on active tab ─────────────────────────────────────
   useEffect(() => {
-    if (activeTab === 'Event Leads') {
-      fetchEventLeads();
-    } else {
-      const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
-      if (dynTab) {
-        fetchSourceLeads(activeTab);
-      }
+    const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
+    if (dynTab) {
+      fetchSourceLeads(activeTab);
     }
   }, [activeTab, currentPage, itemsPerPage, startDate, endDate, debouncedSearchQuery, selectedAgentFilter]);
-
-  const fetchEventLeads = async () => {
-    setLoading(true);
-    try {
-      const startDateStr = startDate ? startDate.toISOString().split('T')[0] : '';
-      const endDateStr = endDate ? endDate.toISOString().split('T')[0] : '';
-      const agentId = selectedAgentFilter || '';
-
-      const result = await getSalesEventLeads(
-        currentPage,
-        itemsPerPage,
-        startDateStr,
-        endDateStr,
-        debouncedSearchQuery,
-        '',
-        agentId
-      );
-
-      if (result.success && result.data) {
-        const transformedLeads = result.data.map((lead) => ({
-          id: lead._id,
-          leadId: lead.leadId,
-          name: lead.leadName,
-          email: lead.leadEmail || '-',
-          phone: lead.leadPhoneNumber,
-          agent: lead.leadAgentId && lead.leadAgentId.length > 0
-            ? `${lead.leadAgentId[0].firstName} ${lead.leadAgentId[0].lastName}`
-            : 'Not Assigned',
-          agentId: lead.leadAgentId && lead.leadAgentId.length > 0 ? lead.leadAgentId[0]._id : null,
-          dateOfBirth: lead.leadDateOfBirth || '-',
-          nationality: lead.leadNationality ?? '-',
-          residency: lead.leadResidency || '-',
-          language: lead.leadPreferredLanguage || '-',
-          source: lead.leadSource,
-          remarks: lead.leadDescription || '',
-          depositStatus: lead.depositStatus || '',
-          status: lead.leadStatus,
-          lastTaskStatus: lead.lastTaskStatus,
-          createdAt: lead.createdAt,
-          leadSourceId: lead?.leadSourceId?.[0],
-          kioskLeadStatus: lead.kioskLeadStatus ?? '-',
-          contacted: lead.contacted || false,
-          answered: lead.answered || false,
-          interested: lead.interested || false,
-          hot: lead.hot || false,
-          cold: lead.cold || false,
-          real: lead.real || false,
-          demo: lead.demo || false,
-          deposited: lead.deposited || false,
-          latestRemarks: lead.latestRemarks || '',
-        }));
-
-        setLeads(transformedLeads);
-        setTotalLeads(result.metadata?.total || 0);
-        setEventLeadsCount(result.metadata?.total || 0);
-      } else {
-        if (result.requiresAuth) {
-          toast.error('Session expired. Please login again');
-        } else {
-          toast.error(result.error?.payload?.message || 'Failed to fetch event leads');
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching event leads:', error);
-      toast.error('Failed to fetch event leads. Please try again');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   // Generic source-based fetch for dynamic tabs.
   // The leadService.getAllSalesManagerLeads API accepts `status` as the filter param.
@@ -468,15 +391,11 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         setShowDeleteConfirmModal(false);
         setLeadToDelete(null);
 
-        if (activeTab === 'Event Leads') {
-          fetchEventLeads();
+        const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
+        if (dynTab) {
+          fetchSourceLeads(activeTab);
         } else {
-          const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
-          if (dynTab) {
-            fetchSourceLeads(activeTab);
-          } else {
-            window.location.reload();
-          }
+          window.location.reload();
         }
       } else {
         if (result.requiresAuth) {
@@ -562,15 +481,11 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         toast.success(result.message || 'Lead source updated successfully');
         handleCloseSourceChangeModal();
         // Refresh the current tab data
-        if (activeTab === 'Event Leads') {
-          fetchEventLeads();
+        const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
+        if (dynTab) {
+          fetchSourceLeads(activeTab);
         } else {
-          const dynTab = dynamicSourceTabs.find(t => t.name === activeTab);
-          if (dynTab) {
-            fetchSourceLeads(activeTab);
-          } else {
-            window.location.reload();
-          }
+          window.location.reload();
         }
       } else {
         if (result.requiresAuth) {
@@ -612,7 +527,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
     const date = new Date(utcDateString);
     if (isNaN(date)) return false;
     const options = {
-      timeZone: 'Asia/Dubai',
+      timeZone: 'Asia/Baghdad',
       day: '2-digit',
       month: '2-digit',
       year: 'numeric',
@@ -637,8 +552,6 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
 
   // Helper: resolve tab count
   const getTabCount = (tab) => {
-    if (tab === 'Event Leads') return eventLeadsCount;
-    if (tab === 'Mobile Leads') return mobileLeadsCount;
     if (tab === 'Ramadan Leads') return ramadanLeadsCount;
     // dynamic source tab
     const dynTab = dynamicSourceTabs.find(t => t.name === tab);
@@ -675,7 +588,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
               <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
                 Lead Management
               </h1>
-              <p className="text-gray-400 mt-2">Manage and track your BBH mobile application leads</p>
+              <p className="text-gray-400 mt-2">Manage and track your BBH leads</p>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -910,7 +823,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         </div>
 
         {/* ── Sub Tabs (Level 2) — hidden for source/event tabs ───────────── */}
-        {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubTabs().length > 0 && (
+        {!isDynamicSourceTab && getSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
             <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-4">
               {getSubTabs().map((subTab) => {
@@ -946,7 +859,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         )}
 
         {/* Sub Sub Tabs (Level 3) */}
-        {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubTabs().length > 0 && (
+        {!isDynamicSourceTab && getSubSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
             <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-8">
               {getSubSubTabs().map((subSubTab) => {
@@ -975,7 +888,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         )}
 
         {/* Sub Sub Sub Tabs (Level 4) */}
-        {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubSubTabs().length > 0 && (
+        {!isDynamicSourceTab && getSubSubSubTabs().length > 0 && (
           <div className="mb-4 overflow-x-auto animate-fadeIn">
             <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-12">
               {getSubSubSubTabs().map((subSubSubTab) => {
@@ -1004,7 +917,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
         )}
 
         {/* Sub Sub Sub Sub Tabs (Level 5) */}
-        {!isDynamicSourceTab && activeTab !== 'Event Leads' && getSubSubSubSubTabs().length > 0 && (
+        {!isDynamicSourceTab && getSubSubSubSubTabs().length > 0 && (
           <div className="mb-6 overflow-x-auto animate-fadeIn">
             <div className="flex gap-2 border-b border-[#dea402]/20 min-w-max pl-16">
               {getSubSubSubSubTabs().map((subSubSubSubTab) => {
@@ -1072,7 +985,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                   <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Nationality</th>
                   <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Agent</th>
                   <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Source</th>
-                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Kiosk - Lead - Task</th>
+                  <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase tracking-wider">Baghdad Branch - Lead - Task</th>
                   <th className="text-left px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Created At</th>
                   <th className="text-center px-6 py-4 text-[#f5cc3a] font-semibold text-sm uppercase whitespace-nowrap tracking-wider">Actions</th>
                 </tr>
@@ -1124,7 +1037,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                       <td className="px-6 py-4 text-gray-300 text-sm">
                         {(activeTab.toLowerCase() === 'ramadan' || lead?.source?.toLowerCase() == 'ramadan')
                           ? 'Ramadan'
-                          : (lead.source ?? 'Kiosk') + (lead?.leadSourceId?.firstName ? ` - ${lead?.leadSourceId?.firstName} ${lead?.leadSourceId?.lastName}` : '')
+                          : (lead.source ?? 'Baghdad Branch') + (lead?.leadSourceId?.firstName ? ` - ${lead?.leadSourceId?.firstName} ${lead?.leadSourceId?.lastName}` : '')
                         }
                       </td>
                       <td className="px-6 py-4 flex items-center gap-2">
@@ -1499,7 +1412,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                         }`}
                       >
                         <option value="">Select Source</option>
-                        <option value="Kiosk">Kiosk</option>
+                        <option value="Kiosk">Baghdad Branch</option>
                       </select>
                       <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                     </div>
@@ -1508,10 +1421,10 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                     )}
                   </div>
 
-                  {/* Kiosk Team */}
+                  {/* Baghdad Branch Team */}
                   <div className="space-y-2">
                     <label className="text-sm text-[#f5cc3a] font-medium block">
-                      Kiosk Team <span className="text-red-500">*</span>
+                      Baghdad Branch Team <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
@@ -1523,7 +1436,7 @@ const result = data.status === 'success' && data.payload?.allBranchLeads?.[0]?.d
                             : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                         }`}
                       >
-                        <option value="">Select Kiosk Member</option>
+                        <option value="">Select Baghdad Branch Member</option>
                         {kioskMembers.map((member) => (
                           <option key={member.id} value={member.id}>{member.name}</option>
                         ))}

@@ -35,7 +35,7 @@ const leadValidationSchema = Yup.object({
       then: (schema) => schema.required('Deposit status is required when status is Real'),
       otherwise: (schema) => schema.notRequired(),
     }),
-  kioskMember: Yup.string().required('Kiosk Team is required'),
+  kioskMember: Yup.string().required('Baghdad Branch Team is required'),
   remarks: Yup.string().max(500, 'Remarks must not exceed 500 characters'),
 });
 
@@ -370,7 +370,7 @@ const SalesManagerLeadFormDrawer = ({
 
                 <div className="relative space-y-2">
                   <label className="text-sm text-[#f5cc3a] font-medium block">
-                    Kiosk Team <span className="text-red-500">*</span>
+                    Baghdad Branch Team <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -384,7 +384,7 @@ const SalesManagerLeadFormDrawer = ({
                           : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                       }`}
                     >
-                      <option value="">Select Kiosk Member</option>
+                      <option value="">Select Baghdad Branch Member</option>
                       {kioskMembers.map((member) => (
                         <option key={member.id} value={member.id}>{member.name}</option>
                       ))}

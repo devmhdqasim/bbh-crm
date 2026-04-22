@@ -178,7 +178,7 @@ const LeadsListingTable = ({
     const date = new Date(utcDateString);
     if (isNaN(date)) return false;
     const options = {
-      timeZone: "Asia/Dubai",
+      timeZone: "Asia/Baghdad",
       day: "2-digit",
       month: "2-digit",
       year: "numeric",

@@ -320,13 +320,13 @@ const TaskDetailsModal = ({ isOpen, onClose, task, onTaskUpdated }) => {
       let scheduledDateISO = null;
       
       if (reminderDateTime) {
-        // The user selects time thinking in Dubai timezone (UTC+4)
+        // The user selects time thinking in Iraq timezone (UTC+3)
         // We need to convert this to UTC for the API
-        const dubaiOffset = 4 * 60; // Dubai is UTC+4 (240 minutes)
+        const iraqOffset = 3 * 60; // Iraq is UTC+3 (180 minutes)
         const userTimezoneOffset = reminderDateTime.getTimezoneOffset(); // User's local timezone offset in minutes
 
-        // Adjust the date to account for Dubai timezone
-        const adjustedDate = new Date(reminderDateTime.getTime() - (dubaiOffset + userTimezoneOffset) * 60000);
+        // Adjust the date to account for Iraq timezone
+        const adjustedDate = new Date(reminderDateTime.getTime() - (iraqOffset + userTimezoneOffset) * 60000);
         scheduledDateISO = adjustedDate.toISOString();
       }
 
@@ -367,12 +367,12 @@ const TaskDetailsModal = ({ isOpen, onClose, task, onTaskUpdated }) => {
         let createResult;
 
         if (reminderDateTime) {
-          // Convert selected time from Dubai timezone to UTC for backend
-          const dubaiOffset = 4 * 60; // Dubai is UTC+4 (240 minutes)
+          // Convert selected time from Iraq timezone to UTC for backend
+          const iraqOffset = 3 * 60; // Iraq is UTC+3 (180 minutes)
           const userTimezoneOffset = reminderDateTime.getTimezoneOffset(); // User's local timezone offset in minutes
 
-          // Adjust the date to account for Dubai timezone
-          const adjustedDate = new Date(reminderDateTime.getTime() - (dubaiOffset + userTimezoneOffset) * 60000);
+          // Adjust the date to account for Iraq timezone
+          const adjustedDate = new Date(reminderDateTime.getTime() - (iraqOffset + userTimezoneOffset) * 60000);
           const scheduledDateISO = adjustedDate.toISOString();
 
           // If reminder date is set, use createTask API

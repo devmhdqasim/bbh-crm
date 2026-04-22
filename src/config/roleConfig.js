@@ -157,7 +157,7 @@ export const SIDEBAR_MENU_CONFIG = [
     icon: 'Users',
   },
   {
-    label: 'Kiosk Members',
+    label: 'Baghdad Branch',
     route: ROUTES.KIOSKMEMBER,
     icon: 'CheckSquare',
   },

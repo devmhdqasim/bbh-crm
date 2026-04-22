@@ -6,7 +6,7 @@ import { Calendar } from 'lucide-react';
 /**
  * DateRangePicker Component
  * 
- * A reusable date range picker with dark theme styling and Dubai timezone support
+ * A reusable date range picker with dark theme styling and Iraq timezone support
  * 
  * @param {Object} props
  * @param {Date|string} props.startDate - Start date value
@@ -42,32 +42,32 @@ const DateRangePicker = ({
 }) => {
   const [localError, setLocalError] = useState('');
 
-  // Dubai timezone offset (GMT+4)
-  const DUBAI_OFFSET = 4 * 60; // 4 hours in minutes
+  // Iraq timezone offset (GMT+3)
+  const IRAQ_OFFSET = 3 * 60; // 3 hours in minutes
 
-  // Convert any date to Dubai timezone
-  const toDubaiTime = (date) => {
+  // Convert any date to Iraq timezone
+  const toIraqTime = (date) => {
     if (!date) return null;
-    
+
     const utcDate = new Date(date);
     // Get the current timezone offset
     const localOffset = utcDate.getTimezoneOffset();
-    // Calculate the difference between Dubai and local timezone
-    const offsetDiff = localOffset + DUBAI_OFFSET;
-    
-    // Adjust the date to Dubai timezone
-    const dubaiDate = new Date(utcDate.getTime() + offsetDiff * 60 * 1000);
-    return dubaiDate;
+    // Calculate the difference between Iraq and local timezone
+    const offsetDiff = localOffset + IRAQ_OFFSET;
+
+    // Adjust the date to Iraq timezone
+    const iraqDate = new Date(utcDate.getTime() + offsetDiff * 60 * 1000);
+    return iraqDate;
   };
 
-  // Convert Dubai time back to UTC for storage/API calls
-  const fromDubaiTime = (date) => {
+  // Convert Iraq time back to UTC for storage/API calls
+  const fromIraqTime = (date) => {
     if (!date) return null;
-    
+
     const localOffset = date.getTimezoneOffset();
-    const offsetDiff = localOffset + DUBAI_OFFSET;
-    
-    // Convert back from Dubai timezone
+    const offsetDiff = localOffset + IRAQ_OFFSET;
+
+    // Convert back from Iraq timezone
     const utcDate = new Date(date.getTime() - offsetDiff * 60 * 1000);
     return utcDate;
   };
@@ -81,13 +81,13 @@ const DateRangePicker = ({
   const startDateObj = parseDate(startDate);
   const endDateObj = parseDate(endDate);
 
-  // Display dates in Dubai timezone
-  const displayStartDate = toDubaiTime(startDateObj);
-  const displayEndDate = toDubaiTime(endDateObj);
+  // Display dates in Iraq timezone
+  const displayStartDate = toIraqTime(startDateObj);
+  const displayEndDate = toIraqTime(endDateObj);
 
   const normalizeDate = (date) => {
     if (!date) return null;
-    // Set to noon in Dubai timezone to prevent date shifting
+    // Set to noon in Iraq timezone to prevent date shifting
     const normalized = new Date(date);
     normalized.setHours(12, 0, 0, 0);
     return normalized;
@@ -111,32 +111,32 @@ const DateRangePicker = ({
     }
     
     const fixedDate = normalizeDate(date);
-    // Convert from Dubai time back to UTC/local time for storage
-    const convertedDate = fromDubaiTime(fixedDate);
+    // Convert from Iraq time back to UTC/local time for storage
+    const convertedDate = fromIraqTime(fixedDate);
     validateDateRange(convertedDate, endDateObj);
     onStartDateChange(convertedDate);
   };
-  
+
   const handleEndDateChange = (date) => {
     if (!date) {
       onEndDateChange(null);
       setLocalError('');
       return;
     }
-    
+
     const fixedDate = normalizeDate(date);
-    // Convert from Dubai time back to UTC/local time for storage
-    const convertedDate = fromDubaiTime(fixedDate);
+    // Convert from Iraq time back to UTC/local time for storage
+    const convertedDate = fromIraqTime(fixedDate);
     validateDateRange(startDateObj, convertedDate);
     onEndDateChange(convertedDate);
   };
 
   const displayError = showError || localError;
 
-  // Convert min/max dates to Dubai timezone for display
-  const displayMinDate = minDate ? toDubaiTime(minDate) : null;
+  // Convert min/max dates to Iraq timezone for display
+  const displayMinDate = minDate ? toIraqTime(minDate) : null;
   // Use maxDate if enableFutureDate is true, otherwise use current date or provided maxDate
-  const displayMaxDate = enableFutureDate ? null : (maxDate ? toDubaiTime(maxDate) : toDubaiTime(new Date()));
+  const displayMaxDate = enableFutureDate ? null : (maxDate ? toIraqTime(maxDate) : toIraqTime(new Date()));
 
   return (
     <div className={`date-range-picker-container ${className}`}>
@@ -197,7 +197,7 @@ const DateRangePicker = ({
 
       {/* Timezone Indicator */}
       <div className="mt-1 text-xs text-[#dea402]/70 text-right">
-        Dubai Time (GMT+4)
+        Iraq Time (GMT+3)
       </div>
 
       {/* Error Message */}

@@ -407,9 +407,9 @@ const SalesManagers = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
               <h1 className="text-4xl font-bold bg-gradient-to-r from-[#dea402] to-[#b38302] bg-clip-text text-transparent">
-                Kiosk Members
+                Baghdad Branch
               </h1>
-              <p className="text-gray-400 mt-2">Manage all BBH Kiosk Members</p>
+              <p className="text-gray-400 mt-2">Manage all BBH Baghdad Branch members</p>
             </div>
             <div className="flex flex-col gap-3">
             <button
@@ -418,7 +418,7 @@ const SalesManagers = () => {
               >
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               <UserPlus className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:rotate-12" />
-              <span className="relative z-10">Add New Kiosk Member</span>
+              <span className="relative z-10">Add New Baghdad Branch Member</span>
             </button>
                             {/* Date Range Filter */}
                             <DateRangePicker
@@ -467,13 +467,13 @@ const SalesManagers = () => {
                 {loading ? (
                   <tr>
                     <td colSpan="7" className="px-6 py-12 text-center text-gray-400">
-                      Loading Kiosk Members...
+                      Loading Baghdad Branch members...
                     </td>
                   </tr>
                 ) : currentSalesManagers.length === 0 ? (
                   <tr>
                     <td colSpan="7" className="px-6 py-12 text-center text-gray-400">
-                      No Kiosk Members found
+                      No Baghdad Branch members found
                     </td>
                   </tr>
                 ) : (
@@ -619,10 +619,10 @@ const SalesManagers = () => {
           <div className="flex items-center justify-between p-6 border-b border-[#dea402]/30 bg-gradient-to-r from-[#dea402]/10 to-transparent">
             <div>
               <h2 className="text-2xl font-bold text-[#dea402]">
-                {editingSalesManager ? 'Edit Kiosk Member' : 'Add New Kiosk Member'}
+                {editingSalesManager ? 'Edit Baghdad Branch Member' : 'Add New Baghdad Branch Member'}
               </h2>
               <p className="text-gray-400 text-sm mt-1">
-                {editingSalesManager ? 'Update Kiosk Member information' : 'Fill in the details to add a new Kiosk Member'}
+                {editingSalesManager ? 'Update Baghdad Branch member information' : 'Fill in the details to add a new Baghdad Branch member'}
               </p>
             </div>
             <button
@@ -828,7 +828,7 @@ const SalesManagers = () => {
                   )}
                 </div> */}
 
-                {/* Password - only for new Kiosk Members */}
+                {/* Password - only for new Baghdad Branch Members */}
                 {!editingSalesManager && (
                   <div className="space-y-2">
                     <label className="text-sm text-[#f5cc3a] font-medium block">

@@ -1031,10 +1031,10 @@ const BranchManagement = () => {
                   </div>
                 </div>
 
-                {/* Kiosk Members Multi-Select using react-select */}
+                {/* Baghdad Branch Members Multi-Select using react-select */}
                 <div className="space-y-2">
                   <label className="text-sm text-[#f5cc3a] font-medium block">
-                    Kiosk Members <span className="text-red-500">*</span>
+                    Baghdad Branch Members <span className="text-red-500">*</span>
                   </label>
                   {!isBranchMembersVisible && (
                     <Select

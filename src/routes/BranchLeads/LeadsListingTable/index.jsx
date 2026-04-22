@@ -259,7 +259,7 @@ const LeadsListingTable = ({
     const date = new Date(utcDateString);
     if (isNaN(date)) return false;
     const options = {
-      timeZone: "Asia/Dubai",
+      timeZone: "Asia/Baghdad",
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -502,12 +502,12 @@ const LeadsListingTable = ({
         </div>
       </div>
 
-      {/* Kiosk Member Filter */}
-      {activeTab === 'Kiosk Members' && (
+      {/* Baghdad Branch Member Filter */}
+      {activeTab === 'Baghdad Branch' && (
         <div className="mb-6 animate-fadeIn">
           <div className="flex items-center gap-4">
             <label className="text-[#f5cc3a] font-medium text-sm whitespace-nowrap">
-              Filter by Kiosk Member:
+              Filter by Baghdad Branch Member:
             </label>
             <div className="relative w-full max-w-xs">
             {!isBranchUsernameEmail && (
@@ -516,7 +516,7 @@ const LeadsListingTable = ({
                 onChange={(e) => setSelectedKioskMemberFilter(e.target.value)}
                 className="w-full px-4 py-2 border-2 border-[#dea402]/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dea402]/50 focus:border-[#dea402] bg-[#4a1015] text-white transition-all duration-300 hover:border-[#dea402]"
               >
-                <option value="">All Kiosk Members</option>
+                <option value="">All Baghdad Branch Members</option>
                 {kioskMembers.map((member) => (
                   <option key={member.id} value={member.id}>{member.name}</option>
                 ))}
@@ -900,7 +900,7 @@ const LeadsListingTable = ({
                         }`}
                       >
                         <option value="">Select Source</option>
-                        <option value="Kiosk">Kiosk</option>
+                        <option value="Kiosk">Baghdad Branch</option>
                       </select>
                       <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                     </div>
@@ -911,7 +911,7 @@ const LeadsListingTable = ({
 
                   <div className="space-y-2">
                     <label className="text-sm text-[#f5cc3a] font-medium block">
-                      Kiosk Team <span className="text-red-500">*</span>
+                      Baghdad Branch Team <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
@@ -923,7 +923,7 @@ const LeadsListingTable = ({
                             : 'border-[#dea402]/30 focus:border-[#dea402] focus:ring-[#dea402]/50 hover:border-[#dea402]'
                         }`}
                       >
-                        <option value="">Select Kiosk Member</option>
+                        <option value="">Select Baghdad Branch Member</option>
                         {kioskMembers.map((member) => (
                           <option key={member.id} value={member.id}>{member.name}</option>
                         ))}

@@ -409,7 +409,7 @@ const AgentManagement = () => {
     if (isNaN(date) && !showPassIcon) return false;
   
     const options = {
-      timeZone: "Asia/Dubai",
+      timeZone: "Asia/Baghdad",
       day: "2-digit",
       month: "2-digit",
       year: "numeric",

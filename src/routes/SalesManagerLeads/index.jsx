@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAllSalesManagerLeads, getSalesEventLeads, assignLeadToAgent, updateLeadTask, bulkAssignLeadsToAgent } from '../../services/leadService';
+import { getAllSalesManagerLeads, assignLeadToAgent, updateLeadTask, bulkAssignLeadsToAgent } from '../../services/leadService';
 import { getAllUsers } from '../../services/teamService';
 import toast from 'react-hot-toast';
 import SalesManagerLeadsListing from './SalesManagerLeadsListing';
@@ -7,9 +7,6 @@ import SalesManagerLeadFormDrawer from './SalesManagerLeadFormDrawer';
 import SalesManagerAssignLeadModal from './SalesManagerAssignLeadModal';
 import ReminderModal from './TaskManagementModal';
 import { getDashboardStatsByFilter } from '../../services/dashboardService';
-
-// Source tabs that have their own dedicated API (handled inside Listing)
-const SELF_FETCHING_SOURCES = ['Event']; // 'Event' maps to 'Event Leads' tab
 
 const SalesManagerLeadManagement = () => {
   const [leads, setLeads] = useState([]);
@@ -43,8 +40,6 @@ const SalesManagerLeadManagement = () => {
   const [kioskMembers, setKioskMembers] = useState([]);
   const [activeModalTab, setActiveModalTab] = useState('assign');
   const [selectedAgentFilter, setSelectedAgentFilter] = useState('');
-  const [eventLeadsCount, setEventLeadsCount] = useState(0);
-  const [mobileLeadsCount, setMobileLeadsCount] = useState(0);
   const [ramadanLeadsCount, setRamadanLeadsCount] = useState(0);
 
   // Status update states
@@ -75,9 +70,8 @@ const SalesManagerLeadManagement = () => {
   }, [searchQuery]);
 
   // Helper: is the active tab a dynamic source tab that fetches in the Listing?
-  // Dynamic source tabs (everything after Event Leads) self-fetch inside Listing.
   const isDynamicSourceTab = () => {
-    const staticTabs = ['All', 'Assigned', 'Not Assigned', 'Contacted', 'Event Leads'];
+    const staticTabs = ['All', 'Assigned', 'Not Assigned', 'Contacted'];
     return !staticTabs.includes(activeTab);
   };
 
@@ -105,38 +99,6 @@ const SalesManagerLeadManagement = () => {
       return 'Contacted';
     }
     return '';
-  };
-
-  // Fetch event leads count on initial load
-  const fetchEventLeadsCount = async () => {
-    try {
-      const startDateStr = startDate ? startDate.toISOString().split('T')[0] : '';
-      const endDateStr = endDate ? endDate.toISOString().split('T')[0] : '';
-      const agentId = selectedAgentFilter || '';
-
-      const result = await getSalesEventLeads(1, 1, startDateStr, endDateStr, debouncedSearchQuery, '', agentId);
-      if (result.success && result.metadata) {
-        setEventLeadsCount(result.metadata.total || 0);
-      }
-    } catch (error) {
-      console.error('Error fetching event leads count:', error);
-    }
-  };
-
-  // Fetch mobile leads count
-  const fetchMobileLeadsCount = async () => {
-    try {
-      const startDateStr = startDate ? startDate.toISOString().split('T')[0] : '';
-      const endDateStr = endDate ? endDate.toISOString().split('T')[0] : '';
-      const agentId = selectedAgentFilter || '';
-
-      const result = await getAllSalesManagerLeads(1, 1, startDateStr, endDateStr, debouncedSearchQuery, 'Mobile', agentId);
-      if (result.success && result.metadata) {
-        setMobileLeadsCount(result.metadata.total || 0);
-      }
-    } catch (error) {
-      console.error('Error fetching mobile leads count:', error);
-    }
   };
 
   // Fetch ramadan leads count
@@ -263,12 +225,9 @@ const SalesManagerLeadManagement = () => {
 
   // Function to refresh current tab data
   const refreshCurrentTab = () => {
-    if (activeTab === 'Event Leads' || isDynamicSourceTab()) {
+    if (isDynamicSourceTab()) {
       // Listing component handles its own fetch via its own useEffect trigger
-      // We trigger it by forcing a state update — simplest: call fetchDashboardData
-      // and let the Listing re-fetch on its own dependency change.
-      // For Event Leads the Listing already watches the deps.
-      fetchEventLeadsCount();
+      fetchDashboardData();
     } else {
       fetchLeads(currentPage, itemsPerPage);
     }
@@ -331,8 +290,6 @@ const SalesManagerLeadManagement = () => {
 
   // Fetch counts on initial load and when filters change
   useEffect(() => {
-    fetchEventLeadsCount();
-    fetchMobileLeadsCount();
     fetchRamadanLeadsCount();
   }, [startDate, endDate, debouncedSearchQuery, selectedAgentFilter]);
 
@@ -343,7 +300,7 @@ const SalesManagerLeadManagement = () => {
 
   // Fetch leads when page, filters, or dates change — skip for self-fetching tabs
   useEffect(() => {
-    if (activeTab === 'Event Leads' || isDynamicSourceTab()) {
+    if (isDynamicSourceTab()) {
       return;
     }
     fetchLeads(currentPage, itemsPerPage);
@@ -692,10 +649,6 @@ const SalesManagerLeadManagement = () => {
         setTotalLeads={setTotalLeads}
         setLoading={setLoading}
         debouncedSearchQuery={debouncedSearchQuery}
-        eventLeadsCount={eventLeadsCount}
-        setEventLeadsCount={setEventLeadsCount}
-        mobileLeadsCount={mobileLeadsCount}
-        setMobileLeadsCount={setMobileLeadsCount}
         ramadanLeadsCount={ramadanLeadsCount}
         setRamadanLeadsCount={setRamadanLeadsCount}
         kioskMembers={kioskMembers}
