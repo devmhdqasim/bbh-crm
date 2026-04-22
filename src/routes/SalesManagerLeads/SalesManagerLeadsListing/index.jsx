@@ -166,7 +166,7 @@ const SalesManagerLeadsListing = ({
 // Build URL manually to send `source=` instead of `status=`
 const axios = (await import('axios')).default;
 const authToken = localStorage.getItem('refreshToken');
-const API_BASE_URL = 'https://staging.crm.saveingold.app/api/v1';
+const API_BASE_URL = 'https://crm-staging.baghdadbullionhouse.com/api/v1';
 
 const queryParams = new URLSearchParams({
   paramPage: currentPage,
