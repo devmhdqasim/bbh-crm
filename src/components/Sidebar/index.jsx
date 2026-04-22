@@ -23,7 +23,6 @@ import { filterMenuByRole, SIDEBAR_MENU_CONFIG, ROUTES } from '@/config/roleConf
 import { useWebSocket } from '../../context/WebSocketContext';
 import { ref, onValue } from 'firebase/database';
 import { db } from '../../config/firebase';
-import logo from '@/assets/images/logo.svg';
 
 const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) => {
   const navigate = useNavigate();
@@ -169,16 +168,16 @@ const Sidebar = ({ isOpen, setIsOpen, isCollapsed, setIsCollapsed, userRole }) =
         {/* Logo with Enhanced Animation */}
         <div className={`mb-8 transition-all duration-700 delay-150 ${isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
           <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-3'} group cursor-pointer overflow-hidden transition-all duration-500`}>
-            {/* <div className="relative w-10 h-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 flex-shrink-0">
+            <div className="relative w-10 h-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 flex-shrink-0">
               <img
-                src={logo}
+                src="/logo.png"
                 alt="BBH Logo"
                 className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(222,164,2,0.5)]"
               />
-            </div> */}
+            </div>
             <div className={`flex items-baseline overflow-hidden whitespace-nowrap transition-all duration-500 ${isCollapsed ? 'w-0 opacity-0 ml-0' : 'w-auto opacity-100 ml-3'}`}>
-              <span className="text-lg font-bold text-[#c99403] transition-all duration-300 group-hover:text-[#dea402] tracking-wide">
-                Baghdad Bullion House
+              <span className="text-xl font-bold text-white transition-all duration-300 group-hover:text-[#dea402] tracking-wide">
+                BBH
               </span>
             </div>
           </div>

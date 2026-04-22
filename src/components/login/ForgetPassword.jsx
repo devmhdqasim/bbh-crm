@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Loader2, ArrowLeft } from 'lucide-react';
 import toast from 'react-hot-toast';
-import logo from '../../assets/images/logo.svg';
 
 const APP_VERSION = __APP_VERSION__ || '1.0.0';
 
@@ -91,7 +90,7 @@ export default function ForgetPassword({
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="BBH Logo" className="h-16 w-auto object-contain" />
+            <img src="/logo.png" alt="BBH Logo" className="h-16 w-auto object-contain" />
           </div>
 
           {/* Heading */}
