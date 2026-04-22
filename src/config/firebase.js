@@ -28,15 +28,15 @@ const getEnvVar = (key) => {
 
 // Your web app's Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: getEnvVar('FIREBASE_API_KEY') || "AIzaSyAybyk9PwDpJtPwoqVAE0T7kkrqEq4ZWXo",
-  authDomain: getEnvVar('FIREBASE_AUTH_DOMAIN') || "saveingold-crm.firebaseapp.com",
-  projectId: getEnvVar('FIREBASE_PROJECT_ID') || "saveingold-crm",
-  storageBucket: getEnvVar('FIREBASE_STORAGE_BUCKET') || "saveingold-crm.firebasestorage.app",
-  messagingSenderId: getEnvVar('FIREBASE_MESSAGING_SENDER_ID') || "707006356857",
-  appId: getEnvVar('FIREBASE_APP_ID') || "1:707006356857:web:e0aefcbb186eb7d064a3a8",
-  measurementId: getEnvVar('FIREBASE_MEASUREMENT_ID') || "G-TQD9E1YR3Y",
-  databaseURL: getEnvVar('FIREBASE_DATABASE_URL') || "https://saveingold-crm-default-rtdb.firebaseio.com"
+  apiKey: getEnvVar('FIREBASE_API_KEY') ||  "AIzaSyB-hWKr_Tpm0w52pyEGqijvVAl19pcUUfg",
+  authDomain: getEnvVar('FIREBASE_AUTH_DOMAIN') ||  "baghdadbullionhouse-crm.firebaseapp.com",
+  projectId: getEnvVar('FIREBASE_PROJECT_ID') ||  "baghdadbullionhouse-crm",
+  storageBucket: getEnvVar('FIREBASE_STORAGE_BUCKET') ||  "baghdadbullionhouse-crm.firebasestorage.app",
+  messagingSenderId: getEnvVar('FIREBASE_APP_ID') ||  "119370451277",
+  appId: getEnvVar('FIREBASE_MEASUREMENT_ID') ||  "1:119370451277:web:d509652a2d18bc46c70f04",
+  measurementId: getEnvVar('FIREBASE_DATABASE_URL') ||  "G-RQ692RQ99H"
 };
+
 
 // Validate that all required config values are present
 const validateConfig = () => {
